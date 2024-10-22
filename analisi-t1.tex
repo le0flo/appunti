@@ -1,0 +1,301 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{enumitem}
+
+\title{Appunti di Analisi T1}
+\author{Leonardo}
+
+\begin{document}
+
+\maketitle
+
+\section{Modulo 1}
+
+\subsection{Principio di induzione}
+
+Il principio di induzione è un metodo generico per dimostrare
+un teorema qualsiasi con dominio in $\mathbb{N}$.
+
+\vspace{5mm}
+\noindent
+Il procedimento di prova per induzione prevede un affermazione
+o uguaglianza che dipende da $n$ e viene indicata con: $P(n)$.
+
+\vspace{5mm}
+\noindent
+Data l'affermazione $P(n)$, il principio prova
+la precedente, al verificarsi delle seguenti condizioni:
+
+\newlist{induzione}{enumerate}{2}
+\setlist[induzione]{label*=\arabic*.}
+
+\begin{induzione}
+    \item $P(0)$
+    \item $P(k) \Leftrightarrow P(k+1)$
+\end{induzione}
+
+\noindent
+Se queste condizioni si verificano, allora: $P(n)$ è vera $\forall n \in \mathbb{N}$.
+
+\subsection{Principio del minimo}
+
+\textbf{DEF}: Ogni sottoinsieme di $\mathbb{N}$ ha un minimo.
+
+\subsection{Maggioranti e minoranti, Massimo e minimo}
+
+Dato $\mathbb{A} = \{ a \in \mathbb{R} \}$
+
+\newlist{maggioranti}{enumerate}{2}
+\setlist[maggioranti]{label*=\arabic*.}
+
+\begin{maggioranti}
+    \item Maggiorante: $M \in \mathbb{R} \land \forall a \in \mathbb{A} : a \leq M$
+    \item Minorante: $m \in \mathbb{R} \land \forall a \in \mathbb{A} : a \geq M$
+\end{maggioranti}
+
+\noindent
+Se l'insieme $\mathbb{A}$ ammette un maggiorante si
+dice \underline{superiormente limitato}, se ammette un minorante
+si dice \underline{inferiormente limitato} e se ammette entrambe
+si dice \underline{limitato}.
+
+\vspace{5mm}
+\noindent
+Il minimo di un insieme $\mathbb{A}$, se esiste,
+è il più grande dei \underline{minoranti}:
+
+\vspace{5mm}
+\noindent
+Il massimo di un insieme $\mathbb{A}$, se esiste,
+è il più piccolo dei \underline{maggioranti}:
+
+\subsection{Piccole nozioni}
+
+L'insieme dei numeri reali \textbf{NON} è numerabile.
+
+\vspace{5mm}
+\noindent
+Radice aritmetica: $\sqrt{n} = m : m \in \mathbb{N}$.
+
+\subsection{Successioni}
+
+\textbf{DEF}: Una successione di numeri reali è una funzione da
+$\mathbb{N}$ in $\mathbb{R}$.
+
+\begin{equation}
+    \begin{split}
+        f : \mathbb{N} \longrightarrow \mathbb{R} \\
+        n \longrightarrow f(n) := a_n
+    \end{split}
+\end{equation}
+
+\noindent
+I termini della successione sono notati nella seguente maniera:
+
+\vspace{5mm}
+$f(0) = a_0$
+
+\vspace{5mm}
+$f(1) = a_1$
+
+\vspace{5mm}
+$f(2) = a_2$
+
+\vspace{5mm}
+\noindent
+La successione può essere:
+
+\begin{itemize}
+    \item Superiormente limitata
+    \item Inferiormente limitata
+    \item Limitata
+\end{itemize}
+
+\subsection{Intorni}
+
+\textbf{DEF}: Si dice intorno, un insieme aperto che ammette un punto centrale.
+
+\subsection{Limiti}
+
+\textbf{DEF}: La funzione $f(x)$ si avvicina \underline{arbitrariamente}
+ad L, a patto che $x$ sia \underline{abbastanza} vicino a $x_0$.
+
+\begin{equation}
+    \forall \varepsilon > 0, \exists \delta > 0 :
+    \forall n > \delta :
+    \forall x \in ] x_0 - \delta, x_0 + \delta [ \backslash \{x_0\}
+    \implies f(x) \in ] L - \varepsilon, L + \varepsilon [
+\end{equation}
+
+\vspace{5mm}
+$\varepsilon$ = intorno al limite
+
+$\delta$ = intorno al valore
+
+L = il limite
+
+\subsection{Serie}
+
+\textbf{DEF}: Sia $(a_n)_n$ una successione di
+numeri reali. Definiamo la successione $(s_n)_n$ associata:
+
+\vspace{5mm}
+$s_0 = a_0$
+
+\vspace{5mm}
+$s_1 = a_0 + a_1$
+
+\vspace{5mm}
+$s_2 = a_0 + a_1 + a_2$
+
+\indent
+\vdots
+
+\vspace{5mm}
+\noindent
+La successione delle somme parziali si chiama serie e si indica:
+
+\begin{equation}
+    \sum_{n = 0}^{+\infty} a_n \text{ oppure } \sum_{}^{} a_n
+\end{equation}
+
+\noindent
+I numeri $a_n$ si dicono \underline{termini della serie}.
+
+\noindent
+Una serie può essere:
+
+\begin{itemize}
+    \item Convergente: $\exists \lim_{n \to \infty} s_n = A \in \mathbb{R}$
+    \item Divergente:
+    $\exists \lim_{n \to \infty} s_n =
+    \begin{cases}
+            - \infty \\
+            + \infty
+    \end{cases}
+    $
+    \item Indeterminata: $\nexists  \lim_{n \to \infty} s_n$
+\end{itemize}
+
+\vspace{5mm}
+\noindent
+\textbf{DEF}: Data una serie $\sum_{}^{} a_n$, se cambio un
+numero finito di termini, la serie generata manterrà
+il carattere dell'originale.
+
+\subsubsection{Serie geometrica}
+
+$q \in \mathbb{R}$
+
+\begin{equation}
+    R_n := q^n \Rightarrow \sum_{n = 0}^{+\infty} q^n
+\end{equation}
+
+\vspace{5mm}
+\noindent
+La serie geometrica converge soltanto se $|q| < 1$
+
+\begin{equation}
+    \sum_{n}^{} q^n = \frac{1}{1 - q}
+\end{equation}
+
+\subsubsection{Convergenza di una serie}
+
+Una serie converge se e soltanto se $a_n \to 0$.
+La condizione precedente è necessaria ma \underline{NON} sufficiente
+per affermare la convergena di una serie.
+
+\subsubsection{Criterio del confronto}
+
+$(a_n)_n, (b_n)_n$
+
+\begin{equation}
+    \forall n : 0 \leq a_n \leq b_n
+\end{equation}
+
+\begin{itemize}
+    \item se $b_n$ converge, anche $a_n$ converge.
+    \item se $a_n$ diverge, anche $b_n$ diverge.
+\end{itemize}
+
+\subsubsection{Criterio di condensazione}
+
+$\sum_{n}^{} a_n$ converge se e soltanto se $\sum_{k = 0}^{+\infty} 2^k a_2k$ converge.
+
+\subsubsection{Criterio del valore assoluto}
+
+Data una serie $\sum_{n}^{} a_n$, se la serie $\sum_{n}^{} |a_n|$ converge, anche la prima converge.
+
+\begin{equation}
+    |\sum_{n}^{} a_n| = \sum_{n}^{} |a_n|
+\end{equation}
+
+\noindent
+Una serie che viene dichiarata convergente usando questo
+criterio è detta assolutamente convergente.
+
+\subsubsection{Criterio della radice}
+
+$(a_n)_n$
+
+\vspace{5mm}
+\noindent
+se $\exists \lim_{n \to \infty} \sqrt[n]{|a_n|} = L$, allora:
+
+\begin{itemize}
+    \item se $L < 1$ allora $\sum_{}^{} a_n$ converge
+    \item se $L > 1$ allora $\sum_{}^{} a_n$ \underline{NON} converge
+    \item se $L = 1$ allora non si può concludere nulla
+\end{itemize}
+
+\subsubsection{Criterio del rapporto}
+
+$(a_n)_n, a_n \neq 0$
+
+\vspace{5mm}
+\noindent
+se $\exists \lim_{n \to \infty} |\frac{a_n + 1}{a_n}| = L$, allora:
+
+\begin{itemize}
+    \item se $L < 1$ allora $\sum_{}^{} a_n$ converge
+    \item se $L > 1$ allora $\sum_{}^{} a_n$ \underline{NON} converge
+    \item se $L = 1$ allora non si può concludere nulla
+\end{itemize}
+
+\subsubsection{Criterio del confronto asintotico}
+
+$(a_n)_n, \forall n : a_n \geq 0$
+
+\noindent
+$(b_n)_n, \forall n : b_n > 0$
+
+\vspace{5mm}
+\noindent
+se $\lim_{n \to \infty} \frac{a_n}{b_n} = L > 0$, allora:
+
+\begin{itemize}
+    \item $\sum_{n}^{} a_n < +\infty \Leftrightarrow \sum_{n}^{} b_n < +\infty$, entrambe convergono
+    \item $\sum_{n}^{} a_n = +\infty \Leftrightarrow \sum_{n}^{} b_n = +\infty$, entrambe divergono
+\end{itemize}
+
+\vspace{5mm}
+\noindent
+$(a_n)_n, \forall n : a_n \geq 0$
+
+\noindent
+$p = n * a_n$
+
+\vspace{5mm}
+\noindent
+se $\lim_{n \to +\infty} \frac{a_n}{\frac{1}{n^p}} = L > 0$, allora
+$\sum_{n}^{} a_n$ converge se $\sum_{n}^{} \frac{1}{n^p}$ converge; possibile soltanto se $p > 1$.
+
+\subsubsection{Criterio di Leibniz}
+
+se $(a_j)_j : a_j > 0 : a_j \geq a_j + 1 : \lim_{j \to \infty} a_j = 0$
+
+\noindent
+allora $\sum_{j = 1}^{+\infty} (-1)^j * a_j$ converge.
+
+\end{document}
