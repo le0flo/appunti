@@ -1,4 +1,5 @@
-Data una funzione $f(x)$, troviamo una funzione $F(x)$ tale che $DF(x) = f(x)$ ...
+Data una funzione $f(x)$, troviamo una funzione $F(x)$ tale che $DF(x) = f(x)$.
+### Integrale
 Dato $c \in \mathbb{R}$:
 $$
 DF = D(F + c) \implies f = f + 0
@@ -31,6 +32,3 @@ $$
 Si possono avere due casi principali quando si parla di integrazione:
 - Integranda non limitata
 - Integranda $[a, +\infty]$, $[-\infty, b]$, $\mathbb{R}$
-### Riferimenti
-- [[Derivate]]
-- [[Analisi T1/Funzioni|Funzioni]]

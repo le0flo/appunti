@@ -1,4 +1,5 @@
 Data una funzione $f(x)$ si vuole approssimare con un polinomio.
+### Formula di Taylor
 Se $f(x)$ è derivabile $n$-volte, il polinomio può essere preso di grado $n$. La formula di Taylor prevede che, una volta fissato $x_0$:
 $$
 f(x) - p(x) = o((x - x_0)^n) \text{ per } x \to x_0
@@ -36,5 +37,3 @@ Df(x_0)(x - x_0) +
 \frac{D^{n+1}f(c)}{(n+1)!} (x - x_0)^{n+1}
 \text{ per } x \to x_0
 $$
-### Riferimenti
-- [[Derivate]]

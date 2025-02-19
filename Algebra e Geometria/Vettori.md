@@ -35,6 +35,3 @@ Un sottospazio affine di $V$ è un sottoinsieme nella forma:
 $$
 \mathbb{A} = \{ \vec{v} + \vec{w} : \vec{w} \in W \}
 $$
-### Riferimenti
-- [[Combinazione lineare]]
-- [Campi](Anelli)

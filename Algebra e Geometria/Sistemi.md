@@ -78,6 +78,3 @@ $$
 rg(S) = rg(S_0)
 $$
 Se $W_S \neq \emptyset$, allora la $dim(W_S) = n - rg(S_0)$.
-### Riferimenti
-- [[Matrici]]
-- [[Combinazione lineare]]

@@ -21,5 +21,3 @@ $$
 dim \mathbb{V} = n
 $$
 Se conosciamo la dimensione dello spazio vettoriale $\mathbb{V}$ e troviamo un insieme di vettori linearmente indipendenti, allora possiamo dire che quell'insieme di vettori è una base di $\mathbb{V}$.
-### Riferimenti
-- [[Vettori]]

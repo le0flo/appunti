@@ -1,1 +1,0 @@
-Si dice intorno, un insieme aperto che ammette un punto centrale.
