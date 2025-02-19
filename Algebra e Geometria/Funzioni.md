@@ -1,17 +1,28 @@
+# Funzioni
+
 Dati due insiemi $\mathbb{A}$ e $\mathbb{B}$:
+
 $$
 f: \mathbb{A} \to \mathbb{B}
 $$
+
 - $\mathbb{A} =$ Dominio della funzione
 - $\mathbb{B} =$ Codominio della funzione
+
 ### Composizione di funzioni
+
 Date le funzioni $f: \mathbb{A} \to \mathbb{B}$ e $g: \mathbb{B} \to \mathbb{C}$:
+
 $$
 \mathbb{A} \to \mathbb{C} \implies a \to g(f(a))
 $$
+
 La funzione composta si indica con: $g o f \longrightarrow$ "$g$ composto da $f$"
+
 ### Classificazione delle funzioni
+
 Una funzione $f: \mathbb{A} \to \mathbb{B}$ può essere:
+
 - Iniettiva: $\forall a \in \mathbb{A} : \exists b \in \mathbb{B}: a \to b$
 - Suriettiva: $\mathbb{A} = \mathbb{B}$
 - Biettive: entrambe le precedenti
