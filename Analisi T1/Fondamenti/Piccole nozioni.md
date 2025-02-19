@@ -1,0 +1,2 @@
+- L'insieme dei numeri reali non è numerabile
+- Radice aritmetica: $\sqrt{n} = m : m \in \mathbb{N}$
