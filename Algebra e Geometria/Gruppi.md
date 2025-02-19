@@ -20,4 +20,4 @@ Un gruppo si dice commutativo (o abeliano) se l'operazione $*_1$ è anche commut
 
 ### Sottogruppi
 
-Se un sottoinsieme del gruppo $(\mathbb{G}, *_1)$ rispetta le 3 condizioni di esistenza per i gruppi con l'operazione $*_1$, allora esso può essere definito un sottogruppo.
+Se un sottoinsieme del gruppo $ (\mathbb{G}, *_1) $ rispetta le 3 condizioni di esistenza per i gruppi con l'operazione $*_1$, allora esso può essere definito un sottogruppo.
