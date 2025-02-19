@@ -30,5 +30,3 @@ $$
 - $n$ = grado del polinomio
 - $a \in \mathbb{C}$ = coefficienti
 - $\forall z \in \mathbb{C}$ possiamo considerare $p(z) = a_0 + a_1 z + a_2 z^2 + \dots + a_n z^n \in \mathbb{C}$
-### Riferimenti
-- [[Insiemi]]

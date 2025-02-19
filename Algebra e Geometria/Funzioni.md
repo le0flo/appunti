@@ -15,5 +15,3 @@ Una funzione $f: \mathbb{A} \to \mathbb{B}$ può essere:
 - Iniettiva: $\forall a \in \mathbb{A} : \exists b \in \mathbb{B}: a \to b$
 - Suriettiva: $\mathbb{A} = \mathbb{B}$
 - Biettive: entrambe le precedenti
-### Riferimenti
-- [[Insiemi]]

@@ -1,3 +1,9 @@
+### Rapporto incrementale
+Data una funzione $f(x)$, un intervallo $h$, allora il rapporto incrementale è il rapporto tra $f(x + h) - f(x)$ e $h$.
+$$
+\Delta f = \frac{f(x + h) - f(x)}{h}
+$$
+### Derivata
 La funzione $f(x)$ è derivabile, se esiste un limite finito al rapporto incrementale di essa.
 $$
 \exists \space finito \lim_{\Delta x \to 0} \frac{f(x + h) - f(x)}{h}
@@ -14,7 +20,7 @@ Data una funzione $f(x) \to Df(x)$:
 $$
 Df(x) \to D(Df(x)) = D^2f(x)
 $$
-### Notazioni
+### Notazioni per derivate di grado superiore
 - $\frac{d^2f}{dx^2} = \frac{d}{dx} * \frac{df}{dx}$
 - $f''$
 - $f^{(2)}$
@@ -48,6 +54,3 @@ $D^2f \leq 0 \implies Df$ è decrescente, la funzione è concava.
 - $f(x), g(x) \rightarrow D(\frac{f}{g}) = \frac{(Df)g - f(Dg)}{g^2}$
 - $f(x), g(x) \rightarrow D(f o g) = (Df(g)) * Dg$
 - $f(x) \rightarrow Df^{-1} = \frac{1}{Df(f^{-1}(x))}$
-### Riferimenti
-- [Rapporto incrementale](Rapporto%20incrementale.md)
-- [[Analisi T1/Funzioni|Funzioni]]

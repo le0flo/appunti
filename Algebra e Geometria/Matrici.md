@@ -83,7 +83,3 @@ Date due matrici generiche, generalmente è impossibile moltiplicarle. Se le mat
 $$
 AB \in M(m,k,\mathbb{K})
 $$
-### Riferimenti
-- [[Insiemi]]
-- [[Combinazione lineare]]
-- [[Algebra e Geometria/Funzioni|Funzioni]]

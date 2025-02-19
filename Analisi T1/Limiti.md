@@ -32,6 +32,3 @@ Dati i limiti $L, M, x_0 \in [ -\infty , +\infty ]$, $\lim_{x \to x_0} f(x) = L$
 - $\lim_{x \to 0} \frac{cos(x) - 1}{x^2} = -\frac{1}{2}$
 - $\lim_{x \to 0} \frac{e^x - 1}{x} = 1$
 - $\lim_{x \to 0} \frac{log(1 + x)}{x} = 1$
-### Riferimenti
-- [[Successioni]]
-- [[Analisi T1/Funzioni|Funzioni]]

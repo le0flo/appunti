@@ -1,3 +1,17 @@
+### Successioni
+Una successione di numeri reali è una funzione da $\mathbb{N}$ in $\mathbb{R}$.
+$$
+f : \mathbb{N} \to \mathbb{R}
+$$
+I termini della successione sono notati nella seguente maniera:
+- $f(0) = a_0$
+- $f(1) = a_1$
+- $f(2) = a_2$
+La successione può essere:
+- Superiormente limitata
+- Inferiormente limitata
+- Limitata
+### Serie
 Sia $(a_n)_n$ una successione di numeri reali. Definiamo la successione $(s_n)_n$ associata:
 - $s_0 = a_0$
 - $s_1 = a_0 + a_1$
@@ -61,5 +75,3 @@ Se $\lim_{n \to +\infty} \frac{a_n}{b_n} = L > 0$, allora:
 $(a_n)_n, \forall n : a_n \geq 0$
 $p = n * a_n$
 Se $\lim_{n \to +\infty} \frac{a_n}{\frac{1}{n^p}} = L > 0$, allora $\sum_{n}^{} a_n$ converge se $\sum_{n}^{} \frac{1}{n^p}$ converge; possibile converge se $p > 1$.
-### Riferimenti
-- [[Successioni]]
