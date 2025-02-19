@@ -1,12 +1,12 @@
 # Gruppo
 
-Dato l'insieme $\mathbb{G}$ ed un'operazione binaria di tipo $*_1: \mathbb{G} \times \mathbb{G} \to \mathbb{G}$, tale che:
+Dato l'insieme $\mathbb{G}$ ed un'operazione binaria di tipo $P_1: \mathbb{G} \times \mathbb{G} \to \mathbb{G}$, tale che:
 
 - $\exists$  un elemento neutro per l'operazione
 - l'operazione deve essere associativa
 - $\forall$ elemento di $\mathbb{G}$ ammette un'inverso
 
-Possiamo definire il gruppo $(\mathbb{G}, *_1)$.
+Possiamo definire il gruppo $(\mathbb{G}, P_1)$.
 
 e.g.
 - $(\mathbb{Q}, +)$ è un gruppo
@@ -20,4 +20,4 @@ Un gruppo si dice commutativo (o abeliano) se l'operazione $*_1$ è anche commut
 
 ### Sottogruppi
 
-Se un sottoinsieme del gruppo $ (\mathbb{G}, *_1) $ rispetta le 3 condizioni di esistenza per i gruppi con l'operazione $*_1$, allora esso può essere definito un sottogruppo.
+Se un sottoinsieme del gruppo $(\mathbb{G}, P_1)$ rispetta le 3 condizioni di esistenza per i gruppi con l'operazione $P_1$, allora esso può essere definito un sottogruppo.
