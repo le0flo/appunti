@@ -1,0 +1,3 @@
+- Seno iperbolico: $\sinh{x} = \frac{e^x - e^{-x}}{2}$
+- Coseno iperbolico: $\cosh{x} = \frac{e^x + e^{-x}}{2}$
+- Tangente iperbolica: $\tanh{x} = \frac{\sinh{x}}{\cosh{x}}$

@@ -1,0 +1,25 @@
+L'insieme è una collezione di oggetti.
+e.g.:
+- $\mathbb{N}$: numeri naturali
+- $\mathbb{Z}$: numeri interi
+- $\mathbb{Q}$ numeri razionali
+- $\mathbb{R}$: numeri reali
+### Simbologia
+- $x \in \mathbb{A}$, $x$ appartiene all'insieme $\mathbb{A}$
+- $x \notin \mathbb{A}$, $x$ non appartiene all'insieme $\mathbb{A}$
+- $\mathbb{Z} \geq 0 = \{ x \in \mathbb{Z} : x \geq 0 \}$
+- $\emptyset$ = insieme vuoto
+- $\mathbb{A} \subseteq \mathbb{B}$: $\mathbb{A}$ è contenuto in $\mathbb{B} \longrightarrow \forall x \in \mathbb{A} : x \in \mathbb{B}$
+- $\mathbb{A} \subsetneqq \mathbb{B}$: $\mathbb{A}$ è contenuto strettamente in $\mathbb{B} \longrightarrow \mathbb{A} \subseteq \mathbb{B}$ e $\mathbb{A} \neq \mathbb{B}$
+- $\mathbb{A} \cap \mathbb{B}$: Intersezione $\longrightarrow \mathbb{A} \cap \mathbb{B} = \{ x : x \in \mathbb{A} \wedge x \in \mathbb{B} \}$
+- $\mathbb{A} \cup \mathbb{B}$: Unione $\longrightarrow \mathbb{A} \cup \mathbb{B} = \{ x : x \in \mathbb{A} \vee x \in \mathbb{B} \}$
+- $\mathbb{A} \backslash \mathbb{B}$: Differenza insiemistica $\longrightarrow \mathbb{A} \backslash \mathbb{B} = \{ x \in \mathbb{A} : x \notin \mathbb{B} \}$
+- $\mathbb{A}^c, \bar{\mathbb{A}}$: Complementare $\longrightarrow \mathbb{B} \backslash \mathbb{A} = \mathbb{A}^c = \bar{\mathbb{A}}$
+### Formule di Morgan
+- $(\mathbb{A} \cap \mathbb{B})^c = \mathbb{A}^c \cup \mathbb{B}^c$
+- $(\mathbb{A} \cup \mathbb{B})^c = \mathbb{A}^c \cap \mathbb{B}^c$
+### Prodotto cartesiano
+Dati due insiemi $\mathbb{A}$ e $\mathbb{B}$, il prodotto cartesiano $\mathbb{A} * \mathbb{B}$ è:
+$$
+\mathbb{A} * \mathbb{B} = \{ (a,b) : a \in \mathbb{A}, b \in \mathbb{B} \}
+$$
