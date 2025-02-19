@@ -13,7 +13,7 @@ e.g.
 
 ### Condizioni particolari
 
-- se $*_2$ è commutativa, l'anello si dice commutativo
-- se $*_2$ ha un elemento neutro, $\mathbb{A}$ si dice: "anello con unità"
-- se $(\mathbb{A} \backslash \vec{0}, *_2)$ è un gruppo, allora $\mathbb{A}$ si dice anello di divisione o con corpo
+- se $P_2$ è commutativa, l'anello si dice commutativo
+- se $P_2$ ha un elemento neutro, $\mathbb{A}$ si dice: "anello con unità"
+- se $(\mathbb{A} \backslash \vec{0}, P_2)$ è un gruppo, allora $\mathbb{A}$ si dice anello di divisione o con corpo
 - quando il corpo è commutativo, $\mathbb{A}$ è un *campo*
