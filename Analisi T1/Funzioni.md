@@ -42,5 +42,3 @@ $$
 (f(b) - f(a))Dg(c) = (g(b) - g(a))Df(c) \implies
 \frac{Df(c)}{Dg(c)} = \frac{f(b) - f(a)}{g(b) - g(a)}
 $$
-### Riferimenti
-- [[Derivate]]

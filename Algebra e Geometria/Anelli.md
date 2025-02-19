@@ -11,5 +11,3 @@ e.g.:
 - se $*_2$ ha un elemento neutro, $\mathbb{A}$ si dice: "anello con unità"
 - se $(\mathbb{A} \backslash \vec{0}, *_2)$ è un gruppo, allora $\mathbb{A}$ si dice anello di divisione o con corpo
 - quando il corpo è commutativo, $\mathbb{A}$ è un **campo**
-### Riferimenti
-- [[Gruppi]]
