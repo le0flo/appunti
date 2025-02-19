@@ -1,0 +1,1 @@
+Ogni sottoinsieme di $\mathbb{N}$ ha un minimo.
