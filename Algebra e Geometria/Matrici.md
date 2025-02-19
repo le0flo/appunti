@@ -1,13 +1,13 @@
-### Matrice
+# Matrice
 
 Possiamo definire una matrice come una "griglia di numeri"
 
 $$
 a_{ij} \in \mathbb{K} = 
 \begin{pmatrix}
-a_{11} & a_{12} & \dots & a_{1n}\\
-a_{21}\\
-\vdots\\
+a_{11} & a_{12} & \dots & a_{1n} \\\\
+a_{21} \\\\
+\vdots \\\\
 a_{m1} & a_{m2} & \dots & a_{mn}
 \end{pmatrix}
 $$
@@ -21,7 +21,8 @@ A = M(m,n,\mathbb{K}) = (a_{ij}) : i = 1 \dots m : j = 1 \dots n
 $$
 
 - $A^i$ è la $i$-esima colonna $\in \mathbb{K}^m \to A = \begin{pmatrix} A^1 | \dots | A^n \end{pmatrix}$
-- $A_j$ è la $j$-esima colonna $\in \mathbb{K}^n \to A = \begin{pmatrix} A_1\\ -\\ \vdots\\ -\\ A_m \end{pmatrix}$
+
+- $A_j$ è la $j$-esima colonna $\in \mathbb{K}^n \to A = \begin{pmatrix} A_1\\\\ -\\\\ \vdots\\\\ -\\\\ A_m \end{pmatrix}$
 
 ### Pivot
 
@@ -34,7 +35,7 @@ Data una matrice $M(m,n,\mathbb{K})$, essa può essere detta "a scalini" se $\fo
 $$
 a_{kh} = 0\ \forall
 \begin{cases}
-k > i\\
+k > i \\\\
 h < j
 \end{cases}
 $$
@@ -42,11 +43,11 @@ $$
 e.g.
 $$
 \begin{pmatrix}
-1 \space 1 \space 0 \space 0 \space 1\\
-0 \space 1 \space 1 \space 0 \space 1\\
-0 \space 0 \space 1 \space 1 \space 1\\
-0 \space 0 \space 0 \space 1 \space 1\\
-0 \space 0 \space 0 \space 0 \space 1\\
+1 \space 1 \space 0 \space 0 \space 1 \\\\
+0 \space 1 \space 1 \space 0 \space 1 \\\\
+0 \space 0 \space 1 \space 1 \space 1 \\\\
+0 \space 0 \space 0 \space 1 \space 1 \\\\
+0 \space 0 \space 0 \space 0 \space 1 \\\\
 \end{pmatrix}
 $$
 

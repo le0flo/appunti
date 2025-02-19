@@ -6,8 +6,8 @@ Dati: $a_{ij} \in \mathbb{K}, b_i \in \mathbb{K}$
 
 $$
 S: \begin{cases}
-a_{11} x_1 + \dots + a_{1n} x_n = b_1\\
-\vdots\\
+a_{11} x_1 + \dots + a_{1n} x_n = b_1 \\\\
+\vdots \\\\
 a_{m1} x_1 + \dots + a_{mn} x_n = b_m
 \end {cases}
 $$
@@ -42,8 +42,8 @@ Applicando le 3 mosse di Gauss ad un sistema lineare $S$, deriviamo il sistema $
 $$
 A_S = A =
 \begin{pmatrix}
-a_{11} \dots a_{1n}\\
-\vdots \ \ddots \ \vdots\\
+a_{11} \dots a_{1n} \\\\
+\vdots \space \ddots \space \vdots \\\\
 a_{m1} \dots a_{mn}
 \end{pmatrix}
 \in M(m,n,\mathbb{K})
@@ -60,9 +60,9 @@ $$
 $$
 C_S = C = ( A | \vec{b} ) = 
 \begin{pmatrix}
-a_{11} \ dots a_{1n} \ b_1\\
-\vdots \ \ddots \ \vdots \ \ \ \ \ \ \vdots\\
-a_{m1} \dots a_{mn} \ b_m
+a_{11} \dots a_{1n} \space b_1 \\\\
+\vdots \space \ddots \space \vdots \space \space \space \vdots \\\\
+a_{m1} \dots a_{mn} \space b_m
 \end{pmatrix}
 \in M(m,n,\mathbb{K})
 
@@ -72,8 +72,8 @@ $$
 
 $$
 S_0: \begin{cases}
-a_{11} x_1 + \dots + a_{1n} x_n = 0\\
-\vdots\\
+a_{11} x_1 + \dots + a_{1n} x_n = 0 \\\\
+\vdots \\\\
 a_{m1} x_1 + \dots + a_{mn} x_n = 0
 \end {cases}
 $$
