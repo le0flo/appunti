@@ -56,7 +56,7 @@ Dati: $x,y,z \in \mathbb{R}^n, \lambda, \gamma \in \mathbb{R}$
 Dati: $x=(x_1, \dots, x_n)$, $y=(y_1, \dots, y_n)$
 
 $$
-x * y = <x,y> = x_1y_1 + \dots + x_ny_n = \sum^{n}_{j=1}x_jy_j
+x*y = < x,y > = x_1 y_1 + \dots + x_n y_n = \sum_{j=1}^{n} x_j y_j
 $$
 
 Operazione di tipo $\mathbb{R}^n \times \mathbb{R}^n\to \mathbb{R}$.
