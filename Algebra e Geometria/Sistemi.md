@@ -58,14 +58,13 @@ $$
 ### Matrice del sistema
 
 $$
-C_S = C = ( A | \vec{b} ) = 
+C_S = C = ( A | \vec{b} ) =
 \begin{pmatrix}
 a_{11} \dots a_{1n} \space b_1 \\
 \vdots \space \ddots \space \vdots \space \space \space \vdots \\
 a_{m1} \dots a_{mn} \space b_m
 \end{pmatrix}
 \in M(m,n,\mathbb{K})
-
 $$
 
 ### Sistema lineare omogeneo associato
