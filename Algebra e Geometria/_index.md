@@ -1,3 +1,3 @@
-# Corso Analisi T2
+# Corso Algebra e Geometria
 
 *TODO*
