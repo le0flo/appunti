@@ -1,4 +1,4 @@
-# Segnali
+### Segnali
 
 Un segnale può essere:
 
