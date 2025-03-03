@@ -33,3 +33,7 @@ Dati: $x_0 \in D(A)$
 1. $x_0 \in D(B)$
 2. se $\lim_{x \to x_0} f(x) = l \in \mathbb{R}^m$: $\lim_{x \to x_0} f(a) = l$
 3. se $\exists \epsilon > 0 : (B(x_0, r) \backslash {x_0}) \cap B \subseteq A$: $\lim_{x \to x_0} f(a) = l = \lim_{x \to x_0} f(x) = l$
+
+### Teorema di Weierstrass generalizzato
+
+### Teorema di Bolzano
