@@ -33,7 +33,7 @@ Dati $\mathbb{K}$ campo, $V$ $\mathbb{K}$-spazio vettoriale e $W \subseteq V$, $
 La formula di Grassman è una relazione tra le dimensioni di due sottospazi di uno stesso spazio vettoriale di dimensione finita.
 
 $$
-dim(U + W) = dim U + dim W - dim U \wedge W
+\dim(U + W) = \dim U + \dim W - \dim(U \wedge W)
 $$
 
 ### Somma diretta
