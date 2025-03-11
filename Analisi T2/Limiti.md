@@ -1,0 +1,39 @@
+### Definizione di limite
+
+Dati: $n,m \in \mathbb{N}$, $A \subseteq \mathbb{R}^n$, $f: A \to \mathbb{R}^m$, $x_0 \in D(A)$, $l \in \mathbb{R}^m$
+
+$$
+\lim_{x \to x_0} f(x) = l \implies \forall \epsilon \in \mathbb{R}^+ \space \exists \delta(\epsilon) > 0 \text{ tale che } x \in A \cap B, \delta(\epsilon)
+$$
+
+### Proprietà dei limiti
+
+Teorema: $A \leq \mathbb{R}^n$, $f,g : A \to \mathbb{R}^m$, $x_0 \in D(A)$, $l,\lambda \in \mathbb{R}^m$
+
+Dati: $\lim_{x \to x_0} f(x) = l$, $\lim_{x \to x_0} g(x) = \lambda$
+
+1. $\lim_{x \to x_0} (f(x) + g(x)) = l + \lambda$
+2. se $m=1$: $\lim_{x \to x_0} (f(x) g(x)) = l \lambda$
+3. se $m=1, g(x) \neq 0 \forall x \in A, \lambda \neq 0$: $\lim_{x \to x_0} \frac{f(x)}{g(x)} = \frac{l}{\lambda}$
+
+### Limiti di restrizioni
+
+Dati: $A,B,C : A \subseteq B$, $f: B \to C$
+
+Restrizione di $f$ ad $A$:
+
+$$
+f: A \to C, f: (a) \to f(a) \forall a \in A
+$$
+
+Teorema: $A \subseteq B \subseteq \mathbb{R}^n$, $f: B \to \mathbb{R}^m$
+
+Dati: $x_0 \in D(A)$
+
+1. $x_0 \in D(B)$
+2. se $\lim_{x \to x_0} f(x) = l \in \mathbb{R}^m$: $\lim_{x \to x_0} f(a) = l$
+3. se $\exists \epsilon > 0 : (B(x_0, r) \backslash {x_0}) \cap B \subseteq A$: $\lim_{x \to x_0} f(a) = l = \lim_{x \to x_0} f(x) = l$
+
+### Teorema di Weierstrass generalizzato
+
+### Teorema di Bolzano
