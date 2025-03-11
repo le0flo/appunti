@@ -52,17 +52,17 @@ $D^2f \leq 0 \implies Df$ è decrescente, la funzione è concava.
 - $Dcx = c$
 - $D(ax^2 + bx + c) = 2ax + b$
 - $Dx^n = nx^{n - 1}$
-- $D\sin{x} = \cos{x}$
-- $D\cos{x} = -\sin{x}$
-- $D\tan{x} = \frac{1}{\cos^2{x}} = 1 + \tan^2{x}$
+- $D\sin(x) = \cos(x)$
+- $D\cos(x) = -\sin(x)$
+- $D\tan(x) = \frac{1}{\cos^2(x)} = 1 + \tan^2(x)$
 - $De^x = e^x$
-- $D\ln{x} = \frac{1}{x}$
-- $D\arcsin{x} = \frac{1}{\sqrt{1 - x^2}}$
-- $D\arccos{x} = -\frac{1}{\sqrt{1 - x^2}}$
-- $D\arctan{x} = \frac{1}{1 + x^2}$
-- $D\sinh{x} = \frac{e^x + e^{-x}}{2} = \cosh{x}$
-- $D\cosh{x} = \frac{e^x - e^{-x}}{2} = \sinh{x}$
-- $D\tanh{x} = \frac{\cosh^2{x} - \sinh^2{x}}{\cosh^2{x}} = 1 - \tanh^2{x}$
+- $D\ln(x) = \frac{1}{x}$
+- $D\arcsin(x) = \frac{1}{\sqrt{1 - x^2}}$
+- $D\arccos(x) = -\frac{1}{\sqrt{1 - x^2}}$
+- $D\arctan(x) = \frac{1}{1 + x^2}$
+- $D\sinh(x) = \frac{e^x + e^{-x}}{2} = \cosh(x)$
+- $D\cosh(x) = \frac{e^x - e^{-x}}{2} = \sinh(x)$
+- $D\tanh(x) = \frac{\cosh^2(x) - \sinh^2(x)}{\cosh^2(x)} = 1 - \tanh^2(x)$
 
 ### Regole di calcolo
 

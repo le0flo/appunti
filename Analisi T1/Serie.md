@@ -3,7 +3,7 @@
 Una successione di numeri reali è una funzione da $\mathbb{N}$ in $\mathbb{R}$.
 
 $$
-f : \mathbb{N} \to \mathbb{R}
+f: \mathbb{N} \to \mathbb{R}
 $$
 
 I termini della successione sono notati nella seguente maniera:
@@ -30,7 +30,7 @@ Sia $(a_n)_n$ una successione di numeri reali. Definiamo la successione $(s_n)_n
 La successione delle somme parziali si chiama serie e si indica:
 
 $$
-\sum_{n = 0}^{+\infty} a_n \text{ oppure } \sum_{}^{} a_n
+\sum_{n = 0}^{+\infty} a_n \text{ oppure } \sum a_n
 $$
 
 I numeri $a_n$ si dicono termini della serie. Una serie può essere:
@@ -39,7 +39,7 @@ I numeri $a_n$ si dicono termini della serie. Una serie può essere:
 - Divergente $\exists \lim_{n \to \infty} s_n = \begin{cases} -\infty\\ +\infty\end{cases}$
 - Indeterminata $\nexists  \lim_{n \to +\infty} s_n$
 
-Data una serie $\sum_{}^{} a_n$, se cambio un numero finito di termini, la serie generata manterrà il carattere dell'originale.
+Data una serie $\sum a_n$, se cambio un numero finito di termini, la serie generata manterrà il carattere dell'originale.
 
 ### Serie geometrica
 
@@ -52,7 +52,7 @@ $$
 La serie geometrica converge soltanto se $|q| < 1$.
 
 $$
-\sum_{n}^{} q^n = \frac{1}{1 - q}
+\sum_{n} q^n = \frac{1}{1 - q}
 $$
 
 ### Convergenza di una serie
@@ -72,14 +72,18 @@ $$
 
 ### Criterio di condensazione
 
-$\sum_{n}^{} a_n$ converge se e soltanto se $\sum_{k = 0}^{+\infty} 2^k a_2k$ converge.
+$\sum_{n} a_n$ converge se e soltanto se converge:
+
+$$
+\sum_{k = 0}^{+\infty} 2^k a_2k
+$$
 
 ### Criterio del valore assoluto
 
-Data una serie $\sum_{n}^{} a_n$, se la serie $\sum_{n}^{} |a_n|$ converge, anche la prima converge.
+Data una serie $\sum_{n}a_n$, se la serie $\sum_{n}|a_n|$ converge, anche la prima converge.
 
 $$
-|\sum_{n}^{} a_n| = \sum_{n}^{} |a_n|
+|\sum_{n}a_n| = \sum_{n}|a_n|
 $$
 
 Una serie che viene dichiarata convergente usando questo criterio è detta assolutamente convergente.
@@ -88,17 +92,17 @@ Una serie che viene dichiarata convergente usando questo criterio è detta assol
 
 Dato: $(a_n)_n$
 
-Se $\exists \space \lim_{n \to +\infty} \sqrt[n]{|a_n|} = L$, allora:
+Se $\exists \lim_{n \to +\infty} \sqrt[n]{|a_n|} = L$, allora:
 
-- se $L < 1$ allora $\sum_{}^{} a_n$ converge
-- se $L > 1$ allora $\sum_{}^{} a_n$ non converge
+- se $L < 1$ allora $\sum a_n$ converge
+- se $L > 1$ allora $\sum a_n$ non converge
 - se $L = 1$ allora non si può concludere nulla
 
 ### Criterio del rapporto
 
 Dato: $(a_n)_n, a_n \neq 0$
 
-Se $\exists \space \lim_{n \to +\infty} |\frac{a_n + 1}{a_n}| = L$, allora:
+Se $\exists \lim_{n \to +\infty} |\frac{a_n + 1}{a_n}| = L$, allora:
 
 - se $L < 1$ allora $\sum_{}^{} a_n$ converge
 - se $L > 1$ allora $\sum_{}^{} a_n$ non converge
@@ -106,7 +110,13 @@ Se $\exists \space \lim_{n \to +\infty} |\frac{a_n + 1}{a_n}| = L$, allora:
 
 ### Criterio di Leibniz
 
-Se $(a_j)_j : a_j > 0 : a_j \geq a_j + 1 : \lim_{j \to +\infty} a_j = 0$, allora $\sum_{j = 1}^{+\infty} (-1)^j * a_j$ converge.
+Se $(a_j)_j : a_j > 0 : a_j \geq a_j + 1 : \lim_{j \to +\infty} a_j = 0$, allora la serie:
+
+$$
+\sum_{j = 1}^{+\infty} (-1)^j * a_j
+$$
+
+converge.
 
 ### Criterio del confronto asintotico
 
@@ -114,9 +124,9 @@ Dati: $(a_n)_n, \forall n : a_n \geq 0$ e $(b_n)_n, \forall n : b_n > 0$
 
 Se $\lim_{n \to +\infty} \frac{a_n}{b_n} = L > 0$, allora:
 
-- $\sum_{n}^{} a_n < +\infty \Leftrightarrow \sum_{n}^{} b_n < +\infty$, entrambe convergono
-- $\sum_{n}^{} a_n = +\infty \Leftrightarrow \sum_{n}^{} b_n = +\infty$, entrambe divergono
+- $\sum a_n < +\infty \Leftrightarrow \sum b_n < +\infty$, entrambe convergono
+- $\sum a_n = +\infty \Leftrightarrow \sum b_n = +\infty$, entrambe divergono
 
 Dati: $(a_n)_n, \forall n : a_n \geq 0$ e $p = n * a_n$
 
-Se $\lim_{n \to +\infty} \frac{a_n}{\frac{1}{n^p}} = L > 0$, allora $\sum_{n}^{} a_n$ converge se $\sum_{n}^{} \frac{1}{n^p}$ converge; possibile converge se $p > 1$.
+Se $\lim_{n \to +\infty} \frac{a_n}{\frac{1}{n^p}} = L > 0$, allora $\sum_{n} a_n$ converge se $\sum_{n}^{} \frac{1}{n^p}$ converge; possibile converge se $p > 1$.

@@ -30,9 +30,9 @@ $$
 
 - L'insieme dei numeri reali non è numerabile
 - Radice aritmetica: $\sqrt{n} = m : m \in \mathbb{N}$
-- Seno iperbolico: $\sinh{x} = \frac{e^x - e^{-x}}{2}$
-- Coseno iperbolico: $\cosh{x} = \frac{e^x + e^{-x}}{2}$
-- Tangente iperbolica: $\tanh{x} = \frac{\sinh{x}}{\cosh{x}}$
+- Seno iperbolico: $\sinh(x) = \frac{e^x - e^{-x}}{2}$
+- Coseno iperbolico: $\cosh(x) = \frac{e^x + e^{-x}}{2}$
+- Tangente iperbolica: $\tanh(x) = \frac{\sinh(x)}{\cosh(x)}$
 
 ### Maggioranti e minoranti
 
