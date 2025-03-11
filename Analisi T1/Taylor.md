@@ -29,11 +29,11 @@ $$
 
 Alcuni polinomi di Taylor di funzioni comuni rappresentati fino al 4° grado:
 
-- $sin(x) \space \rightarrow \space x - \frac{1}{6}x^3$
-- $cos(x) \space \rightarrow \space 1 - \frac{1}{2}x^2 - \frac{1}{24}x^4$
-- $e^x \space \rightarrow \space 1 + x + \frac{1}{2}x^2 + \frac{1}{6}x^3 + \frac{1}{24}x^4$
-- $log(1+x) \space \rightarrow \space x - \frac{1}{2}x^2 + \frac{1}{3}x^3 - \frac{1}{4}x^4$
-- $(1+x)^\alpha \space \rightarrow \space 1 + \alpha t  + \frac{\alpha(\alpha - 1)}{2}x^2 + \frac{\alpha(\alpha - 1)(\alpha - 2)}{6}x^3 + \frac{\alpha(\alpha - 1)(\alpha - 2)(\alpha - 3)}{24}x^4$
+- $\sin(x) \rightarrow x - \frac{1}{6}x^3$
+- $\cos(x) \rightarrow 1 - \frac{1}{2}x^2 - \frac{1}{24}x^4$
+- $e^x \rightarrow 1 + x + \frac{1}{2}x^2 + \frac{1}{6}x^3 + \frac{1}{24}x^4$
+- $\ln(1+x) \rightarrow x - \frac{1}{2}x^2 + \frac{1}{3}x^3 - \frac{1}{4}x^4$
+- $(1+x)^\alpha \rightarrow 1 + \alpha t  + \frac{\alpha(\alpha - 1)}{2}x^2 + \frac{\alpha(\alpha - 1)(\alpha - 2)}{6}x^3 + \frac{\alpha(\alpha - 1)(\alpha - 2)(\alpha - 3)}{24}x^4$
 
 ### Resto secondo Lagrange
 

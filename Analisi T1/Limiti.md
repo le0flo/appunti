@@ -29,7 +29,7 @@ Nel caso il limite $\in [-\infty, +\infty]$ allora usiamo la notazione $M > 0$ o
 
 Seguono alcune funzioni in ordine crescente di chi permette a $n$ di tendere ad infinito più velocemente.
 
-1. $\log{n}$
+1. $\ln(n)$
 2. $n^a : (a > 0)$
 3. $A^n : (a > 1)$
 4. $n!$
@@ -45,7 +45,7 @@ Dati i limiti $L, M, x_0 \in [ -\infty , +\infty ]$, $\lim_{x \to x_0} f(x) = L$
 
 ### Limiti notevoli
 
-- $\lim_{x \to 0} \frac{sin(x)}{x} = 1$
-- $\lim_{x \to 0} \frac{cos(x) - 1}{x^2} = -\frac{1}{2}$
+- $\lim_{x \to 0} \frac{\sin(x)}{x} = 1$
+- $\lim_{x \to 0} \frac{\cos(x) - 1}{x^2} = -\frac{1}{2}$
 - $\lim_{x \to 0} \frac{e^x - 1}{x} = 1$
-- $\lim_{x \to 0} \frac{log(1 + x)}{x} = 1$
+- $\lim_{x \to 0} \frac{\ln(1 + x)}{x} = 1$
