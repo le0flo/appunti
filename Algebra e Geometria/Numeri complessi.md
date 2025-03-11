@@ -30,7 +30,7 @@ $\mathbb{R} \subseteq \mathbb{C}$
 Dati $r \in \mathbb{R}$ e $M \in (0, 2\pi)$:
 
 $$
-z = r(\cos{M}) + i r(\sin{M}) \in \mathbb{C} = r(\cos{M} + i\sin{M}) = re^{iM} \implies |z| = r, \bar{z} = re^{-iM}
+z = r(\cos(M)) + i r(\sin(M)) \in \mathbb{C} = r(\cos(M) + i\sin(M)) = re^{iM} \implies |z| = r, \bar{z} = re^{-iM}
 $$
 
 e.g.

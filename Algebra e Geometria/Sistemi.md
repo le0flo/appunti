@@ -6,8 +6,8 @@ Dati: $a_{ij} \in \mathbb{K}, b_i \in \mathbb{K}$
 
 $$
 S: \begin{cases}
-a_{11} x_1 + \dots + a_{1n} x_n = b_1 \\
-\vdots \\
+a_{11} x_1 + \dots + a_{1n} x_n = b_1\\
+\vdots\\
 a_{m1} x_1 + \dots + a_{mn} x_n = b_m
 \end {cases}
 $$
@@ -42,8 +42,8 @@ Applicando le 3 mosse di Gauss ad un sistema lineare $S$, deriviamo il sistema $
 $$
 A_S = A =
 \begin{pmatrix}
-a_{11} \dots a_{1n} \\
-\vdots \space \ddots \space \vdots \\
+a_{11} \dots a_{1n}\\
+\vdots \space \ddots \space \vdots\\
 a_{m1} \dots a_{mn}
 \end{pmatrix}
 \in M(m,n,\mathbb{K})
@@ -60,8 +60,8 @@ $$
 $$
 C_S = C = ( A | \vec{b} ) =
 \begin{pmatrix}
-a_{11} \dots a_{1n} \space b_1 \\
-\vdots \space \ddots \space \vdots \space \space \space \vdots \\
+a_{11} \dots a_{1n} \space b_1\\
+\vdots \space \ddots \space \vdots \space \space \space \vdots\\
 a_{m1} \dots a_{mn} \space b_m
 \end{pmatrix}
 \in M(m,n,\mathbb{K})
@@ -71,8 +71,8 @@ $$
 
 $$
 S_0: \begin{cases}
-a_{11} x_1 + \dots + a_{1n} x_n = 0 \\
-\vdots \\
+a_{11} x_1 + \dots + a_{1n} x_n = 0\\
+\vdots\\
 a_{m1} x_1 + \dots + a_{mn} x_n = 0
 \end {cases}
 $$
@@ -86,7 +86,7 @@ $$
 Il rango di un sistema $S$ è:
 
 $$
-rg(S)= dim\ span(C^1, \dots, C^n, \vec{b}) \subseteq \mathbb{K}^m
+rg(S)= \dim \space span(C^1, \dots, C^n, \vec{b}) \subseteq \mathbb{K}^m
 $$
 
 Il rango è sempre minore del numero di righe $m$.
@@ -99,7 +99,7 @@ $$
 Possiamo dire che:
 
 $$
-rg(S) \leq min(m, n)
+rg(S) \leq \min(m, n)
 $$
 
 ### Teorema di Rouché-Capelli
