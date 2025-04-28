@@ -40,7 +40,7 @@ A differenza del codice binario, il codice di Gray è una configurazione di bit 
 
 Viene usato generalmente per ridurre errori nella codifica da analogico a digitale.
 
-### Trascodifica
+### Transcodifica
 
 Possiamo dividere i codici in esterno e interno.
 
