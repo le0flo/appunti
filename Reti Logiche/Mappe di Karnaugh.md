@@ -116,4 +116,30 @@ Che a sua volta diventa: $\dots + bd + \dots$
 
 ### Raggruppamenti rettangolari
 
-*TODO*
+Un raggruppamento rettangolare (*RR*) di ordine $p$ è un insieme di $2^p$ celle appartenenti ad una mappa, all'interno del quale ogni cella ha esattamente $p$ celle adiacenti.
+
+Un *RR* di ordine $p$ costituito da celle contenenti valore $1$ o una condizione di indifferenza, individua un implicante della funzione. Nel prodotto compaiono solo le $(n-p)$ variabili che rimangono costanti nelle coordinate del *RR*, in forma vera se valgono $1$, in forma complementata se valgono $0$.
+Lo stesso vale se il *RR* è costituito da celle con valore $0$. Esso costituisce un implicato della funzione e nel prodotto compariranno $(n-p)$ variabili in forma vera se valgono $0$ e in forma complementata se valgono $1$.
+
+Se un *RR* non è interamente incluso in un'altro *RR* di ordine superiore, allora esso individua un implicante/implicato primo.
+
+e.g.
+
+| ab\cd | 00  | 01  | 11  | 10  |
+| ----- | --- | --- | --- | --- |
+| 00    | -   | 1   | 1   | -   |
+| 01    | -   | 1   | 1   | -   |
+| 11    | -   | 1   | 1   | -   |
+| 10    | 0   | 1   | 1   | -   |
+- il *RR* dove $bd$ assumono valore $1$ non è un implicante primo
+- il *RR* dove $d$ assume valore $1$ è un implicante primo.
+
+| ab\cd | 00  | 01  | 11  | 10  |
+| ----- | --- | --- | --- | --- |
+| 00    | 0   | x   | x   | 0   |
+| 01    | 0   | x   | x   | 0   |
+| 11    | 0   | x   | x   | 0   |
+| 10    | 0   | x   | 1   | 0   |
+- il *RR* $c+d$ non è un implicato primo
+- il *RR* $c'+d$ non è un implicato primo
+- il *RR* $d$ è un implicato primo
