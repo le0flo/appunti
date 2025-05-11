@@ -143,3 +143,27 @@ e.g.
 - il *RR* $c+d$ non è un implicato primo
 - il *RR* $c'+d$ non è un implicato primo
 - il *RR* $d$ è un implicato primo
+
+### Copertura minima
+
+La copertura di una funzione su una mappa è l'insieme di RR che coprono tutte le celle di valore 1 o 0.
+
+Una copertura può individuare una possibile struttura per un'espressione (SP per gli 1, PS per gli 0).
+
+Una copertura minima è una copertura costituita dal numero minore possibile di RR di dimensione massima. Questa corrisponde alla espressione minima.
+
+e.g.
+
+| ab\cd | 00  | 01  | 11  | 10  |
+| ----- | --- | --- | --- | --- |
+| 00    | 1   | 1   | 0   | 0   |
+| 01    | 1   | -   | 0   | -   |
+| 11    | 1   | 1   | 0   | 1   |
+| 10    | 1   | 1   | 0   | 1   |
+La copertura $c' + acd'$ è valida ma non è una copertura minima. Infatti se prendiamo in considerazione la copertura $c' + ad'$, essa è una copertura valida con lo stesso numero di RR ma entrambi di dimensione massima.
+
+### Analisi di un circuito con le mappe
+
+1. Si scrive l'espressione associata allo schema dato e, se necessario, la si manipola fino ad ottenere una espressione SP o PS.
+2. Si predispone una mappa di dimensioni adeguate e si tracciano sulla mappa i RR che corrispondono ai termini dell'espressione.
+3. Nelle celle coperte dagli RR, si indica valore 1 se l'espressione analizzata è SP, 0 in caso sia una espressione PS. Nelle celle non coperte si mette il valore opposto (0 con le SP, 1 con le PS).
