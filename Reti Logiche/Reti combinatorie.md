@@ -83,14 +83,12 @@ $$
 - Maxtermine: il vettore dei bit, rappresentati mediante il loro indice, che assumono il valore 0.
 
 Mintermine e maxtermine sono complementari tra loro.
-
 Una configurazione è o un mintermine o un maxtermine.
-
 Il pedice degli operatori $\Sigma$ e $\Pi$ corrisponde al numero di ingressi che danno origine al mintermine o maxtermine.
 
 e.g.
 
-*Full adder*
+*Full adder*:
 
 | i   | a   | b   | r   | S   | R   |
 | --- | --- | --- | --- | --- | --- |
@@ -103,11 +101,11 @@ e.g.
 | 6   | 1   | 1   | 0   | 0   | 1   |
 | 7   | 1   | 1   | 1   | 1   | 1   |
 
-$S(a,b,r) = \Sigma_3 m(1,2,4,7)$
-$S(a,b,r) = \Pi_3 M(0,3,5,6)$
+- $S(a,b,r) = \Sigma_3 m(1,2,4,7)$
+- $S(a,b,r) = \Pi_3 M(0,3,5,6)$
 
-$R(a,b,r) = \Sigma_3 m(3,5,6,7)$
-$R(a,b,r) = \Pi_3 M(0,1,2,4)$
+- $R(a,b,r) = \Sigma_3 m(3,5,6,7)$
+- $R(a,b,r) = \Pi_3 M(0,1,2,4)$
 
 ### Equivalenza tra espressioni
 
@@ -122,8 +120,8 @@ Si può definire tale se e solo se le espressioni esprimono la stessa funzione (
 ### Funzioni incomplete
 
 Anche delle espressioni che forniscono una valutazione uguale, limitate al dominio di una funzione incompleta, sono dette equivalenti.
-
-Un esempio di funzione incompleta è un encoder da $1$ a $N$ bit. Prendendo come esempio più specifico, un encoder con 3 ingressi, a seconda del valore che assumono i bit di uscita delle configurazioni non rilevanti (fuori dal dominio della funzione), l'espressione risultante cambia.
+Un esempio di funzione incompleta è un encoder da $1$ a $N$ bit.
+Prendendo come esempio più specifico, un encoder con 3 ingressi, a seconda del valore che assumono i bit di uscita delle configurazioni non rilevanti (fuori dal dominio della funzione), l'espressione risultante cambia.
 
 ### Equivalenze notevoli
 
@@ -176,7 +174,8 @@ Siamo passati, usando l'espressione $R = br + ar + ab$, ad una rete composta da:
 
 ### Il problema della sintesi
 
-La sintesi è il processo per individuare l'espressione "migliore" per la realizzazione della funzione assegnata. "Migliore" può essere definito con criteri anche opposti tra loro, come:
+La sintesi è il processo per individuare l'espressione "migliore" per la realizzazione della funzione assegnata.
+"Migliore" può essere definito con criteri anche opposti tra loro, come:
 
 - Rapidità di progetto
 - Massima flessibilità
