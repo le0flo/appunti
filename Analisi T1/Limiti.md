@@ -2,13 +2,13 @@
 weight = 2
 +++
 
-### Prima definizione
+### Limite: definizione con le serie
 
 $$
 \lim_{n \to +\infty} f(a_n) = L
 $$
 
-### Seconda definizione
+### Limite: definizione con gli intorni
 
 La funzione $f(x)$ si avvicina arbitrariamente ad L, a patto che $x$ sia abbastanza vicino a $x_0$.
 

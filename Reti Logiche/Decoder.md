@@ -8,7 +8,7 @@ Una rete combinatoria che converte un numero binario a 3 bit a codice 1 su 8 ($2
 La convenzione per indicare gli ingressi è usare le lettere maiuscole a partire dalla A, la quale rappresenta l'ingresso con la cifra meno significativa.
 Ogni uscita ha solo una configurazione per cui essa vale "$1$", ovvero quella che codifica il numero dell'uscita stessa. Data la proposizione precedente, è chiaro che la sintesi canonica minima SP prevede quell'unico mintermine nell'espressione.
 
-### Decoder generico $n:2^n$
+### Decoder (DEC) generico $n:2^n$
 
 Una rete che transcodifica un numero binario a $n$ bit a codice $1$ su $2^n$.
 Gli $n$ ingressi vengono anche indicati come indirizzi ($A$ addresses), con $A_0$ indirizzo di minor peso.
@@ -45,3 +45,6 @@ La tecnologia di oggi ci permette di avere numero di fan-out $\geq 10$, ma riman
 
 - **MSI**: Medium Scale Integration
 - **LSI**: Large Scale Integration
+
+Esistono DEC in forma integrata con 2, 3, o 4 bit di indirizzo.
+Questi ricadono tutti sotto l'ala della MSI.
