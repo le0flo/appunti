@@ -1,3 +1,7 @@
+---
+weight = 1
+---
+
 ### Segnali
 
 Un segnale può essere:

@@ -1,3 +1,7 @@
+---
+weight = 5
+---
+
 ### Ritardi e velocità
 
 Quando cambia un ingresso di un gate, l’uscita non cambia istantaneamente, ma dopo un tempo $\tau_p$ che dipende dalla tecnologia utilizzata. Questo ritardo varia da gate a gate e anche se il passaggio è da H a L o viceversa. Nel caso peggiore, il ritardo totale della rete è dato dalla somma dei ritardi dei gate sul percorso più lungo tra ingressi e uscite. Si assegna il ritardo peggiore alla rete complessiva.

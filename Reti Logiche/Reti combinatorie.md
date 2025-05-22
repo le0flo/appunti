@@ -1,3 +1,7 @@
+---
+weight = 4
+---
+
 ### Definizione
 
 Una rete logica la dove l'uscita dipende unicamente dagli ingressi correnti

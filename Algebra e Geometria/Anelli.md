@@ -1,3 +1,6 @@
+---
+weight = 2
+---
 # Anello
 
 Dato l'insieme $\mathbb{A}$ e due operazioni $P_1,P_2: \mathbb{A} \times \mathbb{A} \to \mathbb{A}$ tali che:
