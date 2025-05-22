@@ -1,3 +1,7 @@
++++
+weight = 1
++++
+
 ### Prodotto cartesiano tra due insiemi
 
 Dati: $\mathbb{A}_1$ e  $\mathbb{A}_2$

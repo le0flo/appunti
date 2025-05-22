@@ -1,3 +1,7 @@
++++
+weight = 2
++++
+
 ### Disuguaglianza di Cauchy-Schwarz
 
 Dati: $x,y \in \mathbb{R}^n$

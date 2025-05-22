@@ -1,4 +1,8 @@
-# Sistema lineare
++++
+weight = 8
++++
+
+### Sistema lineare
 
 Segue un esempio di sistema lineare generico a coefficienti in $\mathbb{K}$:
 

@@ -1,4 +1,8 @@
-# Insieme
++++
+weight = 1
++++
+
+### Insieme
 
 L'insieme è una collezione di oggetti.
 

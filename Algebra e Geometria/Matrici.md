@@ -1,9 +1,13 @@
-# Matrice
++++
+weight = 9
++++
+
+### Matrice
 
 Possiamo definire una matrice come una "griglia di numeri"
 
 $$
-a_{ij} \in \mathbb{K} = 
+a_{ij} \in \mathbb{K} =
 \begin{pmatrix}
 a_{11} & a_{12} & \dots & a_{1n}\\
 a_{21}\\

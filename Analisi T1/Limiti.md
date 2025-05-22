@@ -1,6 +1,6 @@
-# Limiti
-
-Possiamo definire i limiti tramite le successioni e tramite gli intorni.
++++
+weight = 2
++++
 
 ### Prima definizione
 

@@ -1,4 +1,8 @@
-# Gruppo
++++
+weight = 4
++++
+
+### Gruppo
 
 Dato l'insieme $\mathbb{G}$ ed un'operazione binaria di tipo $P_1: \mathbb{G} \times \mathbb{G} \to \mathbb{G}$, tale che:
 

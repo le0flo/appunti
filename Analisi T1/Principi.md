@@ -1,3 +1,7 @@
++++
+weight = 1
++++
+
 ### Principio di induzione
 
 Il principio di induzione è un metodo generico per dimostrare un teorema qualsiasi con dominio in $\mathbb{N}$.

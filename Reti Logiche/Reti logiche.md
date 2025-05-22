@@ -1,6 +1,6 @@
----
++++
 weight = 3
----
++++
 
 ### Rete logica e Gate
 

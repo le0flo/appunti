@@ -1,3 +1,7 @@
++++
+weight = 8
++++
+
 ### A variabili separabili
 
 Data una equazione:

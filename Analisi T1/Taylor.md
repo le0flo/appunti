@@ -1,4 +1,8 @@
-# Formula di Taylor
++++
+weight = 6
++++
+
+### Formula di Taylor
 
 Data una funzione $f(x)$ si vuole approssimare con un polinomio.
 

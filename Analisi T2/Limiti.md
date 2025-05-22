@@ -1,3 +1,7 @@
++++
+weight = 3
++++
+
 ### Definizione di limite
 
 Dati: $n,m \in \mathbb{N}$, $A \subseteq \mathbb{R}^n$, $f: A \to \mathbb{R}^m$, $x_0 \in D(A)$, $l \in \mathbb{R}^m$

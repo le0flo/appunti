@@ -1,4 +1,8 @@
-# Combinazione lineare
++++
+weight = 7
++++
+
+### Combinazione lineare
 
 Dato un $\mathbb{V}$ $\mathbb{K}$-spazio vettoriale e degli elementi di $\mathbb{K}$ ($\lambda_i$), si dice combinazione lineare di $n$ vettori $\vec{v}_1, \dots, \vec{v}_n$ una qualunque somma del seguente tipo:
 

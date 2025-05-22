@@ -1,3 +1,7 @@
++++
+weight = 4
++++
+
 ### Approssimazione lineare
 
 Un'errore si indica con un "o piccolo".
