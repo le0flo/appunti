@@ -1,3 +1,7 @@
+---
+weight = 2
+---
+
 ### Codifica binaria
 
 In una macchina digitale, le informazioni vengono rappresentate sotto forma di bit (*0 e 1*). Questo sistema è detto sistema binario.

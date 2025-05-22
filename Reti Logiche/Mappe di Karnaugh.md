@@ -1,3 +1,7 @@
+---
+weight = 6
+---
+
 ### Definizione
 
 La mappa di Karnaugh è una rappresentazione bidimensionale della tabella della verità di una funzione di 2,3,4 variabili, i cui valori sono elencati sui bordi in maniera tale che due configurazioni consecutive differiscano per il valore di un solo bit (*codice di Gray*).

@@ -1,3 +1,7 @@
+---
+weight = 3
+---
+
 ### Rete logica e Gate
 
 Una rete logica è un'astrazione che rappresenta una combinazione di "interruttori" che elaborano segnali binari.

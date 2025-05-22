@@ -1,3 +1,7 @@
+---
+weight = 7
+---
+
 ### Algebre binarie
 
 Si definisce algebra binaria, un sistema matematico formato da un insieme di operatori definiti assiomaticamente ed atti a descrivere con una espressione ogni possibile funzione di variabili binarie.
