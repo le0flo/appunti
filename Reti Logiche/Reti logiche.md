@@ -146,7 +146,8 @@ Espressione: $z = x \equiv y$ oppure $z = \overline{x \oplus y}$
 
 ### Bus di segnali
 
-Un gruppo di segnali viene detto *bus*. Per indicare un bus di $n$ segnali che codificano un'informazione, si usa la notazione con parentesi quadre:
+Un gruppo di segnali viene detto *bus*.
+Per indicare un bus di $n$ segnali che codificano un'informazione, si usa la notazione con parentesi quadre:
 
 $$
 \text{TEST}[n-1 \dots 0]

@@ -2,12 +2,10 @@
 weight = 8
 +++
 
-### e.g.
+### Esempio
 
 Una rete combinatoria che converte un numero binario a 3 bit a codice 1 su 8 ($2^3$).
-
 La convenzione per indicare gli ingressi è usare le lettere maiuscole a partire dalla A, la quale rappresenta l'ingresso con la cifra meno significativa.
-
 Ogni uscita ha solo una configurazione per cui essa vale "$1$", ovvero quella che codifica il numero dell'uscita stessa. Data la proposizione precedente, è chiaro che la sintesi canonica minima SP prevede quell'unico mintermine nell'espressione.
 
 ### Decoder generico $n:2^n$

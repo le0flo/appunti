@@ -4,7 +4,10 @@ weight = 5
 
 ### Ritardi e velocità
 
-Quando cambia un ingresso di un gate, l’uscita non cambia istantaneamente, ma dopo un tempo $\tau_p$ che dipende dalla tecnologia utilizzata. Questo ritardo varia da gate a gate e anche se il passaggio è da H a L o viceversa. Nel caso peggiore, il ritardo totale della rete è dato dalla somma dei ritardi dei gate sul percorso più lungo tra ingressi e uscite. Si assegna il ritardo peggiore alla rete complessiva.
+Quando cambia un ingresso di un gate, l’uscita non cambia istantaneamente, ma dopo un tempo $\tau_p$ che dipende dalla tecnologia utilizzata.
+Questo ritardo varia da gate a gate e anche se il passaggio è da H a L o viceversa.
+Nel caso peggiore, il ritardo totale della rete è dato dalla somma dei ritardi dei gate sul percorso più lungo tra ingressi e uscite.
+Si assegna il ritardo peggiore alla rete complessiva.
 
 ### Complessità e velocità
 
@@ -35,11 +38,8 @@ Una rete combinatoria, per essere considerata "di costo minimo", è una rete con
 ### Implicanti e implicanti primi
 
 Viene detto implicante, un termine di $n$ ingressi che assume il valore 1 solo la dove la funzione vale 1 o per indifferenza.
-
 Un implicante che cessa di essere tale quando si rimuove un suo letterale viene detto implicante primo.
-
 Un implicante primo essenziale è l'unico ad assumere valore 1 per alcune configurazioni degli ingressi in cui la funzione assume valore 1 (*non per indifferenza*).
-
 L'espressione minima SP è la somma di implicanti primi essenziali.
 
 e.g.
@@ -81,11 +81,8 @@ $$
 ### Implicati e implicati primi
 
 Viene detto implicato, un termine di $n$ ingressi che assume il valore 0 solo la dove la funzione vale 0 o per indifferenza.
-
 Un implicato che cessa di essere tale quando si rimuove un suo letterale viene detto implicato primo.
-
 Un implicato primo essenziale è l'unico ad assumere valore 0 per alcune configurazioni degli ingressi in cui la funzione assume valore 0 (*non per indifferenza*).
-
 L'espressione minima PS è il prodotto degli implicati primi essenziali.
 
 e.g.
@@ -101,9 +98,9 @@ e.g.
 | 1   | 1   | 0   | 0   |
 | 1   | 1   | 1   | 1   |
 
-Implicati: $a+b'+c', a'+b+c, a'+b+c', a'+b'+c, a'+c, a'+b$
-Implicati primi: $a'+c, a'+b, a+b'+c'$
-Implicati primi essenziali: $a'+c, a'+b$
+- Implicati: $a+b'+c', a'+b+c, a'+b+c', a'+b'+c, a'+c, a'+b$
+- Implicati primi: $a'+c, a'+b, a+b'+c'$
+- Implicati primi essenziali: $a'+c, a'+b$
 
 $$
 F(a,b,c) = (a'+c)(a'+b)
