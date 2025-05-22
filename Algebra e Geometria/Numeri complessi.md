@@ -1,4 +1,8 @@
-# Numeri complessi
++++
+weight = 3
++++
+
+### Numero complesso
 
 Un numero complesso viene rappresentato nel seguente modo:
 

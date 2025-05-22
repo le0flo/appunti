@@ -1,6 +1,6 @@
----
++++
 weight = 2
----
++++
 
 ### Codifica binaria
 

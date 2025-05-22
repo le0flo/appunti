@@ -1,4 +1,8 @@
-# Funzioni
++++
+weight = 2
++++
+
+### Funzione
 
 Dati due insiemi $\mathbb{A}$ e $\mathbb{B}$:
 

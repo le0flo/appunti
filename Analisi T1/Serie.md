@@ -1,4 +1,8 @@
-# Successioni
++++
+weight = 3
++++
+
+### Successione
 
 Una successione di numeri reali è una funzione da $\mathbb{N}$ in $\mathbb{R}$.
 

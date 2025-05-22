@@ -1,4 +1,8 @@
-# Vettori
++++
+weight = 6
++++
+
+### Vettori
 
 I vettori sono degli elementi di uno spazio vettoriale, perciò possono essere sommati tra di loro e moltiplicati per dei numeri detti scalari.
 

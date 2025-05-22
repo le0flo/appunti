@@ -1,4 +1,8 @@
-# Integrale
++++
+weight = 7
++++
+
+### Definizione
 
 Data una funzione $f(x)$, troviamo una funzione $F(x)$ tale che $DF(x) = f(x)$.
 
