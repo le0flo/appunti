@@ -60,7 +60,15 @@ e.g.
 
 *Full adder in espressioni generali*
 
-*TODO*
+1. Espressione canonica:
+	- $R = m(3) + m(5) + m(6) + m(7)$
+	- $R = a'br + ab'r + abr' + abr$
+2. *E5*, Identità:
+	- $R = m(3) * 1 + m(5) * 1 + m(6) * 1 + m(7) * 1$
+	- $R = a'br * 1 + ab'r * 1 + abr' * 1 + abr * 1$
+3. *E6 e E5*, Limite e Identità:
+	- $R = m(3) * 1 + m(5) * 1 + m(6) * 1 + m(7) * 1 + m(0) * 0 + m(1) * 0 + m(2) * 0 + m(4) * 0$
+	- $R = a'br * 1 + ab'r * 1 + abr' * 1 + abr * 1 + a'b'r' * 0 + a'b'r * 0 + a'br' * 0 + ab'r' * 0$
 
 ### Il MUX come rete programmabile
 
