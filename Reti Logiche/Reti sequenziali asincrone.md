@@ -77,7 +77,10 @@ Grazie ai ritardi delle reti, è possibile connettere reti combinatorie in retro
 ### Struttura generale di una RSA
 
 Ogni rete combinatoria con *anelli di retroazione diretta* è in realtà una RSA.
-La rete ha $k$ bit di stato se ci sono $k$ segnali di retroazione. I ritardi agiscono della rete combinatoria $G$ agiscono come memoria. Lo stato futuro in se non è osservabile. Lo è soltanto quando esso diventa stato presente.
+La rete ha $k$ bit di stato se ci sono $k$ segnali di retroazione.
+I ritardi agiscono della rete combinatoria $G$ agiscono come memoria.
+Lo stato futuro in se non è osservabile.
+Lo è soltanto quando esso diventa stato presente.
 
 ### Finite state machine (FSM)
 
@@ -126,7 +129,9 @@ Uno stato stabile è un nodo con un arco che ritorna sul nodo da cui parte.
 
 #### Grafo per un'automa di Mealy
 
-Nel caso dell'automa di Mealy, si indica il valore dell'uscita su ciascuna transazione. Per rendere il grafo più leggibile ogni nodo verrà indicato con una lettera diversa (*A,B,C,D,$\dots$*). Quando il valore d'uscita cambia tra due stati, bisogna contrassegnare l'uscita nella transazione con il simbolo di indifferenza. Per progettare una RSA che opera con continuità, bisogna assicurarsi che:
+Nel caso dell'automa di Mealy, si indica il valore dell'uscita su ciascuna transazione.
+Per rendere il grafo più leggibile ogni nodo verrà indicato con una lettera diversa (*A,B,C,D,$\dots$*).
+Quando il valore d'uscita cambia tra due stati, bisogna contrassegnare l'uscita nella transazione con il simbolo di indifferenza. Per progettare una RSA che opera con continuità, bisogna assicurarsi che:
 
 - esista sempre almeno un percorso per passare da un nodo arbitrariamente scelto ad un altro (*grafo strettamente connesso*)
 - non esistano stati irrangiungibili o assorbenti (*dotati di solo frecce entranti*)
@@ -137,8 +142,38 @@ Nel caso dell'automa di Mealy, si indica il valore dell'uscita sugli stati invec
 
 ### Stato iniziale e reset
 
-In una rete sequenziale asincrona, l'uscita dipende dagli ingressi e dallo stato presente. Per assicurarsi un comportamento deterministico, la certezza che la rete parta sempre dallo stesso stato, si introduce un segnale di reset, che assume valore 1 per pochi istanti all'accensione, e rimane 0 per il resto del tempo.
+In una rete sequenziale asincrona, l'uscita dipende dagli ingressi e dallo stato presente.
+Per assicurarsi un comportamento deterministico, la certezza che la rete parta sempre dallo stesso stato, si introduce un segnale di reset, che assume valore 1 per pochi istanti all'accensione, e rimane 0 per il resto del tempo.
 
 ### Tabella di flusso
 
 La tabella di flusso è un modo alternativo per descrivere il comportamento di una RSA.
+
+#### Tabella per un'automa di Mealy
+
+Nel caso di Mealy, in ogni casella vengono riportati i valori delle funzioni $F$ e $G$ per il rispettivo ingresso dello stato presente.
+
+Ogni riga deve contenere almeno una condizione di stabilità.
+Le condizioni di instabilitità devono indicare uno stato futuro stabile.
+
+#### Tabella per un'automa di Moore
+
+Poichè l'uscita dipende solo dallo stato presente, è costante su ogni riga.
+Esiste perciò una colonna aggiuntiva che riporta il valore dell'uscita per ogni stato.
+
+### Analisi e sintesi
+
+Il grafo degli stati è usato generalmente all'inizio del processo di sintesi e come ultimo passo durante l'analisi.
+La tabella di flusso invece costituisce il secondo passo della sintesi e il penultimo dell'analisi.
+
+### Sintesi di una RSA
+
+5 passaggi:
+
+1. Individuazione del *Grafo degli stati*
+2. Definizione della *Tabella di flusso*
+3. Codifica degli stati e definizione della *Tabella delle transizioni*
+4. Sintesi della *rete combinatoria* di uscita e stato futuro
+5. Schema logico che includa anche *ingresso di reset*, se presente
+
+### Analisi di una RSA
