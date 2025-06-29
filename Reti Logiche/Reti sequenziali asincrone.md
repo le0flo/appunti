@@ -156,24 +156,26 @@ Nel caso di Mealy, in ogni casella vengono riportati i valori delle funzioni $F$
 Ogni riga deve contenere almeno una condizione di stabilità.
 Le condizioni di instabilitità devono indicare uno stato futuro stabile.
 
+|     | 00  | 01  | 11  | 10  |
+| --- | --- | --- | --- | --- |
+| A   | A,0 | A,0 | B,0 | A,0 |
+| B   | A,0 | C,0 | B,0 | A,0 |
+| C   | A,0 | C,0 | D,- | A,0 |
+| D   | A,- | A,- | D,1 | A,- |
+
 #### Tabella per un'automa di Moore
 
 Poichè l'uscita dipende solo dallo stato presente, è costante su ogni riga.
 Esiste perciò una colonna aggiuntiva che riporta il valore dell'uscita per ogni stato.
 
+|     | 00  | 01  | 11  | 10  | $z$ |
+| --- | --- | --- | --- | --- | --- |
+| A   | A   | A   | B   | A   | 0   |
+| B   | A   | C   | B   | A   | 0   |
+| C   | A   | C   | D   | A   | 0   |
+| D   | A   | A   | D   | A   | 1   |
+
 ### Analisi e sintesi
 
 Il grafo degli stati è usato generalmente all'inizio del processo di sintesi e come ultimo passo durante l'analisi.
 La tabella di flusso invece costituisce il secondo passo della sintesi e il penultimo dell'analisi.
-
-### Sintesi di una RSA
-
-5 passaggi:
-
-1. Individuazione del *Grafo degli stati*
-2. Definizione della *Tabella di flusso*
-3. Codifica degli stati e definizione della *Tabella delle transizioni*
-4. Sintesi della *rete combinatoria* di uscita e stato futuro
-5. Schema logico che includa anche *ingresso di reset*, se presente
-
-### Analisi di una RSA
