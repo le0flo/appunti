@@ -1,3 +1,7 @@
++++
+weight = 14
++++
+
 ### Regole di corretto impiego
 
 Ci sono 4 regole per ottenere una RSA a funzionamento corretto.
@@ -59,3 +63,5 @@ Per eliminare a priori le alee statiche, è necessario usare la tecnica di coper
 ### (4) Codifica degli stati
 
 Le configurazioni binarie associate ad ogni coppia (*stato presente e stato futuro*) devono essere adiacenti.
+
+*TODO*
