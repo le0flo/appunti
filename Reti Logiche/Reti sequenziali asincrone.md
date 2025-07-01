@@ -175,6 +175,23 @@ Esiste perciò una colonna aggiuntiva che riporta il valore dell'uscita per ogni
 | C   | A   | C   | D   | A   | 0   |
 | D   | A   | A   | D   | A   | 1   |
 
+### Come si sposta la rete su una tabella
+
+e.g.
+
+|     | 00  | 01  | 11  | 10  |
+| --- | --- | --- | --- | --- |
+| A   | A,0 | A,0 | B,0 | A,0 |
+| B   | A,0 | C,0 | B,0 | D,0 |
+| C   | A,0 | C,0 | D,- | A,0 |
+| D   | A,- | A,- | D,1 | C,- |
+
+1. Partiamo dallo stato presente stabile *B* con gli ingressi $y_1y_0 = 11$
+2. Appena cambiamo ingressi $y_1y_0 = 10$, lo stato immediatamente futuro è *D*
+3. Però lo stato *D* con ingressi $y_1y_0 = 10$ non è stabile e il seguente stato futuro è *C*
+4. Anche lo stato *C* con ingressi $y_1y_0 = 10$ non è stabile e il seguente stato futuro è *A*
+5. Lo stato *A* con ingressi $y_1y_0 = 10$ è stabile, perciò il nostro spostamento è terminato 
+
 ### Analisi e sintesi
 
 Il grafo degli stati è usato generalmente all'inizio del processo di sintesi e come ultimo passo durante l'analisi.

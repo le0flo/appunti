@@ -1,5 +1,5 @@
 +++
-weight = 14
+weight = 15
 +++
 
 ### Sintesi di una RSA
@@ -12,7 +12,7 @@ weight = 14
 4. Sintesi della *rete combinatoria* di uscita e stato futuro
 5. Schema logico che includa anche *ingresso di reset*, se presente
 
-### Tabella di Flusso
+### (2) Tabella di Flusso
 
 2 controlli:
 
@@ -28,7 +28,7 @@ e.g.
 | C   | C,1 | D,1 |
 | D   | A,- | D,1 |
 
-### Tabella delle transizioni
+### (3) Tabella delle transizioni
 
 In ogni rete sequenziale, lo stato è rappresentato da una configurazione binaria dei bit di stato. Bisogna quindi scegliere un modo per codificare gli stati. Data la codifica, posso tradurre la tabella di flusso in tabella delle transizioni, sostituendo ad ogni stato la codifica binaria.
 
@@ -57,7 +57,7 @@ $\Downarrow$
 | C=11 | 11,1 | 10,1 |
 | D=10 | 00,- | 10,1 |
 
-### Espressioni combinatorie
+### (4) Espressioni combinatorie
 
 La tabella delle transizioni è in realtà una composizione di TdV combinatorie, ovvero di mappe di Karnaugh, con cui è possibile eseguire la sintesi combinatoria delle funzioni che implementano il comportamento richiesto con le metodologie già studiate.
 
@@ -69,9 +69,23 @@ e.g.
 | B=01 | 11,- | 01,0 |
 | C=11 | 11,1 | 10,1 |
 | D=10 | 00,- | 10,1 |
+
 $\Downarrow$
 
 |     | 00  | 01  | 11  | 10  |
 | --- | --- | --- | --- | --- |
-| 0   |     |     |     |     |
-| 1   |     |     |     |     |
+| 0   | 0   | -   | 1   | -   |
+| 1   | 0   | 0   | 1   | 1   |
+$Z = y1$
+
+|     | 00  | 01  | 11  | 10  |
+| --- | --- | --- | --- | --- |
+| 0   | 0   | 1   | 1   | 0   |
+| 1   | 0   | 0   | 1   | 1   |
+$Y_1 = xy_1 + x'y_0 + y_1y_0$
+
+|     | 00  | 01  | 11  | 10  |
+| --- | --- | --- | --- | --- |
+| 0   | 0   | 1   | 1   | 0   |
+| 1   | 1   | 1   | 0   | 0   |
+$Y_0 = xy_1' + x'y_0 + y_1'y_0$

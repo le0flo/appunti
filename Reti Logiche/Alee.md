@@ -64,3 +64,4 @@ e.g.
 
 - espressione SP minima: $a'd + ad' + ab + c'd$
 - espressione SP priva di alee: $a'd + ad' + ab + c'd + bd + ac'$
+
