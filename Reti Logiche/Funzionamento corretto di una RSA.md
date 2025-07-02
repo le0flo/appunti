@@ -62,6 +62,66 @@ Per eliminare a priori le alee statiche, è necessario usare la tecnica di coper
 
 ### (4) Codifica degli stati
 
-Le configurazioni binarie associate ad ogni coppia (*stato presente e stato futuro*) devono essere adiacenti.
+Le configurazioni binarie associate ad ogni coppia (*stato presente e stato futuro*) devono essere adiacenti. Se applicato a tutte le coppie, questo principio richiederebbe un codice molto ridondante, che utilizzerebbe più bit necessario. Fortunatamente si tratta di un vincolo spesso eccessivo: si può garantire il corretto funzionamento della rete anche in presenza di variazione contemporanea di più di un bit alla volta, per alcune configurazioni di ingresso. Si parla di *corse critiche* e *corse non critiche*.
 
-*TODO*
+Per passare dalla tabella di flusso alla tabella delle transizioni, è necessario scegliere una codifica degli stati. Non tutte le codifiche sono valide.
+
+e.g.
+
+|     | 00  | 01  | 11  | 10  |
+| --- | --- | --- | --- | --- |
+| A   | A   | B   | A   | A   |
+| B   | A   | B   | D   | B   |
+| C   | A   | C   | C   | C   |
+| D   | A   | C   | D   | D   |
+
+$\Downarrow$
+
+|      | 00  | 01  | 11  | 10  |
+| ---- | --- | --- | --- | --- |
+| A=00 | 00  | 01  | 00  | 00  |
+| B=01 | 00  | 01  | 10  | 01  |
+| C=11 | 00  | 11  | 11  | 11  |
+| D=10 | 00  | 11  | 10  | 10  |
+
+Questa configurazione non è valida poiché le celle $B,11$ e $C,00$ non rispettano il vincolo di adiacenza tra stato presente e stato futuro.
+
+#### Determinare se una configurazione è valida o meno
+
+I segnali in retroazione per cui è stata prevista una modifica contemporanea di valore si trovano in una situazione di *corsa*. Una corsa può essere:
+
+- *Critica*: se si possono raggiungere stabilità diverse
+- *Non critica*: se passa da uno o più stati intermedi prima di raggiungere quello stabile
+
+Le transizioni multiple non sono un problema affinché:
+
+- L'uscita non presenti andamenti diversi dal comportamento voluto durante la transizione
+- Gli ingressi rimangono stabili fino al raggiungimento dello stato stabile
+
+e.g.
+
+Usando l'esempio di prima, se dallo stato $C,01$ cambia l'ingresso in $00$ lo stato dovrà passare per due possibili stati intermedi:
+
+- $11 \to 01 \to 00$
+- $11 \to 10 \to 00$
+
+In entrambe i casi il comportamento non varia l'ingresso rimane stabile, perciò questa situazione di corsa *non è* critica. Invece se dallo stato $B,01$ cambia l'ingresso in $11$, lo stato ha questi due possibili stati intermedi:
+
+- $01 \to 00 \to \times$
+- $01 \to 11 \to \times$
+
+Il comportamento varia e in entrambe i casi porta a risultati diversi e non desiderati. Questa situazione di corsa *è* critica.
+
+#### Prevenzione a priori delle corse critiche
+
+La presenza di corse critiche si ha nei casi in cui una colonna della tabella di flusso presenta più di uno stato stabile. In caso di colonne con una sola stabilità, se tutti gli stati non stabili riducono allo stato stabile, si avranno corse non critiche.
+
+Si possono eliminare le situazioni di corse critiche a priori seguendo le seguenti regole:
+
+1. Nelle colonne con una sola stabilità, si inserisce il simbolo dello stato stabile al posto di eventuali condizioni di indifferenza
+2. Per le colonne con più stabilità, si traccia il grafo delle adiacenze:
+	- Un nodo associato per ogni stato
+	- Un ramo orientato per ogni coppia stato *presente-futuro*
+3. Si sovrappone il grafo ad una mappa con codici di Gray su righe e colonne (*come per le mappe di Karnaugh*) e si verifica se è possibile assegnare configurazioni adiacenti ad ogni coppia di stati coinvolta in una transazione.
+4. Se è impossibile soddisfare i vincoli di adiacenza, si cerca di ridurli ricorrendo a transazioni multiple
+5. Se non ci si riesce, si incrementa il numero delle variabili di stato e si ritorna al punto 3
