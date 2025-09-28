@@ -1,0 +1,251 @@
+\documentclass{subfiles}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{Memorie binarie}
+
+Uno degli usi più importanti delle RSA è la realizzazione di memorie binarie, ovvero circuiti che hanno lo scopo di memorizzare il valore di un bit.
+Sono categorizzati come componenti primitivi, inoltre sono i principali blocchi di costruzione per le reti sincrone.
+Ci sono 3 tipi principali di memorie:
+
+\begin{itemize}
+    \item Latch SR
+    \item Latch CD
+    \item Flip-flop D
+\end{itemize}
+
+\noindent
+Si differenziano per quale sequenza di ingressi porta alla scrittura di un bit, quindi quando sono sensibili a comandi di modifica dell’informazione memorizzata.
+
+\subsection{Latch SR}
+
+La più semplice memoria binaria.
+Questo componente ha:
+
+\begin{description}
+    \item[2 Ingressi] set $S$ e reset $R$
+    \item[2 Uscite] $Q$ e il suo complemento $Q'$
+\end{description}
+
+\noindent
+Il comportamento della rete è il seguente:
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c| }
+\hline
+Comando & Ingresso $S$ & Ingresso $R$ & Uscita $Q$  \\
+\hline
+\hline
+Memorizza & 0 & 0 & Ultimo valore scritto \\
+Scrivi $1$ & 1 & 0 & 1 \\
+Scrivi $0$ & 0 & 1 & 0 \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent
+La coppia di ingressi 11 non può presentarsi per un corretto funzionamento della rete.
+
+\subsubsection{Sintesi del latch SR}
+
+\begin{center}
+\begin{multicols}{2}
+\begin{tabular}{ |c|c|c|c|c|c| }
+\hline
+& 00 & 01 & 11 & 10 & $Q$ \\
+\hline
+\hline
+A & A & A & - & B & 0 \\
+B & B & A & - & B & 1 \\
+\hline
+\end{tabular}
+
+Tabella di flusso
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{tabular}{ |c|c|c|c|c|c| }
+\hline
+& 00 & 01 & 11 & 10 & $Q$ \\
+\hline
+\hline
+A=0 & 0 & 0 & - & 1 & 0 \\
+B=1 & 1 & 0 & - & 1 & 1 \\
+\hline
+\end{tabular}
+
+Tabella delle transizioni
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{description}
+\item[Espressione SP] $Y = S + yR'$
+\item[Espressione PS] $Y = R' * (y+S)$
+\end{description}
+
+Sintesi combinatoria
+\end{multicols}
+\end{center}
+
+\subsubsection{Stato iniziale di un latch SR}
+
+Come ogni RSA, il bit di stato di un latch SR avrà un valore casuale all'avvio della macchina.
+Ci sono casi in cui, però, serve che il latch SR abbia uno stato iniziale predeterminato all'accensione, perciò esistono delle varianti del latch SR dotate di 2 ingressi aggiuntivi, normalmente attivi bassi, prioritari rispetto a $S$ e $R$:
+
+\begin{description}
+    \item[Preset $PRE'$] quando $PRE'=0$, il latch SR memorizza $1$ indipendentemente dai valori di $S$ e $R$
+    \item[Clear $CLR'$] quando $CLR'=0$, il latch SR memorizza $0$ indipendentemente dai valori di $S$ e $R$
+\end{description}
+
+Anche per gli ingressi di preset e clear vale la regola che non possono mai essere contemporaneamente attivi.
+Poiché gli ingressi di inizializzazione $PRE'$ e $CLR'$ non devono essere usati durante la normale operatività del latch ma solo all'avvio, sono rappresentati tipicamente in alto e in basso, rispetto agli altri ingressi, situati sul lato sinistro della rete.
+
+\subsection{Metastabilità}
+
+Uno stato stabile è uno stato in cui $Q=q$ (stato futuro uguale allo stato presente).
+Idealmente, il bit di stato può assumere soltanto i valori H o L.
+In realtà i segnali che si trovano sull'anello di retroazione, come tutti i segnali di una rete reale, sono segnali analogici.
+Questo significa che i segnali possono assumere un valore anche leggermente superiore o inferiore ad H e L.\\
+
+\noindent
+Per garantire un corretto funzionamento di un circuito, esso deve rimanere stabile anche a fronte di disturbi sui segnali analogici sottostanti.
+Se il segnale analogico da cui è derivato $q$ si sposta di poco all'interno della banda in cui viene interpretato, la risposta $Q$ della rete combinatoria deve riavvicinarsi al valore predefinito.
+Se si allontanasse, amplificando il disturbo, la rete non riuscirebbe a garantire la stabilità in una situazione reale.
+Questo si ottiene a livello elettronico, facendo si che la relazione ingresso-uscita analogica del circuito combinatorio $f_{rc}$, che poniamo in retroazione, abbia tratti a pendenza minore di 1 intorno ad H e L.\\
+
+\noindent
+Per unire due tratti di pendenza < 1, è inevitabile creare un tratto di pendenza > 1 che interseca di nuovo la retta $Q = q$.
+Esiste quindi un'altro punto M oltre ai valori H e L in cui la rete può fermarsi.
+Questo punto viene detto stato meta-stabile e se il una rete combinatoria si trova in tale punto, si dice che è in metastabilità.
+Il problema è che non si può sapere in quale dei due stati si troverà la rete a seguito del disturbo, poiché dipende soltanto dal disturbo stesso, che è casuale.\\
+
+\noindent
+Un latch, per esempio, può trovarsi in uno stato meta-stabile se la durata degli ingressi non rispetta il vincolo $t_w$.
+
+\subsection{Latch CD}
+
+Il latch CD è un'altra memoria binaria.
+La differenza principale da un latch SR è il modo in cui viene comandato.
+Il latch CD memorizza il valore del segnale $D$ soltanto quando $C$ ha valore $1$.
+Chi lo comanda non dice esplicitamente cosa scrivere come nel caso del latch SR, ma quando scrivere $D$, pilotando opportunamente $C$.
+Quindi diventa possibile, pilotando correttamente il segnale $C$, condiviso da $n$ latch, memorizzare contemporaneamente $n$ dati binari.
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c| }
+\hline
+Comando & Ingresso $C$ & Ingresso $D$ & Uscita $Q$  \\
+\hline
+\hline
+Memorizza & 0 & - & Ultimo valore scritto \\
+Scrivi $1$ & 1 & 1 & 1 \\
+Scrivi $0$ & 1 & 0 & 0 \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent
+Il campionamento del segnale $D$ avviene soltanto quando $C$ è alto ($1$).
+Significa che il latch CD è una memoria level-triggered.
+Il latch CD è utile perché la forma d'onda nell'ingresso $D$, pilotando opportunamente $C$, viene ripulita da andamenti indesiderati in transitorio o valori che non doveva essere memorizzati, quando la si va a leggere dall'uscita $Q$.
+Per questo motivo è il componente di memoria usato all'interno del registro buffer e della memoria RAM.
+
+\subsubsection{Sintesi formale}
+
+$$
+\begin{matrix}
+Y=CD+C'y+Dy\\
+Q=y
+\end{matrix}
+$$
+
+\subsubsection{Sintesi diretta}
+
+Si può realizzare una sintesi di un latch CD utilizzando i componenti precedentemente introdotti.
+Avendo il latch SR, una RSA che può memorizzare un bit, basterebbe ideare una rete che transcodifichi il codice CD in codice SR.
+La rete è costituita da 2 AND, corrispondenti ai due mintermini della tabella seguente:
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c| }
+\hline
+Comando & $C$ & $D$ & $Q$ & $S$ & $R$ \\
+\hline
+\hline
+Memorizza & 0 & - & Ultimo valore scritto & 0 & 0 \\
+Scrivi $1$ & 1 & 1 & 1 & 1 & 0 \\
+Scrivi $0$ & 1 & 0 & 0 & 0 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+    \item $S = CD$
+    \item $R = CD'$
+\end{itemize}
+
+\subsubsection{Tempi di set-up, di hold e di risposta}
+
+Avendo più gate in cascata, il transitorio del latch CD dura più di quello del latch SR.
+Come nel latch SR, anche il comando di campionamento ($C=1$) deve avere una durata minima di $t_w$.
+Non rispettare questo vincolo può causare metastabilità, come nel latch SR.
+Esistono altri due tempi da considerare nel latch CD, rispettivamente prima e dopo il fronte di discesa di $C$.
+
+\begin{description}
+    \item[Tempo di set-up] il tempo di propagazione attraverso i gate
+    \item[Tempo di hold] il tempo necessario per innescare la retroazione
+\end{description}
+
+\noindent
+L'ingresso $D$ deve essere costante durante $t_{su}+t_h$ per garantire il corretto funzionamento del latch.
+Questi vincoli evitano che la rete veda cambiamenti "simultanei" degli ingressi, proibiti nelle RSA.
+L'uscita in forma vera e complementata è disponibile a partire dal fronte di salita di $C$, dopo un tempo di risposta $t_r$, tipicamente diverso se $Q$ passa da L a H o da H a L.
+Se quando il segnale $C=1$, $D$ modifica il suo valore e lo mantiene per almeno il tempo di setup, allora la stessa modifica si riscontra anche su $Q$, con un ritardo pari al tempo di risposta (uscita trasparente).
+
+\subsection{Flip-flop D}
+
+Una RSA con due ingressi $CLK$ e $D$.
+L'ingresso $CLK$ (clock) è tipicamente rappresentato da un triangolo.
+$CLK$ svolge il ruolo di segnale di campionamento, $D$ il segnale campionato.
+Il campionamento ha luogo quando $CLK$ transita dal valore logico 0 al valore logico 1 (campionamento su fronti di salita, positive edge-triggered).
+$Q$, dopo un piccolo tempo dal fronte di salita, riflette l'ultimo valore campionato.\\
+
+\noindent
+Questo ritardo è fondamentale, in quanto garantisce che quando $Q$ cambia, la rete non è più in trasparenza.
+Con il flip-flop D è possibile qualunque montaggio in retroazione, senza alcun rischio di instabilità.
+Esistono due tipi principali di flip-flop D:
+
+\begin{description}
+    \item[Master-slave] realizzato con due latch CD in cascata con $C$ in forma vera e negata
+    \item[Edge-triggered] 6 NAND invece che 8 e altri miglioramenti che vengono da scelte di progetto non intuitive, ottenute utilizzando strumenti di CAD (Computer-Aided Design)
+\end{description}
+
+\subsubsection{Tempi di set-up, di hold e di risposta}
+
+I tempi caratteristici di un flip-flop D hanno gli stessi nomi e significati simili a quelli del latch CD, con la differenza che fanno riferimento al fronte di salita del clock.
+
+\begin{description}
+    \item[Tempo di set-up $t_{su}$] tempo minimo in cui $D$ deve essere costante prima del fronte
+    \item[Tempo di hold $t_h$] tempo minimo in cui $D$ deve essere costante dopo il fronte
+    \item[Tempo di risposta $t_r$] tempo massimo di durata del transitorio sulle uscite $Q$ e $Q'$ dopo il fronte
+\end{description}
+
+\noindent
+Come nel latch CD, $D$ deve rimanere costante sia durante $t_{su}$, sia durante $t_h$.
+Transitorio più lungo di un latch CD, perciò viene usato solo quando serve la sua robustezza, per esempio nelle retroazioni di reti sequenziali sincrone.
+
+\subsubsection{FF-D come elemento di ritardo}
+
+Se all'ingresso $CLK$ viene inviato un segnale periodico, il FF-D ritarda il segnale di uscita $Q$, rispetto al segnale $D$, di un tempo pari al periodo di clock $T$.
+Il clock divide il tempo in intervalli discreti tra cui vale la relazione:
+
+$$
+Q^{n+1} = D^{n}
+$$
+
+\noindent
+Questa è una caratteristica che lo rende fondamentale nella realizzazione di reti sequenziali sincrone.
+
+\end{document}

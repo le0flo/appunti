@@ -1,0 +1,236 @@
+\documentclass{subfiles}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{Reti sequenziali asincrone}
+
+\subsection{Stato}
+
+Lo stato è un informazione che la rete memorizza al suo interno.
+Gli stati sono tutti i "riassunti" utili della storia passata degli ingressi.
+Utile indica la proprietà degli stati che gli permette di cambiare il comportamento futuro della rete.
+Oltre a decidere il valore di uscita, la rete sequenziale deve decidere se "vale la pena ricordare" qualsiasi evento che influenzerà il comportamento di essa.
+La rete, quando memorizza un evento, cambia stato.
+La rete calcola perciò lo stato futuro, ovvero il nuovo stato che riassume la storia tenendo in considerazione anche l'ultimo ingresso visto.
+
+\subsection{Reti sequenziali asincrone (RSA)}
+
+Esistono due tipi di reti sequenziali:
+
+\begin{itemize}
+    \item Asincrone
+    \item Sincrone
+\end{itemize}
+
+\noindent
+In una rete asincrona, lo stato futuro sovrascrive lo stato presente il momento in cui viene calcolato.
+Segue una sequenza di lavoro tipica per una rete sequenziale asincrona:
+
+\begin{enumerate}
+    \item Si parte da una situazione stabile, dove lo stato presente è uguale allo stato futuro
+    \item Cambia un ingresso
+    \item Dopo un tempo pari al ritardo della rete, sono disponibili un nuovo stato futuro e una nuova uscita.
+    \item Lo stato futuro diventa lo stato presente, sovrascrivendolo nella memoria della rete.
+    \item Nuova situazione stabile, con uno stato presente uguale allo stato futuro, ed un ingresso costante.
+\end{enumerate}
+
+\noindent
+La rete riinizierà il ciclo ad ogni cambio di ingressi.
+
+\subsection{Codifica degli stati}
+
+Gli stati vengono rappresentati attraverso segnali binari organizzati in un codice.
+In una rete sequenziale con $K$ stati, ci saranno almeno $k = [\log_2 K] bit$ per rappresentare lo stato.
+Gli ingressi di stato presente e le uscite di stato futuro sono ognuno rappresentati da $k$ segnali binari.\\
+
+\noindent
+Una notazione comune per questi segnali è $y_{k-1}, \dots, y_1, y_0$ per lo stato presente, e $Y_{k-1}, \dots, Y_1, Y_0$ per lo stato futuro.
+In una rete sequenziale asincrona si hanno:
+
+\begin{description}
+    \item[$m$] segnali di uscita
+    \item[$k$] segnali di stato futuro
+    \item[$n$] segnali di ingresso
+    \item[$k$] segnali di stato presente
+\end{description}
+
+\noindent
+Una volta che lo stato presente diventa disponibile, le uscite dipendono solo dagli ingressi attuali e dallo stato presente, perciò le uscite sono funzioni combinatorie di questi segnali.
+Una RSA è perciò composta da $m+k$ reti combinatorie, ognuna con $n+k$ ingressi.
+Una convenzione comune è indicare con $F$ le funzioni che calcolano i bit di uscita e con $G$ le funzioni che calcolano i bit di stato futuro.
+
+\subsection{Retroazione}
+
+Data una rete combinatoria, provare a collegare l'uscita di essa in retroazione su uno dei propri ingressi, analizzando il tutto soltanto con usando le pure relazioni matematiche tra i gate, risulterebbe impossibile.
+Però i gate non sono istantanei, ogni gate reale ha un ritardo di propagazione, indicato dal tempo $\tau_p$.
+Il ritardo complessivo di una rete combinatoria nel caso peggiore è definito come:
+
+$$
+T_p = N_{\text{casc}} * \tau_p
+$$
+
+\noindent
+Quando analizziamo una rete, possiamo immaginare un segnale ideale, che cambia istantaneamente al variare degli ingressi, insieme al segnale reale, che cambia dopo il ritardo complessivo della rete.
+Grazie ai ritardi delle reti, è possibile connettere reti combinatorie in retroazione diretta, garantendo che la rete calcoli correttamente la nuova uscita.
+
+\subsection{Struttura generale di una RSA}
+
+Ogni rete combinatoria con anelli di retroazione diretta è in realtà una RSA.
+La rete ha $k$ bit di stato se ci sono $k$ segnali di retroazione.
+I ritardi agiscono della rete combinatoria $G$ agiscono come memoria.
+Lo stato futuro in se non è osservabile.
+Lo è soltanto quando esso diventa stato presente.
+
+\subsection{Finite State Machine (FSM)}
+
+Una RSA è un caso particolare di Automa a stati finiti $M$, anche rappresentabile come sistema matematico.
+
+$$
+FSM = \{I,U,S,F,G\}
+$$
+
+\noindent
+Formato da:
+
+\begin{description}
+    \item[$I$] alfabeto di ingresso
+    \item[$U$] alfabeto di uscita
+    \item[$S$] insieme degli stati
+\end{description}
+
+\begin{description}
+    \item[$F: S \times I \to U$] funzione di uscita,
+    \item[$G: S \times I \to S$] funzione di aggiornamento dello stato interno
+\end{description}
+
+\noindent
+Due tipologie:
+
+\begin{itemize}
+    \item Automa di Mealy
+    \item Automa di Moore (un caso particolare dell'automa di Mealy, dove l'uscita dipende soltanto dallo stato presente)
+\end{itemize}
+
+\subsection{Comportamento e struttura}
+
+Per analizzare una rete combinatoria, si usavano:
+
+\begin{itemize}
+    \item Tabella della verità (TdV) $\to$ Comportamento della rete
+    \item Espressione o schema logico $\to$ Struttura della rete
+\end{itemize}
+
+\noindent
+Per analizzare una rete sequenziali asincrona invece si usano:
+
+\begin{itemize}
+    \item Grafo degli stati e Tabella di flusso $\to$ Comportamento della rete
+    \item Espressione o schema logico $\to$ Struttura della rete (per ognuna delle $m+k$ reti combinatorie che la compongono)
+\end{itemize}
+
+\subsection{Grafo degli stati}
+
+Un grafo ad archi orientati dove:
+
+\begin{description}
+    \item[Nodo] rappresenta uno stato presente
+    \item[Arco] rappresenta una trasformazione, da stato presente a stato futuro, in corrispondenza di una o più configurazioni di ingressi
+\end{description}
+
+\noindent
+Da ogni nodo devono uscire tanti rami quante configurazioni possibili di ingressi.
+Uno stato stabile è un nodo con un arco che ritorna sul nodo da cui parte.
+
+\subsubsection{Grafo per un'automa di Mealy}
+
+Nel caso dell'automa di Mealy, si indica il valore dell'uscita su ciascuna transazione.
+Per rendere il grafo più leggibile ogni nodo verrà indicato con una lettera diversa (A,B,C,D,$\dots$).
+Quando il valore d'uscita cambia tra due stati, bisogna contrassegnare l'uscita nella transazione con il simbolo di indifferenza. Per progettare una RSA che opera con continuità, bisogna assicurarsi che:
+
+\begin{itemize}
+    \item esista sempre almeno un percorso per passare da un nodo arbitrariamente scelto ad un altro (grafo strettamente connesso)
+    \item non esistano stati irrangiungibili o assorbenti (dotati di solo frecce entranti)
+\end{itemize}
+
+\subsubsection{Grafo per un'automa di Moore}
+
+Nel caso dell'automa di Mealy, si indica il valore dell'uscita sugli stati invece che sulle transazioni.
+
+\subsection{Stato iniziale e reset}
+
+In una rete sequenziale asincrona, l'uscita dipende dagli ingressi e dallo stato presente.
+Per assicurarsi un comportamento deterministico, la certezza che la rete parta sempre dallo stesso stato, si introduce un segnale di reset, che assume valore 1 per pochi istanti all'accensione, e rimane 0 per il resto del tempo.
+
+\subsection{Tabella di flusso}
+
+La tabella di flusso è un modo alternativo per descrivere il comportamento di una RSA.
+
+\subsubsection{Tabella per un'automa di Mealy}
+
+Nel caso di Mealy, in ogni casella vengono riportati i valori delle funzioni $F$ e $G$ per il rispettivo ingresso dello stato presente.
+Ogni riga deve contenere almeno una condizione di stabilità.
+Le condizioni di instabilitità devono indicare uno stato futuro stabile.
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| }
+\hline
+& 00 & 01 & 11 & 10 \\
+\hline
+\hline
+A & A,0 & A,0 & B,0 & A,0 \\
+B & A,0 & C,0 & B,0 & A,0 \\
+C & A,0 & C,0 & D,- & A,0 \\
+D & A,- & A,0 & D,1 & A,- \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection{Tabella per un'automa di Moore}
+
+Poichè l'uscita dipende solo dallo stato presente, è costante su ogni riga.
+Esiste perciò una colonna aggiuntiva che riporta il valore dell'uscita per ogni stato.
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c| }
+\hline
+& 00 & 01 & 11 & 10 & $z$ \\
+\hline
+\hline
+A & A,0 & A,0 & B,0 & A,0 & 0 \\
+B & A,0 & C,0 & B,0 & A,0 & 0 \\
+C & A,0 & C,0 & D,- & A,0 & 0 \\
+D & A,- & A,0 & D,1 & A,- & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent
+esempio:
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| }
+\hline
+& 00 & 01 & 11 & 10 \\
+\hline
+\hline
+A & A,0 & A,0 & B,0 & A,0 \\
+B & A,0 & C,0 & B,0 & A,0 \\
+C & A,0 & C,0 & D,- & A,0 \\
+D & A,- & A,0 & D,1 & C,- \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+    \item Partiamo dallo stato presente stabile B con gli ingressi $y_1y_0 = 11$
+    \item Appena cambiamo ingressi $y_1y_0 = 10$, lo stato immediatamente futuro è D
+    \item Però lo stato D con ingressi $y_1y_0 = 10$ non è stabile e il seguente stato futuro è C
+    \item Anche lo stato C con ingressi $y_1y_0 = 10$ non è stabile e il seguente stato futuro è A
+    \item Lo stato A con ingressi $y_1y_0 = 10$ è stabile, perciò il nostro spostamento è terminato
+\end{enumerate}
+
+\end{document}

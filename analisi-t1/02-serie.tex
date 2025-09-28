@@ -1,0 +1,162 @@
+\documentclass{subfiles}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{Serie}
+
+\subsection{Successione}
+
+Una successione di numeri reali è una funzione da $\mathbb{N}$ in $\mathbb{R}$.
+
+$$
+f: \mathbb{N} \to \mathbb{R}
+$$
+
+\noindent
+I termini della successione sono notati nella seguente maniera:
+
+\begin{itemize}
+    \item $f(0) = a_0$
+    \item $f(1) = a_1$
+    \item $f(2) = a_2$
+\end{itemize}
+
+\noindent
+La successione può essere:
+
+\begin{itemize}
+    \item superiormente limitata
+    \item inferiormente limitata
+    \item limitata
+\end{itemize}
+
+
+\subsection{Serie}
+
+Sia $(a_n)_n$ una successione di numeri reali. Definiamo la successione $(s_n)_n$ associata:
+
+\begin{itemize}
+    \item $s_0 = a_0$
+    \item $s_1 = a_0 + a_1$
+    \item $s_2 = a_0 + a_1 + a_2$
+    \item $\vdots$
+\end{itemize}
+
+\noindent
+La successione delle somme parziali si chiama serie e si indica:
+
+$$
+\sum_{n = 0}^{+\infty} a_n \text{ oppure } \sum a_n
+$$
+
+\noindent
+I numeri $a_n$ si dicono termini della serie. Una serie può essere:
+
+\begin{description}
+    \item[Convergente] $\exists \lim_{n \to +\infty} s_n = A \in \mathbb{R}$
+    \item[Divergente] $\exists \lim_{n \to \infty} s_n = \begin{cases} -\infty\\ +\infty\end{cases}$
+    \item[Indeterminata] $\nexists  \lim_{n \to +\infty} s_n$
+\end{description}
+
+\noindent
+Data una serie $\sum a_n$, se cambio un numero finito di termini, la serie generata manterrà il carattere dell'originale.
+
+\subsubsection{Serie geometrica}
+
+Dato $q \in \mathbb{R}$, allora:
+
+$$
+R_n := q^n \Rightarrow \sum_{n = 0}^{+\infty} q^n
+$$
+
+\noindent
+La serie geometrica converge soltanto se $|q| < 1$.
+
+$$
+\sum_{n} q^n = \frac{1}{1 - q}
+$$
+
+\subsubsection{Convergenza di una serie}
+
+Una serie converge se e soltanto se $a_n \to 0$. La condizione precedente è necessaria ma non sufficiente per affermare la convergenza di una serie.
+
+\subsubsection{Criterio di condensazione}
+
+Dati $(a_n)_n, (b_n)_n$
+
+$$
+\forall n : 0 \leq a_n \leq b_n
+$$
+
+\begin{itemize}
+    \item se $b_n$ converge, anche $a_n$ converge.
+    \item se $a_n$ diverge, anche $b_n$ diverge.
+\end{itemize}
+
+\subsubsection{Criterio di condensazione}
+
+$\sum_{n} a_n$ converge se e soltanto se converge:
+
+$$
+\sum_{k = 0}^{+\infty} 2^k a_2k
+$$
+
+\subsubsection{Criterio del valore assoluto}
+
+Data una serie $\sum_{n}a_n$, se la serie $\sum_{n}|a_n|$ converge, anche la prima converge.
+
+$$
+|\sum_{n}a_n| = \sum_{n}|a_n|
+$$
+
+\noindent
+Una serie che viene dichiarata convergente usando questo criterio è detta assolutamente convergente.
+
+\subsubsection{Criterio della radice}
+
+Dato $(a_n)_n$, se $\exists \lim_{n \to +\infty} \sqrt[n]{|a_n|} = L$, allora:
+
+\begin{itemize}
+    \item se $L < 1$ allora $\sum a_n$ converge
+    \item se $L > 1$ allora $\sum a_n$ non converge
+    \item se $L = 1$ allora non si può concludere nulla
+\end{itemize}
+
+\subsubsection{Criterio del rapporto}
+
+Dato $(a_n)_n, a_n \neq 0$, se $\exists \lim_{n \to +\infty} |\frac{a_n + 1}{a_n}| = L$, allora:
+
+\begin{itemize}
+    \item se $L < 1$ allora $\sum_{}^{} a_n$ converge
+    \item se $L > 1$ allora $\sum_{}^{} a_n$ non converge
+    \item se $L = 1$ allora non si può concludere nulla
+\end{itemize}
+
+\subsubsection{Criterio di Leibniz}
+
+Se $(a_j)_j : a_j > 0 : a_j \geq a_j + 1 : \lim_{j \to +\infty} a_j = 0$, allora la serie:
+
+$$
+\sum_{j = 1}^{+\infty} (-1)^j * a_j
+$$
+
+\noindent
+converge.
+
+\subsubsection{Criterio del confronto asintotico}
+
+Dati $(a_n)_n, \forall n : a_n \geq 0$ e $(b_n)_n, \forall n : b_n > 0$, se $\lim_{n \to +\infty} \frac{a_n}{b_n} = L > 0$, allora:
+
+\begin{itemize}
+    \item $\sum a_n < +\infty \Leftrightarrow \sum b_n < +\infty$, entrambe convergono
+    \item $\sum a_n = +\infty \Leftrightarrow \sum b_n = +\infty$, entrambe divergono
+\end{itemize}
+
+\noindent
+Dati $(a_n)_n, \forall n : a_n \geq 0$ e $p = n * a_n$, se $\lim_{n \to +\infty} \frac{a_n}{\frac{1}{n^p}} = L > 0$, allora $\sum_{n} a_n$ converge se $\sum_{n}^{} \frac{1}{n^p}$ converge; possibile converge se $p > 1$.
+
+\end{document}

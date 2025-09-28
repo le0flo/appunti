@@ -1,0 +1,289 @@
+\documentclass{subfiles}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{Mappe di Karnaugh}
+
+La mappa di Karnaugh è una rappresentazione bidimensionale della tabella della verità di una funzione di 2,3,4 variabili,
+i cui valori sono elencati sui bordi in maniera tale che due configurazioni consecutive differiscano per il valore di un solo bit (codice di Gray).\\
+
+\noindent
+esempio, Uscita $R$ del Full Adder:
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c| }
+\hline
+$a$ & $b$ & $r$ & $R$ \\
+\hline
+\hline
+0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 1 & 1 & 1 \\
+1 & 0 & 0 & 0 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 0 & 1 \\
+1 & 1 & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent
+La mappa di Karnaugh associata è:
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| }
+\hline
+$a \backslash br$ & 00 & 01 & 11 & 10 \\
+\hline
+\hline
+0 & 0 & 0 & 1 & 0 \\
+1 & 1 & 1 & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent
+Lo scopo della mappa è quello di identificare graficamente, configurazioni adiacenti,
+ovvero che differiscono per un solo bit, aventi il medesimo valore di uscita
+(utile per trovare a sua volta implicanti e implicati primi essenziali).
+
+\subsection{Adiacenza tra celle}
+
+Una coppia di celle adiacenti su una mappa di Karnaugh è detta tale quando differiscono per un solo bit.
+Il numero di celle adiacenti corrisponde al numero di ingressi.\\
+
+\noindent
+esempio, O è la cella scelta, X sono le celle considerate adiacenti ad O:
+
+\begin{itemize}
+    \item 2 ingressi:
+
+    \begin{center}
+    \begin{tabular}{ |c|c|c| }
+    \hline
+    $a \backslash b$ & 0 & 1 \\
+    \hline
+    \hline
+    0 & O & X \\
+    1 & X & \\
+    \hline
+    \end{tabular}
+    \end{center}
+
+    \item 3 ingressi:
+
+    \begin{center}
+    \begin{tabular}{ |c|c|c|c|c| }
+    \hline
+    $a \backslash bc$ & 00 & 01 & 11 & 10 \\
+    \hline
+    \hline
+    0 & & & X & \\
+    1 & & X & O & X \\
+    \hline
+    \end{tabular}
+    \end{center}
+
+    \item 4 ingressi:
+
+    \begin{center}
+    \begin{tabular}{ |c|c|c|c|c| }
+    \hline
+    $ab \backslash cd$ & 00 & 01 & 11 & 10 \\
+    \hline
+    \hline
+    00 & X & & X & O \\
+    01 & & & & X \\
+    11 & & & & \\
+    10 & & & & X \\
+    \hline
+    \end{tabular}
+    \end{center}
+
+    \item 5 ingressi:
+
+    $a=0$
+
+    \begin{center}
+    \begin{tabular}{ |c|c|c|c|c| }
+    \hline
+    $bc \backslash de$ & 00 & 01 & 11 & 10 \\
+    \hline
+    \hline
+    00 & & & & \\
+    01 & & X & & \\
+    11 & X & O & X & \\
+    10 & & X & & \\
+    \hline
+    \end{tabular}
+    \end{center}
+
+    $a=1$
+
+    \begin{center}
+    \begin{tabular}{ |c|c|c|c|c| }
+    \hline
+    $ab \backslash cd$ & 00 & 01 & 11 & 10 \\
+    \hline
+    \hline
+    00 & & & & \\
+    01 & & & & \\
+    11 & & X & & \\
+    10 & & & & \\
+    \hline
+    \end{tabular}
+    \end{center}
+\end{itemize}
+
+\subsection{Manipolazione algebrica per via grafica}
+
+Due termini di una espressione canonica (SP o PS) corrispondenti a configurazioni diverse che individuano celle adiacenti,
+equivalgono ad un unico termine con un letterale in meno (quello che cambia valore).\\
+
+\noindent
+esempio:
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| }
+\hline
+$ab \backslash cd$ & 00 & 01 & 11 & 10 \\
+\hline
+\hline
+00 & X & X & X & X \\
+01 & X & X & X & X \\
+11 & X & X & X & 1 \\
+10 & X & X & X & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent
+L'espressione canonica SP $\dots + abcd' + ab'cd' + \dots$ diventa: $\dots + acd' + \dots$.
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| }
+\hline
+$ab \backslash cd$ & 00 & 01 & 11 & 10 \\
+\hline
+\hline
+00 & X & X & X & X \\
+01 & X & X & X & X \\
+11 & X & 0 & 0 & X \\
+10 & X & X & X & X \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent
+L'espressione canonica PS $\dots * (a'b'cd') * (a'b'c'd') * \dots$ diventa: $\dots + a'b'd' + \dots$.
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| }
+\hline
+$ab \backslash cd$ & 00 & 01 & 11 & 10 \\
+\hline
+\hline
+00 & X & X & X & X \\
+01 & X & 1 & 1 & X \\
+11 & X & 1 & 1 & X \\
+10 & X & X & X & X \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent
+L'espressione canonica SP $\dots + a'bc'd + a'bcd + abc'd + abcd + \dots$ diventa: $\dots + a'bd + abd + \dots$,
+che a sua volta diventa: $\dots + bd + \dots$.
+
+\subsection{Raggruppamenti rettangolari}
+
+Un raggruppamento rettangolare (RR) di ordine $p$ è un insieme di $2^p$ celle appartenenti ad una mappa, all'interno del quale ogni cella ha esattamente $p$ celle adiacenti.
+Un RR di ordine $p$ costituito da celle contenenti valore $1$ o una condizione di indifferenza, individua un implicante della funzione.
+Nel prodotto compaiono solo le $(n-p)$ variabili che rimangono costanti nelle coordinate del RR, in forma vera se valgono $1$, in forma complementata se valgono $0$.
+Lo stesso vale se il RR è costituito da celle con valore $0$. Esso costituisce un implicato della funzione e nel prodotto compariranno $(n-p)$ variabili in forma vera se valgono $0$ e in forma complementata se valgono $1$.
+Se un RR non è interamente incluso in un'altro RR di ordine superiore, allora esso individua un implicante/implicato primo.\\
+
+\noindent
+esempio:
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| }
+\hline
+$ab \backslash cd$ & 00 & 01 & 11 & 10 \\
+\hline
+\hline
+00 & - & 1 & 1 & - \\
+01 & - & 1 & 1 & - \\
+11 & - & 1 & 1 & - \\
+10 & 0 & 1 & 1 & - \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+    \item il RR dove $bd$ assumono valore $1$ non è un implicante primo
+    \item il RR dove $d$ assume valore $1$ è un implicante primo
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| }
+\hline
+$ab \backslash cd$ & 00 & 01 & 11 & 10 \\
+\hline
+\hline
+00 & 0 & x & x & 0 \\
+01 & 0 & x & x & 0 \\
+11 & 0 & x & x & 0 \\
+10 & 0 & x & 1 & 0 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+    \item il RR $c+d$ non è un implicato primo
+    \item il RR $c'+d$ non è un implicato primo
+    \item il RR $d$ è un implicato primo
+\end{itemize}
+
+\subsection{Copertura minima}
+
+La copertura di una funzione su una mappa è l'insieme di RR che coprono tutte le celle di valore 1 o 0.
+Una copertura può individuare una possibile struttura per un'espressione (SP per gli 1, PS per gli 0).
+Una copertura minima è una copertura costituita dal numero minore possibile di RR di dimensione massima.
+Questa corrisponde alla espressione minima.\\
+
+\noindent
+esempio:
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| }
+\hline
+$ab \backslash cd$ & 00 & 01 & 11 & 10 \\
+\hline
+\hline
+00 & 1 & 1 & 0 & 0 \\
+01 & 1 & - & 0 & - \\
+11 & 1 & 1 & 0 & 1 \\
+10 & 1 & 1 & 0 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent
+La copertura $c' + acd'$ è valida ma non è una copertura minima.
+Infatti se prendiamo in considerazione la copertura $c' + ad'$, essa è una copertura valida con lo stesso numero di RR ma entrambi di dimensione massima.
+
+\subsection{Analisi di un circuito con le mappe}
+
+\begin{enumerate}
+    \item Si scrive l'espressione associata allo schema dato e, se necessario, la si manipola fino ad ottenere una espressione SP o PS.
+    \item Si predispone una mappa di dimensioni adeguate e si tracciano sulla mappa i RR che corrispondono ai termini dell'espressione.
+    \item Nelle celle coperte dagli RR, si indica valore 1 se l'espressione analizzata è SP, 0 in caso sia una espressione PS. Nelle celle non coperte si mette il valore opposto (0 con le SP, 1 con le PS).
+\end{enumerate}
+
+\end{document}

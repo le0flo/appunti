@@ -1,0 +1,90 @@
+\documentclass{subfiles}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{Multiplexer}
+
+esempio:\\
+
+\noindent
+Un multiplexer o selettore a 2 vie.
+Un selettore è l'equivalente, in hardware, di un "if".
+Permette di decidere tramite un segnale $A$, quale tra le due vie d'ingresso, $I_0$ o $I_1$, sarà replicata dall'uscita.
+La tabella della verità e l'equazione SP risultante sono le seguenti:
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| }
+\hline
+$A \backslash I_1,I_0$ & 00 & 01 & 11 & 10 \\
+\hline
+\hline
+0 & 0 & 1 & 1 & 0 \\
+1 & 0 & 0 & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+$$
+Z = A'I_0 + A I_1
+$$
+
+\subsection{Multiplexer (MUX) generico}
+
+Il concetto di selettore può essere generalizzato a $n$ bit di indirizzo.
+Gli $n$ bit di indirizzo selezionano uno tra i $2^n$ ingressi detti "vie" o anche "bit di programmazione", a seconda dell'uso che si fa del MUX.
+Al crescere d $n$ cresce esponenzialmente il numero delle vie.
+L'ingresso replicato sull'uscita si determina nel seguente modo:
+
+$$
+i = A_{n-1} 2^{n-1} + \dots + A_1 2^1 + A_0 2^0
+$$
+
+\subsection{Teorema dell'espansione di Shannon}
+
+Data una funzione $F$ di $n$ variabili binarie, vale la relazione:
+
+$$
+F(x_1, \dots, x_i, \dots, x_n) = x_i F(x_1, \dots, 1, \dots, x_n) + \overline{x_i} F(x_1, \dots, 0, \dots, x_n)
+$$
+
+\noindent
+La relazione duale è ugualmente valida:
+
+$$
+F(x_1, \dots, x_i, \dots, x_n) = (x_i + F(x_1, \dots, 0, \dots, x_n))(\overline{x_i} + F(x_1, \dots, 1, \dots, x_n))
+$$
+
+\subsection{Espressioni generali}
+
+In generale, applicando ripetutamente il teorema di espansione di Shannon, è possibile dedurre le seguenti espressioni generali:
+
+\begin{description}
+	\item[Caso SP] ogni funzione di $n$ variabili è descritta da una espressione in cui compaiono, in somma logica, tutti i mintermini di $n$ variabili, ciascuno in prodotto logico con il valore della funzione quando in ingresso compare la configurazione riconosciuta dal mintermine
+
+	$$
+    F(x_1, x_2, \dots, x_n) = \sum_{i=0}^{2^n-1} m(i) * F(i)
+    $$
+
+	\item[Caso PS] ogni funzione di $n$ variabili è descritta da una espressione in cui compaiono, in prodotto logico, tutti i maxtermini di $n$ variabili, ciascuno in somma logica con il valore della funzione quando in ingresso compare la configurazione riconosciuta dal maxtermine
+
+	$$
+    F(x_1, x_2, \dots, x_n) = \prod_{i=0}^{2^n-1} (M(i) + F(i))
+    $$
+\end{description}
+
+\subsection{Il MUX come rete programmabile}
+
+Il MUX si adatta bene a realizzare l'espressione generale nel caso SP.
+Con $n$ variabili occorre un MUX a $n$ bit di indirizzo.
+Il MUX viene utilizzato, in questo caso, come generatore di funzioni.
+
+\subsection{MUX in forma integrata}
+
+Esistono MUX a 2,4,8 o 16 bit di programmazione.
+Il circuito integrato ha un numero di pin limitati, ma gli ingressi di un MUX crescono esponenzialmente, perciò saranno disponibili in forma integrata, al massimo MUX a 16 bit di programmazione.
+
+\end{document}

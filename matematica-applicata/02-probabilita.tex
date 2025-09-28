@@ -1,0 +1,88 @@
+\documentclass{subfiles}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{Probabilità}
+
+\subsection{Definizione classica di probabilità}
+
+Dato un esperimento che presenta più esiti equiprobabili possibili, si definisce probabilità dell'evento $E \subset S$:
+
+$$
+P(E) = \frac{n \text{ di esiti favorevoli}}{n \text{ di esisti totali}}
+$$
+
+\noindent
+Dove il numero di esiti totali deve essere finito.
+
+\subsection{Definizione frequentista}
+
+Ripetuto $N$ volte un esperimento che presenta più esiti possibili, si definisce probabilità dell'evento $E \subset S$:
+
+$$
+P(E) = \frac{n \text{ di esperimenti in cui si verifica } E}{N}
+$$
+
+\subsection{Principio di enumerazione o fondamentale del calcolo combinatorio}
+
+Si considerino $2$ esperimenti:
+il primo presenta $n$ esiti e per ciascuno di questi esiti,
+il secondo ne presenta $m$, allora, se le sequenze distinte di esiti danno luogo a risultati diversi,
+gli esiti dei due esperimenti saranno complessivamente $n \times m$.
+
+\subsection{Disposizioni semplici}
+
+Si dicono disposizioni semplici di $n$ oggetti di classe $K : (K \leq n)$ tutti gli allineamenti (sequenze ordinate) di $K$ elementi presi dall'insieme di $n$ oggetti.
+
+$$
+D_{n,k} = n(n-1)(n-2)\dots(n-k+1)=\frac{n!}{(n-k)!}
+$$
+
+\subsection{Disposizioni con ripetizioni}
+
+Si dicono disposizioni con ripetizioni di $n$ oggetti distinti di classe $K$, gli allineamenti che si possono formare prendendo $K$ oggetti non necessariamente diversi dagli altri $n$ dati.
+
+$$
+D^R_{n,k} = n^k
+$$
+
+\subsection{Permutazioni semplici}
+
+Dati $n$ oggetti distinti, si dicono permutazioni semplici di $n$ elementi gli allineamenti che si possono formare usando tutti gli $n$ oggetti diversi.
+
+$$
+P_n = n(n-1)(n-2)\dots1 = n!
+$$
+
+\subsection{Permutazioni con ripetizioni}
+
+Dati $n$ oggetti non necessariamente distinti, si definiscono permutazioni con ripetizioni, gli allineamenti che si possono costruire a partire da gli n oggetti dati.
+
+$$
+P^R_n = \frac{n!}{K_1!K_2!\dots K_j!}
+$$
+
+\noindent
+se tra gli $n$ oggetti ce ne sono $K_1$ del primo tipo, $K_2$ del secondo tipo, $\dots$ $K_j$ del j-esimo tipo.
+
+$$
+n = \sum^j_{i=1}K_i
+$$
+
+\subsection{Combinazioni semplici}
+
+Dati $n$ oggetti distinti, si dicono combinazioni semplici di $n$ oggetti di classe $K (K \leq n)$, gli insiemi che si possono formare a partire dagli $n$ dati:
+
+$$
+C_{n,k} = \begin{matrix} n\\ k \end{matrix} = \frac{n!}{(n-k)!k!} = \frac{D_{n,k}}{P_k}
+$$
+
+\subsection{Eventi complementari}
+
+Dati $E,F \subset S$, $E^c \subset S$ è l'insieme di tutti gli esiti di $S$ che non stanno in $E$.
+
+\end{document}

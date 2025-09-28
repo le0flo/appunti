@@ -1,0 +1,77 @@
+\documentclass{subfiles}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{Decoder}
+
+esempio:\\
+
+\noindent
+Una rete combinatoria che converte un numero binario a 3 bit a codice 1 su 8 ($2^3$).
+La convenzione per indicare gli ingressi è usare le lettere maiuscole a partire dalla A, la quale rappresenta l'ingresso con la cifra meno significativa.
+Ogni uscita ha solo una configurazione per cui essa vale "$1$", ovvero quella che codifica il numero dell'uscita stessa.
+Data la proposizione precedente, è chiaro che la sintesi canonica minima SP prevede quell'unico mintermine nell'espressione.
+
+\subsection{Decoder (DEC) generico $n:2^n$}
+
+Una rete che transcodifica un numero binario a $n$ bit a codice $1$ su $2^n$.
+Gli $n$ ingressi vengono anche indicati come indirizzi ($A$ addresses), con $A_0$ indirizzo di minor peso.
+L'indice $i$ dell'uscita $U_i$ attivata è pari al numero rappresentato dalla configurazione binaria degli stessi ingressi.
+
+$$
+i = A_{n-1} * 2^{n-1} + \dots + A_1 * 2^1 + A_0 * 2^0
+$$
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| }
+\hline
+$A_{n-1}$ & $\dots$ & $A_2$ & $A_1$ & $A_0$ \\
+\hline
+\hline
+0 & $\dots$ & 0 & 0 & 0 \\
+0 & $\dots$ & 0 & 0 & 1 \\
+0 & $\dots$ & 0 & 1 & 0 \\
+0 & $\dots$ & 0 & 1 & 1 \\
+$\dots$ & $\dots$ & $\dots$ & $\dots$ & $\dots$ \\
+1 & $\dots$ & 1 & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| }
+\hline
+$U_{2^n-1}$ & $\dots$ & $U_2$ & $U_1$ & $U_0$ \\
+\hline
+\hline
+0 & $\dots$ & 0 & 0 & 1 \\
+0 & $\dots$ & 0 & 1 & 0 \\
+0 & $\dots$ & 1 & 0 & 0 \\
+0 & $\dots$ & 0 & 0 & 0 \\
+$\dots$ & $\dots$ & $\dots$ & $\dots$ & $\dots$ \\
+1 & $\dots$ & 0 & 0 & 0 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Effetto di carico: fan-out}
+
+Il fan-out è il numero massimo di gate che possono collegarsi all'ingresso di un singolo gate.
+La tecnologia di oggi ci permette di avere numero di fan-out $\geq 10$, ma rimane comunque un fattore importante da considerare.
+
+\subsection{MSI e LSI}
+
+\begin{description}
+    \item[MSI] Medium Scale Integration
+    \item[LSI] Large Scale Integration
+\end{description}
+
+\noindent
+Esistono DEC in forma integrata con 2, 3, o 4 bit di indirizzo.
+Questi ricadono tutti sotto l'ala della MSI.
+
+\end{document}

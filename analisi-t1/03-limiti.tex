@@ -1,0 +1,68 @@
+\documentclass{subfiles}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{Limiti}
+
+\subsection{Definizione con le serie}
+
+$$
+\lim_{n \to +\infty} f(a_n) = L
+$$
+
+\subsection{Definizione con gli intorni}
+
+La funzione $f(x)$ si avvicina arbitrariamente ad L, a patto che $x$ sia abbastanza vicino a $x_0$.
+
+$$
+\forall \varepsilon > 0, \exists \delta > 0 :
+\forall n > \delta :
+\forall x \in \space ] x_0 - \delta, x_0 + \delta [ \space \backslash \space \{x_0\}
+\implies f(x) \in \space ] L - \varepsilon, L + \varepsilon [
+$$
+
+\begin{itemize}
+    \item $\varepsilon$ = intorno al limite della funzione per quel valore
+    \item $\delta$ = intorno al valore della funzione
+    \item $L$ = il valore del limite
+\end{itemize}
+
+\noindent
+Nel caso il limite $\in [-\infty, +\infty]$ allora usiamo la notazione $M > 0$ oppure $M < 0$ per indicare l'intorno.
+
+\subsection{Gerarchia degli infiniti}
+
+Seguono alcune funzioni in ordine crescente di chi permette a $n$ di tendere ad infinito più velocemente.
+
+\begin{enumerate}
+    \item $\ln(n)$
+    \item $n^a : (a > 0)$
+    \item $A^n : (a > 1)$
+    \item $n!$
+    \item $n^n$
+\end{enumerate}
+
+\subsection{Algebra dei limiti}
+
+Dati i limiti $L, M, x_0 \in [ -\infty , +\infty ]$, $\lim_{x \to x_0} f(x) = L$, $\lim_{x \to x_0} g(x) = M$ allora:
+
+\begin{itemize}
+    \item $\lim_{x \to x_0} (f(x) + g(x)) = L + M$
+    \item $\lim_{x \to x_0} (f(x) - g(x)) = L - M$
+    \item $\lim_{x \to x_0} (f(x) * g(x)) = L * M$
+\end{itemize}
+
+\subsection{Limiti notevoli}
+
+\begin{itemize}
+    \item $\lim_{x \to 0} \frac{\sin(x)}{x} = 1$
+    \item $\lim_{x \to 0} \frac{\cos(x) - 1}{x^2} = -\frac{1}{2}$
+    \item $\lim_{x \to 0} \frac{e^x - 1}{x} = 1$
+    \item $\lim_{x \to 0} \frac{\ln(1 + x)}{x} = 1$
+\end{itemize}
+
+\end{document}

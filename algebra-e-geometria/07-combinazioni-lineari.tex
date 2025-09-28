@@ -1,0 +1,58 @@
+\documentclass{subfiles}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{Combinazioni lineari}
+
+Dato un $\mathbb{V}$ $\mathbb{K}$-spazio vettoriale e degli elementi di $\mathbb{K}$ ($\lambda_i$), si dice combinazione lineare di $n$ vettori $\vec{v}_1, \dots, \vec{v}_n$ una qualunque somma del seguente tipo:
+
+$$
+V = \lambda_1 \vec{v}_1 + \dots + \lambda_n \vec{v}_n : \lambda_i \in \mathbb{K}
+$$
+
+\noindent
+Si può dire che i vettori della combinazione lineare sono:
+
+\begin{description}
+    \item[Linearmente dipendenti] se esiste una combinazione lineare a coefficienti non nulli che da come risultato un vettore nullo (i vettori sono paralleli)
+    \item[Linearmente indipendenti] se l'unica loro combinazione lineare che da come risultato il vettore nullo, è quella con tutti i coefficienti nulli (i vettori non sono paralleli)
+\end{description}
+
+\subsection{Span}
+
+Dati dei vettori $\vec{v}_1, \dots, \vec{v}_n$ di un $\mathbb{V}$ $\mathbb{K}$-spazio vettoriale, lo span è l'insieme di tutte le combinazioni lineari dei vettori con coefficienti $\lambda_i$:
+
+$$
+span(\vec{v}_1, \dots, \vec{v}_n) = \{ \lambda_1 \vec{v}_1 + \dots + \lambda_n \vec{v}_n : \lambda_i \in \mathbb{K} \}
+$$
+
+\noindent
+Lo $span(\vec{v}_1, \dots, \vec{v}_n)$ è un sottospazio vettoriale di $\mathbb{V}$ e si può dire "sottospazio vettoriale generato da $\mathbb{V}$".
+
+\subsection{Base}
+
+I vettori $\vec{v}_1, \dots, \vec{v}_n$ si dicono "sistema di generatori" di $\mathbb{V}$ se ogni vettore di $\mathbb{V}$ si può ottenere come combinazione lineare $\vec{v}_1, \dots, \vec{v}_n$.
+
+\noindent
+I vettori $\vec{v}_1, \dots, \vec{v}_n$ sono una base se:
+
+\begin{itemize}
+    \item Sono linearmente indipendenti
+    \item Sono un sistema di generatori
+\end{itemize}
+
+\noindent
+Se $\mathbb{V}$ ha una base costituita da $n$ vettori, allora si dice che la dimensione di $\mathbb{V}$ è $n$:
+
+$$
+dim \mathbb{V} = n
+$$
+
+\noindent
+Se conosciamo la dimensione dello spazio vettoriale $\mathbb{V}$ e troviamo un insieme di vettori linearmente indipendenti, allora possiamo dire che quell'insieme di vettori è una base di $\mathbb{V}$.
+
+\end{document}

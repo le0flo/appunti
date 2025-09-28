@@ -1,0 +1,203 @@
+\documentclass{subfiles}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{Funzionamento corretto di RSA}
+
+\subsection{Regole di corretto impiego}
+
+Ci sono 4 regole per ottenere una RSA a funzionamento corretto.
+
+\begin{enumerate}
+    \item Durata degli ingressi
+    \item Cambiamento dei bit di ingresso
+    \item Alee statiche
+    \item Codifica degli stati
+\end{enumerate}
+
+\subsubsection{Durata degli ingressi}
+
+Esiste, anche per le RSA, un limite superiore alla velocità di funzionamento della rete.
+Per calcolare il tempo minimo di durata di una configurazione binaria in ingresso, devo considerare il ritardo massimo tra $T_{pG_0}, \dots, T_{pG_{k-1}}$ che viene indicato con $T_{pG}$.
+In generale d'ingresso deve permanere per almeno $2T_{pG}$: la prima volta per calcolare lo stato futuro a partire dal vecchio stato presente, la seconda per renderlo stabile.
+Se sono presenti transizioni multiple e la più lunga prevede $t$ transizioni, il tempo sarà $(1 + t)T_{pG}$, ovvero $T_{pG}$ moltiplicato per il numero necessario di transizioni per rendere lo stato futuro stabile.
+
+\subsubsection{Cambiamento dei bit di ingresso}
+
+Il progetto e l'uso di una RSA devono prevedere che cambi solo un bit di ingresso alla volta.\\
+
+\noindent
+esempio:
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c| }
+\hline
+& 00 & 01 & 11 & 10 & $z$ \\
+\hline
+\hline
+A & A & C & B & D & 0 \\
+B & A & D & B & C & 0 \\
+C & A & C & C & C & 1 \\
+D & A & D & D & D & 0 \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent
+Se si parte dallo stato A e si riceve la sequenza $00-11-10$ (sapendo che non possiamo cambiare più di 1 bit alla volta):
+
+\begin{description}
+	\item[caso $00-01-11-10$] la rete raggiunge lo stato C ma troppo velocemente
+	\item[caso $00-10-11-10$] la rete finisce nello stato D invece che lo stato C
+\end{description}
+
+\noindent
+Cambiare più di bit di ingresso alla volta non è soltanto fisicamente impossibile, ma potrebbe causare un aumento nell'imprevedibilità della rete.
+Per evidenziare questa regola, si deve modificare la tabella di flusso, eliminando le configurazioni non adiacenti a quelle per cui lo stato è stabile.\\
+
+\noindent
+esempio:
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| }
+\hline
+& 00 & 01 & 11 & 10 \\
+\hline
+\hline
+A & A,0 & A,0 & B,0 & A,0 \\
+B & A,0 & C,0 & B,0 & A,0 \\
+C & A,0 & C,0 & D,- & A,0 \\
+D & A,- & A,- & D,1 & A,- \\
+\hline
+\end{tabular}
+
+$$\Downarrow$$
+
+\begin{tabular}{ |c|c|c|c|c| }
+\hline
+& 00 & 01 & 11 & 10 \\
+\hline
+\hline
+A & A,0 & A,0 & B,0 & A,0 \\
+B & -,- & C,0 & B,0 & A,0 \\
+C & A,0 & C,0 & D,- & -,- \\
+D & -,- & A,- & D,1 & A,- \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection{Alee statiche}
+
+L'alea statica può non essere un problema per reti di calcolo non all interno di anelli combinatori in retroazioni, però può introdurre stati spuri all'interno della sequenza di una RSA.
+Per eliminare a priori le alee statiche, è necessario usare la tecnica di copertura ridondante, per ottenere le espressioni SP e PS durante la sintesi.
+
+\subsubsection{Codifica degli stati}
+
+Le configurazioni binarie associate ad ogni coppia (stato presente e stato futuro) devono essere adiacenti.
+Se applicato a tutte le coppie, questo principio richiederebbe un codice molto ridondante, che utilizzerebbe più bit necessario.
+Fortunatamente si tratta di un vincolo spesso eccessivo: si può garantire il corretto funzionamento della rete anche in presenza di variazione contemporanea di più di un bit alla volta, per alcune configurazioni di ingresso.
+Si parla di corse critiche e corse non critiche.
+Per passare dalla tabella di flusso alla tabella delle transizioni, è necessario scegliere una codifica degli stati.
+Non tutte le codifiche sono valide.\\
+
+\noindent
+esempio:
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| }
+\hline
+& 00 & 01 & 11 & 10 \\
+\hline
+\hline
+A & A & B & A & A \\
+B & A & B & D & B \\
+C & A & C & C & C \\
+D & A & C & D & D \\
+\hline
+\end{tabular}
+
+$$\Downarrow$$
+
+\begin{tabular}{ |c|c|c|c|c| }
+\hline
+& 00 & 01 & 11 & 10 \\
+\hline
+\hline
+A=00 & 00 & 01 & 00 & 00 \\
+B=01 & 00 & 01 & 10 & 01 \\
+C=11 & 00 & 11 & 11 & 11 \\
+D=10 & 00 & 11 & 10 & 10 \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent
+Questa configurazione non è valida poiché le celle $B,11$ e $C,00$ non rispettano il vincolo di adiacenza tra stato presente e stato futuro.
+
+\subsection{Determinare se una configurazione è valida o meno}
+
+I segnali in retroazione per cui è stata prevista una modifica contemporanea di valore si trovano in una situazione di corsa.
+Una corsa può essere:
+
+\begin{description}
+    \item[Critica] se si possono raggiungere stabilità diverse
+    \item[Non critica] se passa da uno o più stati intermedi prima di raggiungere quello stabile
+\end{description}
+
+\noindent
+Le transizioni multiple non sono un problema affinché:
+
+\begin{itemize}
+    \item L'uscita non presenti andamenti diversi dal comportamento voluto durante la transizione
+    \item Gli ingressi rimangono stabili fino al raggiungimento dello stato stabile
+\end{itemize}
+
+\noindent
+esempio:\\
+
+\noindent
+Usando l'esempio di prima, se dallo stato $C,01$ cambia l'ingresso in $00$ lo stato dovrà passare per due possibili stati intermedi:
+
+\begin{itemize}
+\item $11 \to 01 \to 00$
+\item $11 \to 10 \to 00$
+\end{itemize}
+
+\noindent
+In entrambe i casi il comportamento non varia l'ingresso rimane stabile, perciò questa situazione di corsa non è critica.
+Invece se dallo stato $B,01$ cambia l'ingresso in $11$, lo stato ha questi due possibili stati intermedi:
+
+\begin{itemize}
+\item $01 \to 00 \to \times$
+\item $01 \to 11 \to \times$
+\end{itemize}
+
+\noindent
+Il comportamento varia e in entrambe i casi porta a risultati diversi e non desiderati.
+Questa situazione di corsa è critica.
+
+\subsection{Prevenzione a priori delle corse critiche}
+
+La presenza di corse critiche si ha nei casi in cui una colonna della tabella di flusso presenta più di uno stato stabile.
+In caso di colonne con una sola stabilità, se tutti gli stati non stabili riducono allo stato stabile, si avranno corse non critiche.
+Si possono eliminare le situazioni di corse critiche a priori seguendo le seguenti regole:
+
+\begin{enumerate}
+    \item Nelle colonne con una sola stabilità, si inserisce il simbolo dello stato stabile al posto di eventuali condizioni di indifferenza
+    \item Per le colonne con più stabilità, si traccia il grafo delle adiacenze:
+
+    \begin{itemize}
+        \item Un nodo associato per ogni stato
+        \item Un ramo orientato per ogni coppia stato presente-futuro
+    \end{itemize}
+
+    \item Si sovrappone il grafo ad una mappa con codici di Gray su righe e colonne (come per le mappe di Karnaugh) e si verifica se è possibile assegnare configurazioni adiacenti ad ogni coppia di stati coinvolta in una transazione
+    \item Se è impossibile soddisfare i vincoli di adiacenza, si cerca di ridurli ricorrendo a transazioni multiple
+    \item Se non ci si riesce, si incrementa il numero delle variabili di stato e si ritorna al punto 3
+\end{enumerate}
+
+\end{document}

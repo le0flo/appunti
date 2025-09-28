@@ -1,0 +1,79 @@
+\documentclass{subfiles}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{Integrali}
+
+\subsection{Definizione}
+
+Data una funzione $f(x)$, troviamo una funzione $F(x)$ tale che $DF(x) = f(x)$.\\
+
+\noindent
+Dato $c \in \mathbb{R}$:
+
+$$
+DF = D(F + c) \implies f = f + 0
+$$
+
+\subsection{Notazioni}
+
+\begin{itemize}
+	\item $\int f$
+	\item $\int f(x)dx$
+	\item $\int fdx$
+\end{itemize}
+
+\subsection{Integrali comuni}
+
+\begin{itemize}
+	\item $\int x^\alpha dx = \frac{x^{\alpha + 1}}{\alpha + 1} + c : \alpha \neq -1$
+	\item $\int \frac{1}{x} dx = \ln|x| + c : \alpha = -1$
+	\item $\int e^x dx = e^x + c$
+	\item $\int \sin(x) dx = -\cos(x) + c$
+	\item $\int \cos(x) dx = \sin(x) + c$
+	\item $\int \frac{1}{\sqrt{1 - x^2}} dx = \arcsin(x) + c$
+	\item $\int -\frac{1}{\sqrt{1 - x^2}} dx = \arccos(x) + c$
+	\item $\int \frac{1}{1 + x^2} dx = \arctan(x) + c$
+	\item $f(x), g(x); \alpha, \beta \in \mathbb{R} \rightarrow \int (\alpha f + \beta g)dx = \alpha \int fdx + \beta \int gdx$
+\end{itemize}
+
+\subsection{Integrazione per parti}
+
+Dati $F(x), G(x)$:
+
+$$
+\int (DF) * G dx = FG - \int F * (DG) dx
+$$
+
+\subsection{Cambiamento di variabile}
+
+Dati $F(x), G(x)$:
+
+$$
+\int DF(G(x)) * DG(x) dx = DF(G(x)) + c
+$$
+
+\subsection{Sostituzioni con tangente}
+
+Dato $t = \tan(\frac{x}{2})$:
+
+\begin{itemize}
+    \item $dx = \frac{2}{1 + t^2}dt$
+    \item $\sin(x) = \frac{2t}{1 + t^2}$
+    \item $\cos(x) = \frac{1 - t^2}{1 + t^2}$
+\end{itemize}
+
+\noindent
+Dato $t = \tan(x)$:
+
+\begin{itemize}
+    \item $dx = \frac{1}{1 + t^2}dt$
+    \item $\sin(x) = \dots$
+    \item $\cos(x) = \dots$
+\end{itemize}
+
+\end{document}

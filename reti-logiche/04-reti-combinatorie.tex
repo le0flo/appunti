@@ -1,0 +1,251 @@
+\documentclass{subfiles}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{Reti combinatorie}
+
+\subsection{Definizione}
+
+Una rete logica la dove l'uscita dipende unicamente dagli ingressi correnti.
+
+\subsection{Comportamento}
+
+La tabella della verità, con tutte le combinazioni di ingressi possibili e i rispettivi segnali d'uscita.
+
+\subsection{Struttura}
+
+I componenti che realizzano la rete logica indicata. Può essere dichiarata sotto forma di:
+
+\begin{description}
+	\item[Espressione] esempio: $z = (x \equiv y)(x \oplus w)$
+	\item[Schema logico]
+\end{description}
+
+\subsection{Dalle tabelle di verità a espressioni}
+
+Uno dei metodi per passare da una tabella di comportamento ad una espressione, è mediante l'uso delle così dette espressioni canoniche.
+
+\subsection{Espressioni canoniche}
+
+\begin{description}
+	\item[Espressione canonica SP] Somma di prodotti, prima forma canonica
+	\item[Espressione canonica PS] Prodotto di somme, seconda forma canonica
+\end{description}
+
+\subsubsection{Full adder}
+
+Una rete logica con 3 ingressi ($a,b,r$) e due uscite ($S,R$). Questo rappresenta:
+
+\begin{description}
+	\item[$S = 1$] quando il numero di uno dei suoi ingressi è dispari
+	\item[$R = 1$] quando in ingresso ci sono due o più 1
+\end{description}
+
+\noindent
+Questa rete è combinatoria perchè l'uscita dipende solo dagli ingressi attuali.
+Sarà una rete fondamentale per realizzare operazioni aritmetiche tra numeri binari.
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| }
+\hline
+$a$ & $b$ & $r$ & $S$ & $R$ \\
+\hline
+\hline
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 1 & 0 \\
+0 & 1 & 0 & 1 & 0 \\
+0 & 1 & 1 & 0 & 1 \\
+1 & 0 & 0 & 1 & 0 \\
+1 & 0 & 1 & 0 & 1 \\
+1 & 1 & 0 & 0 & 1 \\
+1 & 1 & 1 & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent
+Per trovare un'espressione, prendiamo come esempio l'output $S$:
+
+$$
+S = 1 \implies Riga_1, Riga_2, Riga_4, Riga_7
+$$
+
+\noindent
+Perciò $S = 1$ quando:
+
+\begin{itemize}
+    \item $C_1 = 1 \implies a = 0$, $b = 0$, $r = 0$
+    \item $C_2 = 1 \implies a = 0$, $b = 1$, $r = 0$
+    \item $C_4 = 1 \implies a = 1$, $b = 0$, $r = 0$
+    \item $C_7 = 1 \implies a = 1$, $b = 1$, $r = 1$
+\end{itemize}
+
+\noindent
+Che possiamo trasformare in:
+
+\begin{itemize}
+\item $C_1 = 1 \implies a' = 1$, $b' = 1$, $r' = 1$
+\item $C_2 = 1 \implies a' = 1$, $b = 1$, $r' = 1$
+\item $C_4 = 1 \implies a = 1$, $b' = 1$, $r' = 1$
+\item $C_7 = 1 \implies a = 1$, $b = 1$, $r = 1$
+\end{itemize}
+
+\noindent
+Che ci permette di ottenere:
+
+$$
+S = C_1 + C_2 + C_4 + C_7 = a'b'r' + a'br' + ab'r' + abr
+$$
+
+\noindent
+Usando lo stesso ragionamento otteniamo che:
+
+$$
+R = a'br + ab'r + abr' + abr
+$$
+
+\subsection{Notazione simbolica}
+
+\begin{description}
+	\item[Mintermine] il vettore dei bit, rappresentati mediante il loro indice, che assumono il valore 1
+	\item[Maxtermine] il vettore dei bit, rappresentati mediante il loro indice, che assumono il valore 0
+\end{description}
+
+\noindent
+Mintermine e maxtermine sono complementari tra loro.
+Una configurazione è o un mintermine o un maxtermine.
+Il pedice degli operatori $\Sigma$ e $\Pi$ corrisponde al numero di ingressi che danno origine al mintermine o maxtermine.\\
+
+\noindent
+esempio, Full adder:
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c| }
+\hline
+$i$ & $a$ & $b$ & $r$ & $S$ & $R$ \\
+\hline
+\hline
+0 & 0 & 0 & 0 & 0 & 0 \\
+1 & 0 & 0 & 1 & 1 & 0 \\
+2 & 0 & 1 & 0 & 1 & 0 \\
+3 & 0 & 1 & 1 & 0 & 1 \\
+4 & 1 & 0 & 0 & 1 & 0 \\
+5 & 1 & 0 & 1 & 0 & 1 \\
+6 & 1 & 1 & 0 & 0 & 1 \\
+7 & 1 & 1 & 1 & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+    \item $S(a,b,r) = \Sigma_3 m(1,2,4,7)$
+    \item $S(a,b,r) = \Pi_3 M(0,3,5,6)$
+    \item $R(a,b,r) = \Sigma_3 m(3,5,6,7)$
+    \item $R(a,b,r) = \Pi_3 M(0,1,2,4)$
+\end{itemize}
+
+\subsection{Equivalenza tra espressioni}
+
+L'equivalenza tra due espressioni si indica con:
+
+$$
+E_1 = E_2
+$$
+
+\noindent
+Si può definire tale se e solo se le espressioni esprimono la stessa funzione (o TdV).
+
+\subsection{Funzioni incomplete}
+
+Anche delle espressioni che forniscono una valutazione uguale, limitate al dominio di una funzione incompleta, sono dette equivalenti.
+Un esempio di funzione incompleta è un encoder da $1$ a $N$ bit.
+Prendendo come esempio più specifico, un encoder con 3 ingressi, a seconda del valore che assumono i bit di uscita delle configurazioni non rilevanti (fuori dal dominio della funzione), l'espressione risultante cambia.
+
+\subsection{Equivalenze notevoli}
+
+Proprietà della somma e del prodotto logico:
+
+\begin{description}
+    \item[Commutativa] $x+y = y+x$ e $x*y = y*x$
+    \item[Associativa] $(x+y)+z = x+y+z$ e $(x*y)*z = x*y*z$ (utile per ridurre il fan-in)
+    \item[Distributiva] $(x*y) + (x*z) = x*(y+z)$ e $(x+y) * (x+z) = x+(y*z)$ (valida soltanto in algebra binaria)
+    \item[Idempotenza] $x+x = x$ e $x*x = x$
+    \item[Identità] $x+0 = x$ e $x*1 = x$
+    \item[Limite] $x+1 = 1$ e $x*0 = 0$
+    \item[Involuzione] $(x')' = x$ (viene usata per amplificare il segnale)
+    \item[Limitazione] $x+x' = 1$ e $x * x' = 0$
+    \item[Combinazione] $xy + xy' = x$ e $(x+y) * (x+y') = x$
+    \item[Prima legge di De Morgan] $(x+y)' = x'*y'$
+    \item[Seconda legge di De Morgan] $(x*y)' = x'+y'$
+    \item[Consenso] $xy+x'z+yz = xy+x'z$ e $(x+y)*(x'+z)*(y+z) = (x+y)*(x'+z)$
+\end{description}
+
+\subsection{Manipolazione algebrica di espressioni}
+
+Data l'espressione per il ritorno di un full adder:
+
+$$
+R = a'br + ab'r + abr' + abr
+$$
+
+\noindent
+Essa può essere semplificata usando i seguenti passaggi:
+
+\begin{description}
+    \item[Distribuzione] $a'br + ab'r + ab*(r'+r)$
+    \item[Limitazione] $a'br + ab'r + ab1$
+    \item[Identità] $a'br + ab'r + ab$
+\end{description}
+
+\noindent
+Oppure una versione ancora più semplificata è:
+
+\begin{description}
+    \item[Idempotenza] $a'br + ab'r + abr' + abr + abr + abr$
+    \item[Distribuzione] $br*(a'+a) + ar*(b'+b) + ab*(r'+r)$
+    \item[Limitazione] $br1 + ar1 + ab1$
+    \item[Identità] $br + ar + ab$
+\end{description}
+
+\noindent
+Rispetto all'espressione originale $R = a'br + ab'r + abr' + abr$, da una rete formata da:
+
+\begin{itemize}
+    \item 1 OR da 4 ingressi
+    \item 4 AND da 3 ingressi
+    \item 3 NOT
+\end{itemize}
+
+\noindent
+Siamo passati, usando l'espressione $R = br + ar + ab$, ad una rete composta da:
+
+\begin{itemize}
+    \item 1 OR a 3 ingressi
+    \item 3 AND da 2 ingressi
+\end{itemize}
+
+\subsection{Il problema della sintesi}
+
+La sintesi è il processo per individuare l'espressione "migliore" per la realizzazione della funzione assegnata.
+"Migliore" può essere definito con criteri anche opposti tra loro, come:
+
+\begin{itemize}
+    \item Rapidità di progetto
+    \item Massima flessibilità
+    \item Massima velocità
+    \item Minima complessità
+\end{itemize}
+
+\noindent
+Abbiamo due possibili obbiettivi:
+
+\begin{description}
+	\item[Reti di costo minimo] Massima velocità e Minima complessità
+	\item[Reti programmabili] Rapidità di progetto e Massima flessibilità
+\end{description}
+
+\end{document}

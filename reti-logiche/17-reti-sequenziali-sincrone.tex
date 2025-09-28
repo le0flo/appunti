@@ -1,0 +1,142 @@
+\documentclass{subfiles}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{Reti sequenziali sincrone}
+
+\subsection{Vantaggi e limiti di una RSA}
+
+Il vantaggio principale è che la rete risponde non appena cambiano gli ingressi, grazie ai segnali in retroazione diretta.
+Avere i segnali in retroazione diretta, per una rete, porta ad una serie di malfunzionamenti dovuti principalmente ai ritardi con cui si aggiornano i segnali in retroazione.
+La difficoltà di realizzare un progetto cresce molto al crescere della complessità della funzione da realizzare.
+In pratica le RSA vengono usate soltanto per realizzare memorie, latch e flip-flop.
+
+\subsection{Reti sequenziali sincrone}
+
+Mentre in una rete sequenziale asincrona, l'aggiornamento dello stato avviene immediatamente, anche durante il transitorio, nelle reti sequenziali sincrone, l'aggiornamento dello stato avviene quando tutti i segnali di stato sono a regime.
+Questo permette alle RSS di sfruttare i seguenti vantaggi:
+
+\begin{itemize}
+    \item Espressioni minime
+    \item Codice d'ingresso arbitrario
+    \item Codice di stato arbitrario
+    \item Progettazione più semplice rispetto alle RSA
+\end{itemize}
+
+\subsection{Campionamento periodico}
+
+Per leggere lo stato futuro ed aggiornare lo stato presente a regime, bisogna utilizzare la tecnica del campionamento periodico.
+Campionare, o memorizzare, è l'azione che ci permette di leggere lo stato futuro ed aggiornare lo stato presente, ed è una azione che va eseguita periodicamente, perciò ad intervalli regolari, sufficientemente lunghi.
+Grazie al campionamento, lo stato presente si aggiorna ogni $T_0$ unità di tempo, con il valore che lo stato futuro ha assunto alla fine del periodo, filtrando tutte le oscillazioni e le corse.
+Per campionare con periodo $T_0$, si possono utilizzare $k$ flip-flop D (tanti quanti i bit di stato da memorizzare), il cui ingresso $CLK$ è collegato ad un segnale periodico di clock, con periodo $T_0$, che posso generare da un circuito oscillatore, con frequenza $\frac{1}{T_0}$.
+
+\subsection{Struttura generale di una RSS}
+
+Ogni rete combinatoria con anelli in retroazione su cui sono inseriti FF-D comandati da un generatore di clock in comune è quindi una RSS.
+La rete ha $k$ bit di stato se ci sono $k$ segnali in retroazione.
+I FF-D agiscono da memoria dello stato presente e ritardo costante nel suo aggiornamento.
+Stato futuro e stato presente sono entrambi osservabili.
+Sequenza tipica di lavoro di una rete sequenziale sincrona:
+
+\begin{enumerate}
+    \item Al fronte di salita del segnale di clock, vengono campionati i bit di stato futuro dai FF-D
+    \item Dopo un tempo pari al tempo di risposta dei FF-D, lo stato futuro diventa stato presente
+    \item L'eventuale cambiamento dello stato presente e l'eventuale cambiamento degli ingressi porta la rete a calcolare una nuova uscita e un nuovo stato futuro (gli stati spuri intermedi, se esistenti, vengono ignorati dalla rete)
+    \item I nuovi bit di stato futuro sono a regime con un anticipo sulla fine del periodo $T_0$ pari almeno al tempo di set-up dei FF-D, pronti per essere campionati alla fine del periodo e iniziare un nuovo ciclo
+\end{enumerate}
+
+\subsection{Temporizzazione di una RSS}
+
+Le RSS non funzionano ad inseguimento degli ingressi come le reti combinatorie o le RSA.
+Ogni stato presente è stabile per almeno un periodo di clock.
+Lo stato futuro e l'uscita possono modificarsi anche se non cambiano gli ingressi.
+Ciò che fa evolvere stato ed uscita di una RSS è l'arrivo di un fronte di salita del clock e nient'altro.\\
+
+\noindent
+L'unico vincolo in una RSS è che il periodo di clock $T_0$ ha un valore minimo.
+I nuovi ingressi e lo stato presente devono avere tempo di propagarsi attraverso la funzione $G$.
+Oltre al ritardo della rete $G$, anche gli FF-D impongono dei vincoli su $T_0$:
+
+\begin{itemize}
+    \item I bit di stato futuro $Y_{0 \dots k-1}$ devono rimanere costanti sia durante $t_{su}$, sia durante $t_h$
+    \item I bit di stato presente $y_{0 \dots k-1}$ saranno ingressi stabili per $G$ dopo $t_r$ dal fronte del clock
+\end{itemize}
+
+\noindent
+Per garantire il corretto funzionamento della rete, il periodo $T_0$ deve essere maggiore della somma di:
+
+\begin{itemize}
+\item tempo necessario per avere ingressi a regime
+\item ritardo della funzione $G$
+\item tempo di set-up dei FF-D
+\end{itemize}
+
+\subsection{Finite State Machine}
+
+Le RSS sono un caso particolare di automa a stati finiti $M$, ovvero un sistema matematico:
+
+$$
+FSM = \{ I,U,S,F,G \}
+$$
+
+\begin{description}
+    \item[$I$] alfabeto di ingresso
+    \item[$U$] alfabeto di uscita
+    \item[$S$] insieme degli stati
+\end{description}
+
+\begin{description}
+    \item[$F: S \times I \to U$] funzione di uscita
+    \item[$G: S \times I \to S$] funzione di aggiornamento dello stato interno
+\end{description}
+
+\noindent
+In questo caso la memoria che mantiene il vecchio stato $s$ fino a quando non è necessario sostituirlo con il nuovo stato $s^*$ è realizzata dai FF-D.
+È possibile realizzare RSS in accordo al modello di Mealy o al modello di Moore e la scelta ha impatti più significativi di quanti non ne avesse per le RSA.
+
+\subsection{Sincronizzazione di ingressi asincroni}
+
+Il modello delle RSS assume ingressi sincroni, ovvero che variano una sola volta in ogni ciclo di clock al fronte del clock stesso.
+Non è possibile rendere sincrono un segnale che varia con una frequenza maggiore del clock stesso, perciò in questo caso bisogna aumentare la frequenza di clock.
+Se invece la frequenza con cui varia l'ingresso è minore del di quella del clock, allora la sincronizzazione è possibile e il risultato è il segnale $X_{sync}$, le cui variazioni rispecchiano quelle di $X$ (il segnale asincrono), ma avvengono in corrispondenza dei fronti di salita del clock.\\
+
+\noindent
+Una rete che realizza un segnale $X_{sync}$ partendo da un ingresso asincrono $X$ viene detta sincronizzatore.
+Il più semplice tra i sincronizzatori è un FF-D.
+Per diminuire la probabilità che la rete veda un segnale in metastabilità, il sincronizzatore viene spesso realizzato con 2 o più FF-D in cascata.
+
+\subsection{Segnali $A\_$}
+
+Un segnale di ingresso asincrono viene indicato dal suo nome preceduto da $A\_$.\\
+
+\noindent
+esempio:
+
+\begin{itemize}
+    \item $A\_RESET$ e $A\_RES$ $\implies$ Segnali di reset asincroni
+    \item $RESET$ e $RES$ $\implies$ Segnali di reset sincroni
+\end{itemize}
+
+\subsection{Sintesi di una RSS}
+
+\subsubsection{Sintesi formale}
+
+Il procedimento di sintesi formale di una rete sequenziale sincrona è formato da 5 passi e consente di dedurre lo schema logico dalle specifiche di comportamento:
+
+\begin{enumerate}
+    \item Comprensione delle specifiche e individuazione del grafo degli stati
+    \item Definizione della tabella di flusso a partire dal grafo degli stati
+    \item Codifica degli stati e definizione della tabella delle transizioni
+    \item Sintesi della parte combinatoria
+    \item Disegno dello schema logico
+\end{enumerate}
+
+\subsubsection{Sintesi diretta}
+
+La progettazione diretta di una RSS si esegue combinando RSS notevoli più semplici (registri, shift register, contatori, $\dots$) tramite opportuna logica combinatoria.
+
+\end{document}

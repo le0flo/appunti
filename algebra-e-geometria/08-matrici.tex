@@ -1,0 +1,157 @@
+\documentclass{subfiles}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{Matrici}
+
+Possiamo definire una matrice come una "griglia di numeri"
+
+$$
+a_{ij} \in \mathbb{K} =
+\begin{pmatrix}
+a_{11} & a_{12} & \dots & a_{1n}\\
+a_{21}\\
+\vdots\\
+a_{m1} & a_{m2} & \dots & a_{mn}
+\end{pmatrix}
+$$
+
+\noindent
+Una matrice $m \times n$ dove $m$ sono le righe e $n$ sono le colonne
+
+\subsection{Notazione}
+
+$$
+A = M(m,n,\mathbb{K}) = (a_{ij}) : i = 1 \dots m : j = 1 \dots n
+$$
+
+\begin{itemize}
+	\item $A^i$ è la $i$-esima colonna $\in \mathbb{K}^m \to A = \begin{pmatrix} A^1 | \dots | A^n \end{pmatrix}$
+	\item $A_j$ è la $j$-esima colonna $\in \mathbb{K}^n \to A = \begin{pmatrix} A_1 \\ - \\ \vdots \\ - \\ A_m \end{pmatrix}$
+\end{itemize}
+
+\subsection{Pivot}
+
+Data una riga $R_i$ di una matrice $M(m,n,\mathbb{K})$, il pivot di $R_i$ è il primo coefficiente non nullo partendo da sinistra.
+
+\subsection{Matrice a scalini}
+
+Data una matrice $M(m,n,\mathbb{K})$, essa può essere detta "a scalini" se $\forall i$, considerando la $i$-esima riga $R_i$ e il rispettivo pivot $a_{ij}$:
+
+$$
+a_{kh} = 0\ \forall
+\begin{cases}
+k > i\\
+h < j
+\end{cases}
+$$
+
+\noindent
+esempio:
+
+$$
+\begin{pmatrix}
+1 & 1 & 0 & 0 & 1\\
+0 & 1 & 1 & 0 & 1\\
+0 & 0 & 1 & 1 & 1\\
+0 & 0 & 0 & 1 & 1\\
+0 & 0 & 0 & 0 & 1\\
+\end{pmatrix}
+$$
+
+\subsection{Rango}
+
+Dato $A \in M(m,n,\mathbb{K})$:
+
+$$
+rg(A)= dim\ span(A^1, \dots, A^n, \vec{b}) \leq \mathbb{K}^m
+$$
+
+\begin{itemize}
+    \item Se $A'$ è una matrice ottenuta da $A$ usando le mosse di Gauss, allora $rg(A') = rg(A)$
+    \item $rg(A) \leq min(m,n)$
+    \item $rgr(A) = dim\ span(A_1, \dots, A_m) \leq n :$ rango per riga
+    \item $rgr(A') = rgr(A)$, se $A'$ è una matrice ottenuta usando le mosse di Gauss
+\end{itemize}
+
+\subsection{Trasposta}
+
+La trasposta di una matrice:
+
+$$
+A \in M(m,n,\mathbb{K}) = (a_{ij}) \implies {}^tA \in M(n,m,\mathbb{K}) = (a_{ji})
+$$
+
+\subsection{Sotto-matrice}
+
+La sotto-matrice $B$ di $A$ è una matrice $B \in M(k,h,\mathbb{K})$ con $k \leq m$ e $h \leq n$, ottenuta da $A$ togliendo $m - k$ righe e $n - h$ colonne.
+
+\subsection{Matrice dei cofattori}
+
+Dato $A \in M(m,n,\mathbb{K})$:
+
+$$
+C_{ij} (A) \in M(m-1, n-1, \mathbb{K})
+$$
+
+\noindent
+La matrice dei cofattori di una matrice $A$ si ottiene togliendo la $i$-esima riga e la $j$-esima colonna dalla matrice $A$.
+
+\begin{itemize}
+    \item se $B \leq A$, allora $rg(B) \leq rg(A)$
+    \item $\forall$ combinazione lineare di $A^1,  \dots, A^n$ ottengo una combinazione lineare di $B^1, \dots, B^k$
+\end{itemize}
+
+\subsection{Determinante}
+
+Dato $A \in M(n,\mathbb{K})$:\\
+
+\noindent
+Il determinante di $A$ è uno scalare che si può ottenere soltanto da matrici quadrate, e si ottiene nei seguenti modi:
+
+\begin{enumerate}
+	\item $n = 1 \implies det A = a$
+	\item $n = 2 \implies det A = ad - bc$
+	\item $n \geq 3 \implies det A = \sum^{n}_{j=1} (-1)^{j+1} a_{1j} \ det C_{1j} (A)$
+\end{enumerate}
+
+\noindent
+Per le matrici triangolare superiore, matrici diagonali e matrici identità:
+
+$$
+det A = \text{ prodotto degli elementi sulla diagonale}
+$$
+
+\noindent
+Se una matrice $A$ ha due righe o colonne uguali $\implies det A = 0$
+
+\subsection{Determinante e le mosse di Gauss}
+
+Il determinante è una funzione che prende in entrata una matrice e restituisce uno scalare.
+Questa funzione si relaziona con le mosse di Gauss, nella seguente maniera:
+
+\begin{enumerate}
+	\item $A_i \leftrightarrow A_j \implies det(A') = -det(A)$
+	\item $A_i \rightarrow \lambda A_i \implies det(A') = \lambda det(A)$
+	\item $A_i \rightarrow A_i + \lambda A_j \implies det(A') = det(A)$
+\end{enumerate}
+
+\subsection{Moltiplicazione righe per colonne}
+
+Date due matrici generiche, generalmente è impossibile moltiplicarle.
+Se le matrici assumono le seguenti forme, allora la moltiplicazione è possibile:
+
+\begin{description}
+	\item $A \in M(m,n,\mathbb{K})$
+	\item $B \in M(n,k,\mathbb{K})$
+\end{description}
+
+$$
+AB \in M(m,k,\mathbb{K})
+$$
+
+\end{document}

@@ -1,0 +1,61 @@
+\documentclass{subfiles}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{Reti programmabili}
+
+\subsection{LSI e VLSI}
+
+Rispettivamente Large Scale Integration e Very Large Scale Integration.
+Appartengono a queste categorie i chip composti da milioni di gate.
+Sono molto costosi da produrre e per ammortizzare le spese necessitano di essere prodotti e, soprattutto, venduti in massa.
+
+\subsection{Reti combinatorie programmabili}
+
+Una rete combinatoria in grado di presentare diverse relazioni ingresso/uscita selezionabili mediante l'attribuzione di una determinata configurazione di valori ad un gruppo di segnali interni, detti bit di programmazione.
+
+\subsection{Tabella della verità come memoria non modificabile}
+
+Le reti programmabili possono essere usate per realizzare reti combinatorie a partire da memorie immutabili.
+Una memoria è un circuito che realizza fisicamente un array, ovvero una lista di dati indicizzabile con un intero (indirizzo).
+Una tabella della verità può essere interpretata come una memoria non modificabile, ovvero una lista di $2^n$ dati immutabili, tra cui gli $n$ ingressi mi permettono di scegliere.
+
+\subsubsection{Memoria di sola lettura, ROM}
+
+Una Read Only Memory è un circuito che realizza una memoria a sola lettura, ovvero che contiene ad ogni indirizzo un dato fissato.
+Esse sono dunque delle reti programmabili in grado di realizzare qualsiasi funzione di $n$ variabili.
+Le ROM sono programmabili una sola volta (OTP, one time programmable) e sono quindi memorie di sola lettura non volatili.
+
+\subsubsection{Memorie non volatili, a sola lettura e programmabili}
+
+\begin{description}
+    \item[ROM] programmabile una volta, soltanto dal costruttore, fuori dal circuito
+    \item[PROM] programmabile una volta, dall'utente, fuori dal circuito
+    \item[EPROM] programmabile più volte, dall'utente, fuori dal circuito
+    \item[EEPROM / FLASH] programmabile più volte, dall'utente, dentro il circuito
+\end{description}
+
+\subsubsection{CPLD e FPGA}
+
+Le EEPROM sono un esempio di CLB, Configurable Logic Block.
+Cambiando i bit di programmazione possiamo sintetizzare funzioni diverse.
+La loro evoluzione ha portato a rendere disponibili delle versioni più avanzate, come i Complex PLD e gli FPGA, Field Programmable Gate Array.
+In un FPGA, anche le connessioni tra CLB sono programmabili.
+
+\subsection{Hardware description language, HDL}
+
+I circuiti programmabili e le connessioni in CPLD e FPGA sono configurati a partire da file scritti in linguaggi di descrizione hardware.
+Sono dei linguaggi di programmazione a tutti gli effetti, specializzati per gestire la concorrenza intrinseca a livello hardware e la nozione di tempo.
+I progetti sono poi passati al sintetizzatore, che realizza una sintesi mappabile sui gate, le altre risorse e le connessioni disponibili in uno specifico FPGA.
+I due principali HDL sono:
+
+\begin{itemize}
+    \item VHDL
+    \item Verilog
+\end{itemize}
+
+\end{document}

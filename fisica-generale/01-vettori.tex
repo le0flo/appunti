@@ -1,0 +1,195 @@
+\documentclass{subfiles}
+
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\graphicspath{ {fisica-generale/assets/} }
+
+\begin{document}
+
+\section{Vettori}
+
+\subsection{Notazione}
+
+$\vec{a} \in \mathbb{R}^n$
+
+$$
+\vec{a} = (a_1, a_2, \dots, a_n) : a_j \in \mathbb{R}^n
+$$
+
+\subsection{Definizioni}
+
+\begin{description}
+    \item[Quantità scalari] sono le quantità definite da un numero (un vettore unidimensionale) e un'unità di misura (esempio: temperatura)
+    \item[Quantità vettoriali] definite da un vettore $\vec{a} \in \mathbb{R}^n : n > 1$ e un unità di misura (esempio: distanza)
+    \item[Quantità tensoriali] ??
+\end{description}
+
+\subsection{Rappresentazione grafica}
+
+Un vettore è rappresentato da una freccia, che ha:
+
+\begin{itemize}
+    \item Una direzione
+    \item Un verso
+    \item Modulo (un valore assoluto ed è la lunghezza della suddetta freccia)
+\end{itemize}
+
+\noindent
+Dato un $\vec{a}$, il suo inverso è un vettore che ha uguale modulo ma verso opposto.
+
+\subsection{Somma}
+
+\includegraphics[width=\columnwidth]{somma-di-vettori}
+
+Regola del parallelogramma:
+
+\includegraphics[width=\columnwidth]{regola-del-parallelogramma}
+
+\subsection{Prodotto per scalare}
+
+Dati $\lambda \in \mathbb{R}$ e $\vec{a} \in \mathbb{R}^n$, $\vec{b} = \lambda \vec{a} \in \mathbb{R}^n$ è un vettore con stessa direzione di $\vec{a}$ se:
+
+\begin{itemize}
+	\item Se $\lambda > 0$, stesso verso
+	\item Se $\lambda < 0$, verso opposto
+\end{itemize}
+
+\noindent
+Il modulo di $\vec{b}$ è uguale a $|\lambda|$ volte quello di $\vec{a}$
+
+\subsection{Prodotto scalare}
+
+Un operazione che prende due vettori e restituisce un numero.
+
+\includegraphics[width=\columnwidth]{prodotto-scalare}
+
+$$
+\vec{a} * \vec{b} = |\vec{a}| * |\vec{b}| * \cos{\theta}
+$$
+
+\noindent
+Dove $|\vec{a}|$ è il modulo di $|\vec{a}|$ (similmente per $\vec{b}$) e $\theta$ è l'angolo compreso tra $\vec{a}$ e $\vec{b}$.
+
+\subsubsection{Proprietà}
+
+\begin{itemize}
+    \item Commutativa: $\vec{a} * \vec{b} = \vec{b} * \vec{a}$
+    \item Distributiva: $\vec{a} * (\vec{b}+\vec{c}) = \vec{a}*\vec{b} + \vec{a}*\vec{c}$
+    \item $\forall \lambda \in \mathbb{R} : \lambda (\vec{a} * \vec{b}) = (\lambda\vec{a}) * \vec{b} = \vec{a} * (\lambda\vec{b})$
+\end{itemize}
+
+\subsection{Componente}
+
+Dato $\vec{a} \in \mathbb{R}^n$ e vettore di modulo 1 (vettore unitario)  $\vec{u} \in \mathbb{R}^n$, definiamo la componente di $\vec{a}$ lungo $\vec{u}$ il numero:
+
+$$
+\vec{a} * \vec{u} = |\vec{a}| * |\vec{u}| * \cos{\theta} = |\vec{a}| * \cos{\theta}
+$$
+
+\subsubsection{Versore}
+
+Chiamiamo versori i vettori di modulo 1, e li indichiamo con $\hat{u}$.
+
+\subsubsection{Vettore componente}
+
+Dati $\vec{a}, \hat{u}$, definiamo il vettore componente $\vec{a}_u$ come il vettore lungo $\hat{u}$ con modulo $|\vec{a} * \hat{u}|$.
+
+$$
+\vec{a}_u = a_{\hat{u}} * \hat{u}
+$$
+
+\noindent
+Il modulo di un vettore (o norma) è legato al prodotto scalare da $|a^2| = \vec{a} * \vec{a}$, infatti $\vec{a} * \vec{a} = |a| * |a| * \cos{\theta}$.
+
+\subsection{Prodotto vettoriale}
+
+Un operazione che prende 2 vettori e restituisce un vettore in $\mathbb{R}^3$.
+
+$$
+\vec{a} \wedge \vec{b} \text{ ("a vettor b")}
+$$
+
+\noindent
+$\vec{a} \wedge \vec{b}$ è definito come il vettore che vive lungo la direzione ortogonale al piano individuato da $\vec{a}$ e $\vec{b}$, che ha modulo $|\vec{a}|*|\vec{b}|*\sin{\theta}$ e un verso determinato dalla "regola della mano destra".
+
+\includegraphics[width=\columnwidth]{prodotto-vettoriale}
+
+\subsubsection{Proprietà}
+
+\begin{itemize}
+    \item Distributiva: $(\vec{a} * \vec{b}) \wedge \vec{c} = \vec{a} \wedge \vec{c} + \vec{b} \wedge \vec{c}$
+    \item Non vale la proprietà associativa: $(\vec{a} \wedge \vec{b}) \wedge \vec{c} \neq \vec{a} \wedge (\vec{b} \wedge \vec{c})$
+\end{itemize}
+
+\subsection{Vettori e coordinate}
+
+Possiamo passare ad una trattazione algebrica dei vettori introducendo un sistema di riferimento.
+Questo significa introdurre un insieme di vettori privilegiato ed esprimere ogni altro vettore in termini delle componenti corrispondente.
+
+\noindent
+In una dimensione, un sistema di riferimento è dato da un singolo versore $\hat{u}$:
+
+\includegraphics[width=\columnwidth]{vettori-e-coordinate-una-dimensione}
+
+\noindent
+In due dimensioni, un sistema di riferimento è dato da due versori ortogonali:
+
+\includegraphics[width=\columnwidth]{vettori-e-coordinate-due-dimensioni}
+
+\noindent
+In tre dimensioni, un sistema di riferimento è determinato da tre versori ortogonali (di solito i versori sono indicati come $\hat{x}, \hat{y}, \hat{z}$ oppure come $\hat{i}, \hat{j}, \hat{k}$):
+
+\includegraphics[width=\columnwidth]{vettori-e-coordinate-tre-dimensioni}
+
+\subsection{Operazioni tra vettori in coordinate}
+
+Le coordinate sono le componenti di un vettore rispetto ai versori (o "assi") del sistema di riferimento.
+
+\begin{description}
+	\item[Somma] $\vec{a} = (a_x, a_y, a_z), \vec{b} = (b_x, b_y, b_z)$
+
+	$$
+	\vec{a} + \vec{b} = (a_x+b_x, a_y+b_y, a_z+b_z)
+	$$
+
+	\item[Prodotto per scalare] $\lambda \in \mathbb{R}, \vec{a} \in \mathbb{R}^3, \vec{a} = (a_x, a_y, a_z)$
+
+	$$
+	\lambda \vec{a} = (\lambda a_x, \lambda a_y, \lambda a_z)
+	$$
+
+	\item[Prodotto scalare] $\vec{a} = a_i \hat{i} + a_j \hat{j} + a_k \hat{k}, \vec{b} = b_i \hat{i} + b_j \hat{j} + b_k \hat{k}$
+
+	$$
+    \begin{matrix}
+    \vec{a} * \vec{b} = a_ib_i + a_jb_j + a_kb_k \\
+    \vec{a} * \vec{b} = |\vec{a}| |\vec{b}| \cos{\theta} \\
+    \theta = \arccos{[\frac{a_ib_i + a_jb_j + a_kb_k}{|\vec{a}||\vec{b}|}]}
+    \end{matrix}
+    $$
+
+    \item[Prodotto vettoriale] $\vec{a} = a_i \hat{i} + a_j \hat{j} + a_k \hat{k}, \vec{b} = b_i \hat{i} + b_j \hat{j} + b_k \hat{k}$
+
+    $$
+    \vec{a} \wedge \vec{b} = (a_jb_k - a_kb_j, a_kb_i - a_ib_k, a_ib_j - a_jb_i)
+    $$
+\end{description}
+
+\subsection{Regola mnemonica del determinante}
+
+Le componenti di $\vec{a} \wedge \vec{b}$ si ottengono calcolando il determinante di:
+
+$$
+\det{
+\begin{pmatrix}
+\hat{i} & \hat{j} & \hat{k} \\
+a_i & a_j & a_k \\
+b_i & b_j & b_k
+\end{pmatrix}
+} = \hat{i} (a_jb_k - a_kb_j) - \hat{j} (a_ib_k - a_kb_i) + \hat{k} (a_ib_j - a_jb_i)
+$$
+
+\end{document}

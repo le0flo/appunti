@@ -1,0 +1,39 @@
+\documentclass{subfiles}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{Riconoscitore di sequenze}
+
+Progettare una rete sincrona che controlla se gli ultimi $n$ byte che si sono presentati sull'ingresso $IN[7 \dots 0]$ mentre il segnale $EN$ era a livello logico $1$ erano uguali ad una sequenza predefinita.
+Nel caso sia rilevata la sequenza desiderata, nel periodo di clock successivo a quello in cui si è ricevuto l'ultimo valore, l'uscita $OUT$ deve essere portata al valore logico $1$ e rimanere tale finché non viene asserito il segnale asincrono di reset $A\_RESET$.
+In seguito ad un reset, la rete deve riprendere immediatamente il controllo della sequenza di ingresso come se non fosse stato ricevuto alcun carattere.
+
+\subsection{Versione base}
+
+Un modo, inefficiente, per riconoscere sequenze secondo Moore negli ultimi $n$ dati di ingresso è quello di memorizzare in uno shift register a $n$ stadi i dati stessi e poi verificare ad ogni clock se gli $n$ dati rappresentano la sequenza predefinita.
+Se i dati hanno parallelismo $k$, saranno necessari $k * N$ FF-D.
+
+\subsection{Versione ottimizzata}
+
+La soluzione precedente non ottimizza l'uso delle risorse.
+Non è necessario memorizzare l'intera lunghezza $n$ del dato, servirebbe semplicemente sapere se il primo numero è apparso $n$ clock prima, il secondo $n-1$ clock prima, $\dots$.
+Un modo migliore per riconoscere una sequenza secondo Moore negli ultimi $n$ dati di ingresso è quindi quello di memorizzare in vari shift register a $n$, $n-1$, $\dots$, $1$ bit, se si è visto il simbolo richiesto $n$, $n-1$, $\dots$, $1$ clock prima, infine verificare ad ogni clock se gli $n$ bit sono tutti a $1$.
+Questa soluzione richiede il seguente numero di FF-D:
+
+$$
+n + (n-1) + \dots + 1 = n!
+$$
+
+\subsection{Versione con i contatori}
+
+Si può ridurre ulteriormente l'utilizzo di FF-D rispetto alle versioni precedente, usando un contatore con $EN$ e $LD$.
+Non è necessario ricordare se $n$ clock prima abbiamo visto il dato $k$.
+In ogni momento la rete aspetta un simbolo che la rete attende e che la fa avanzare al passo successivo, ovvero fa incrementare di 1 il numero di simboli corretti visti in sequenza.
+Il modo più efficiente per riconoscere sequenze secondo Moore negli ultimi $n$ dati di ingresso è quindi quello di memorizzare in un contatore x$(n+1)$ se si è visto 0, 1, 2, $\dots$, o tutti e $n$ i simboli della sequenza, abilitando il conteggio quando la rete riceve un simbolo corretto e resettando a 0 quando compare un simbolo fuori sequenza.
+Così facendo sono necessari soltanto $[log_2 (n+1)]$ FF-D.
+
+\end{document}

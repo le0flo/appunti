@@ -1,0 +1,77 @@
+\documentclass{subfiles}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{Vettori}
+
+I vettori sono degli elementi di uno spazio vettoriale, perciò possono essere sommati tra di loro e moltiplicati per dei numeri detti scalari.
+
+\begin{description}
+    \item $\vec{v} = (x_1, y_1)$
+    \item $\vec{w} = (x_2, y_2)$
+\end{description}
+
+\begin{description}
+    \item[Somma] $\vec{v} + \vec{w} = (x_1 + x_2, y_1 + y_2)$
+    \item[Moltiplicazione] $\lambda \vec{v} = (\lambda x_1, \lambda y_1)$
+\end{description}
+
+\subsection{Spazio vettoriale}
+
+Lo spazio vettoriale è una struttura algebrica composta da:
+
+\begin{itemize}
+\item Un campo $\mathbb{K}$ di elementi scalari
+\item Un insieme di vettori $\mathbb{V}$
+\item due operazioni binarie interne (solitamente somma $+$ e prodotto $*$)
+    \item $+: \mathbb{V} \times \mathbb{V} \to \mathbb{V}$
+    \item $*: \mathbb{K} \times \mathbb{V} \to \mathbb{V}$
+\end{itemize}
+
+\noindent
+Un spazio vettoriale è tale affinché $(\mathbb{V}, +)$ sia commutativo.
+
+\subsection{Sottospazio vettoriale}
+
+Dati $\mathbb{K}$ campo, $V$ $\mathbb{K}$-spazio vettoriale e $W \subseteq V$, $W$ è un sottospazio vettoriale di $V$ se:
+
+\begin{itemize}
+    \item $\vec{0} \in W$
+    \item $\forall \ \vec{v}, \vec{w} \in W : \vec{v} + \vec{w} \in W$
+    \item $\forall \ \lambda \in \mathbb{K} : \forall \ \vec{v} \in W : \lambda \vec{v} \in W$
+\end{itemize}
+
+\subsection{Formula di Grassman}
+
+La formula di Grassman è una relazione tra le dimensioni di due sottospazi di uno stesso spazio vettoriale di dimensione finita.
+
+$$
+\dim(U + W) = \dim U + \dim W - \dim(U \wedge W)
+$$
+
+\subsection{Somma diretta}
+
+$$
+U \oplus W \text{ se } U \cap W = \{ \vec{0} \}
+$$
+
+\noindent
+$U$ e $W$ sono in somma diretta se e solo se:
+
+$$
+B_u \cup B_w = B_{u+w} : \text{ è una base di } U + W
+$$
+
+\subsection{Sottospazio affine}
+
+Un sottospazio affine di $V$ è un sottoinsieme nella forma:
+
+$$
+\mathbb{A} = \{ \vec{v} + \vec{w} : \vec{w} \in W \}
+$$
+
+\end{document}

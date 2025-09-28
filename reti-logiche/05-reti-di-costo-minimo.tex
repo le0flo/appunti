@@ -1,0 +1,152 @@
+\documentclass{subfiles}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{Reti di costo minimo}
+
+\subsection{Ritardi e velocità}
+
+Quando cambia un ingresso di un gate, l’uscita non cambia istantaneamente, ma dopo un tempo $\tau_p$ che dipende dalla tecnologia utilizzata.
+Questo ritardo varia da gate a gate e anche se il passaggio è da H a L o viceversa.
+Nel caso peggiore, il ritardo totale della rete è dato dalla somma dei ritardi dei gate sul percorso più lungo tra ingressi e uscite.
+Si assegna il ritardo peggiore alla rete complessiva.
+
+\subsection{Complessità e velocità}
+
+Per confrontare complessità e velocità di risposta di reti combinatorie equivalenti, si usano i seguenti indicatori:
+
+\begin{description}
+    \item[$N_{gate}$] il numero di gate nella rete (maggiore è l'$N_{gate}$ , maggiore è la complessità)
+    \item[$N_{conn}$] il numero di connessioni in una rete (maggiore è l'$N_{conn}$ , maggiore è la complessità)
+    \item[$N_{casc}$] il numero massimo di gate disposti in cascata, ovvero in serie tra ingressi e uscite (minore è l'$N_{gate}$ , maggiore è la velocità)
+\end{description}
+
+\subsection{Rete di "costo minimo"}
+
+Ipotesi:
+
+\begin{itemize}
+    \item Ingressi disponibili in forma vera e negata
+    \item fan-in dei gate quando serve
+\end{itemize}
+
+\noindent
+Una rete combinatoria, per essere considerata "di costo minimo", è una rete con:
+
+\begin{itemize}
+    \item Non più di 2 gate in cascata tra ingressi e uscita
+    \item Minimo numero di gate
+    \item Minimo numero di ingressi per gate
+\end{itemize}
+
+\noindent
+Il numero di gate e/o connessioni della rete di costo minimo di tipo SP è in generale diverso da quello della rete di costo minimo di tipo PS.\\
+
+\noindent
+E' possibile che più espressioni dello stesso tipo (SP o PS) siano minime (abbiano cioè valori uguali di $N_{gate}, N_{conn}$ e $N_{casc} \leq 2$).
+
+\subsection{Implicanti e implicanti primi}
+
+Viene detto implicante, un termine di $n$ ingressi che assume il valore 1 solo la dove la funzione vale 1 o per indifferenza.
+Un implicante che cessa di essere tale quando si rimuove un suo letterale viene detto implicante primo.
+Un implicante primo essenziale è l'unico ad assumere valore 1 per alcune configurazioni degli ingressi in cui la funzione assume valore 1 (non per indifferenza).
+L'espressione minima SP è la somma di implicanti primi essenziali.\\
+
+\noindent
+esempio:
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c| }
+\hline
+$a$ & $b$ & $c$ & $z$ \\
+\hline
+\hline
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 1 \\
+0 & 1 & 0 & 1 \\
+0 & 1 & 1 & - \\
+1 & 0 & 0 & - \\
+1 & 0 & 1 & 0 \\
+1 & 1 & 0 & 0 \\
+1 & 1 & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent
+Implicanti rispetto alla TdV:
+
+\begin{itemize}
+    \item 3 termini (mintermini): $a'b'c', a'b'c, a'bc', a'bc, ab'c', abc$
+    \item 2 termini: $a'b', a'b, a'c, a'c', b'c', bc$
+    \item 1 termine: $a'$
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| }
+\hline
+$a$ & $b$ & $c$ & $z$ & implicanti primi attivi \\
+\hline
+\hline
+0 & 0 & 0 & 1 & $a', b'c'$ \\
+0 & 0 & 1 & 1 & $a'$ \\
+0 & 1 & 0 & 1 & $a'$ \\
+0 & 1 & 1 & - & $a', bc$ \\
+1 & 0 & 0 & - & $b'c'$ \\
+1 & 0 & 1 & 0 & \\
+1 & 1 & 0 & 0 & \\
+1 & 1 & 1 & 1 & $bc$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent
+Implicanti primi: $a', bc$
+
+$$
+F(a,b,c) = a' + bc
+$$
+
+\subsection{Implicati e implicati primi}
+
+Viene detto implicato, un termine di $n$ ingressi che assume il valore 0 solo la dove la funzione vale 0 o per indifferenza.
+Un implicato che cessa di essere tale quando si rimuove un suo letterale viene detto implicato primo.
+Un implicato primo essenziale è l'unico ad assumere valore 0 per alcune configurazioni degli ingressi in cui la funzione assume valore 0 (non per indifferenza).
+L'espressione minima PS è il prodotto degli implicati primi essenziali.\\
+
+\noindent
+esempio:
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c| }
+\hline
+$a$ & $b$ & $c$ & $z$ \\
+\hline
+\hline
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 1 \\
+0 & 1 & 0 & 1 \\
+0 & 1 & 1 & - \\
+1 & 0 & 0 & - \\
+1 & 0 & 1 & 0 \\
+1 & 1 & 0 & 0 \\
+1 & 1 & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{description}
+    \item[Implicati] $a+b'+c', a'+b+c, a'+b+c', a'+b'+c, a'+c, a'+b$
+    \item[Implicati primi] $a'+c, a'+b, a+b'+c'$
+    \item[Implicati primi essenziali] $a'+c, a'+b$
+\end{description}
+
+$$
+F(a,b,c) = (a'+c)(a'+b)
+$$
+
+\end{document}

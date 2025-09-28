@@ -1,0 +1,97 @@
+\documentclass{subfiles}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{Derivate}
+
+\subsection{Rapporto incrementale}
+
+Data una funzione $f(x)$, un intervallo $h$, allora il rapporto incrementale è il rapporto tra $f(x + h) - f(x)$ e $h$.
+
+$$
+\Delta f = \frac{f(x + h) - f(x)}{h}
+$$
+
+\subsection{Derivata}
+
+La funzione $f(x)$ è derivabile, se esiste un limite finito al rapporto incrementale di essa.
+
+$$
+\exists \space finito \lim_{\Delta x \to 0} \frac{f(x + h) - f(x)}{h}
+$$
+
+\subsubsection{Notazioni}
+
+\begin{itemize}
+    \item $Df$
+    \item $\frac{df}{dx}$
+    \item $f'$
+    \item $f^{(1)}$
+    \item $\dot{f}$
+\end{itemize}
+
+Se $f(x)$ è derivabile $\implies f(x)$ è continua.
+
+\subsection{Derivate di grado superiore}
+
+Data una funzione $f(x) \to Df(x)$:
+
+$$
+Df(x) \to D(Df(x)) = D^2f(x)
+$$
+
+\subsubsection{Notazioni per derivate di grado superiore}
+
+\begin{itemize}
+    \item$\frac{d^2f}{dx^2} = \frac{d}{dx} * \frac{df}{dx}$
+    \item $f''$
+    \item $f^{(2)}$
+    \item $\ddot{f}$
+\end{itemize}
+
+$$
+D^nf = \frac{d^nf}{dx^n} = f^{(n)}
+$$
+
+\begin{description}
+    \item $D^2f \geq 0 \implies Df$ è crescente, la funzione è convessa.
+    \item $D^2f \leq 0 \implies Df$ è decrescente, la funzione è concava.
+\end{description}
+
+\subsection{Derivate comuni}
+
+\begin{itemize}
+    \item $Dc = 0$
+    \item $Dcx = c$
+    \item $D(ax^2 + bx + c) = 2ax + b$
+    \item $Dx^n = nx^{n - 1}$
+    \item $D\sin(x) = \cos(x)$
+    \item $D\cos(x) = -\sin(x)$
+    \item $D\tan(x) = \frac{1}{\cos^2(x)} = 1 + \tan^2(x)$
+    \item $De^x = e^x$
+    \item $D\ln(x) = \frac{1}{x}$
+    \item $D\arcsin(x) = \frac{1}{\sqrt{1 - x^2}}$
+    \item $D\arccos(x) = -\frac{1}{\sqrt{1 - x^2}}$
+    \item $D\arctan(x) = \frac{1}{1 + x^2}$
+    \item $D\sinh(x) = \frac{e^x + e^{-x}}{2} = \cosh(x)$
+    \item $D\cosh(x) = \frac{e^x - e^{-x}}{2} = \sinh(x)$
+    \item $D\tanh(x) = \frac{\cosh^2(x) - \sinh^2(x)}{\cosh^2(x)} = 1 - \tanh^2(x)$
+\end{itemize}
+
+\subsection{Regole di calcolo}
+
+\begin{itemize}
+    \item $f(x), g(x) \rightarrow D(f + g) = Df + Dg$
+    \item $f(x), c \rightarrow D(cf) = c * Df$
+    \item $f(x) = \sum_{n}^{k = 0} a_k x^k \rightarrow D(f) = \sum_{n}^{k = 1} a_k k x^{k - 1}$
+    \item $f(x), g(x) \rightarrow D(f * g) = (Df)g + f(Dg)$
+    \item $f(x), g(x) \rightarrow D(\frac{f}{g}) = \frac{(Df)g - f(Dg)}{g^2}$
+    \item $f(x), g(x) \rightarrow D(f o g) = (Df(g)) * Dg$
+    \item $f(x) \rightarrow Df^{-1} = \frac{1}{Df(f^{-1}(x))}$
+\end{itemize}
+
+\end{document}

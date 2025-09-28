@@ -1,0 +1,94 @@
+\documentclass{subfiles}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{Principi}
+
+\subsection{Principio di induzione}
+
+Il principio di induzione è un metodo generico per dimostrare un teorema qualsiasi con dominio in $\mathbb{N}$.
+Il procedimento di prova per induzione prevede un affermazione o uguaglianza che dipende da $n$ e viene indicata con: $P(n)$.\\
+
+\noindent
+Data l'affermazione $P(n)$, il principio prova la precedente, al verificarsi delle seguenti condizioni:
+
+\begin{enumerate}
+    \item $P(0)$
+    \item $P(k)$
+\end{enumerate}
+
+\noindent
+Se queste condizioni si verificano, allora: $P(n)$ è vera $\forall n \in \mathbb{N}$.
+
+\subsection{Principio del minimo}
+
+Ogni sottoinsieme di $\mathbb{N}$ ha un minimo.
+
+\subsection{Principio del valore intermedio}
+
+Data una funzione continua $f(x)$ e due punti $f(a)$ e $f(b)$, allora:
+
+$$
+\exists c \in ] a, b [ : f(c) = \lambda
+$$
+
+\subsection{Piccole nozioni}
+
+\begin{itemize}
+    \item L'insieme dei numeri reali non è numerabile
+    \item Radice aritmetica: $\sqrt{n} = m : m \in \mathbb{N}$
+    \item Seno iperbolico: $\sinh(x) = \frac{e^x - e^{-x}}{2}$
+    \item Coseno iperbolico: $\cosh(x) = \frac{e^x + e^{-x}}{2}$
+    \item Tangente iperbolica: $\tanh(x) = \frac{\sinh(x)}{\cosh(x)}$
+\end{itemize}
+
+\subsection{Maggioranti e minoranti}
+
+Dato $\mathbb{A} = \{ a \in \mathbb{R} \}$:
+
+\begin{itemize}
+    \item Maggiorante: $M \in \mathbb{R} \land \forall a \in \mathbb{A} : a \leq M$
+    \item Minorante: $m \in \mathbb{R} \land \forall a \in \mathbb{A} : a \geq M$
+\end{itemize}
+
+\noindent
+Se l'insieme $\mathbb{A}$ ammette un maggiorante si dice superiormente limitato, se ammette un minorante si dice inferiormente limitato e se ammette entrambe si dice limitato.
+
+\begin{itemize}
+    \item Il massimo di un insieme $\mathbb{A}$, se esiste, è il più piccolo dei maggioranti
+    \item Il minimo di un insieme $\mathbb{A}$, se esiste, è il più grande dei minoranti
+\end{itemize}
+
+\subsection{Numeri complessi}
+
+$$
+x^2 + 1 = 0, \text{ impossibile in } \mathbb{R}
+$$
+
+\noindent
+Si risolve introducendo $i$: $x^2 = -1 \to x = \sqrt{-1} \to i^2 = -1$.
+Un numero complesso è composto da due parti:
+
+\begin{itemize}
+    \item parte reale: $a \in \mathbb{R}$
+    \item parte complessa: $i * b : b \in \mathbb{R}$
+\end{itemize}
+
+\subsection{Notazione dei numeri complessi}
+
+$$
+z = a + ib
+$$
+
+\subsection{Teorema fondamentale dell'algebra}
+
+\begin{description}
+    \item[Tesi] $p(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x^1 + a_0$
+    \item[Ipotesi] Il polinomio $p(x)$ ha $n$ radici in $\mathbb{C}$ tenendo in conto la moltiplicabilità: $a_0, \dots , a_n \in \mathbb{C}; a_n \neq 0$.
+\end{description}
+
+\end{document}
