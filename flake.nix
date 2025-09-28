@@ -10,7 +10,7 @@
   in {
     devShells.${system}.default = pkgs.mkShell {
       buildInputs = with pkgs; [
-        texliveFull
+        texliveFull gnumake
       ];
     };
   };
