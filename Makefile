@@ -1,28 +1,22 @@
-all: clean analist_t1 algebra_e_geometria reti_logiche analisi_t2 matematica_applicata fisica_generale
+all: clean analisi-t1 algebra-e-geometria reti-logiche matematica-applicata fisica-generale
 
-analisi_t1: analisi-t1/main.tex
-	mkdir -p out
-	pdflatex -jobname=analisi-t1 -output-directory=out analisi-t1/main.tex
+analisi-t1: analisi-t1/main.tex
+	latexmk -jobname=analisi-t1 -outdir=./out/ -pdf analisi-t1/main.tex
 
-algebra_e_geometria: algebra-e-geometria/main.tex
-	mkdir -p out
-	pdflatex -jobname=algebra-e-geometria -output-directory=out algebra-e-geometria/main.tex
+algebra-e-geometria: algebra-e-geometria/main.tex
+	latexmk -jobname=algebra-e-geometria -outdir=./out/ -pdf algebra-e-geometria/main.tex
 
-reti_logiche: reti-logiche/main.tex
-	mkdir -p out
-	pdflatex -jobname=reti-logiche -output-directory=out reti-logiche/main.tex
+reti-logiche: reti-logiche/main.tex
+	latexmk -jobname=reti-logiche -outdir=./out/ -pdf reti-logiche/main.tex
 
-analisi_t2: analisi-t2/main.tex
-	mkdir -p out
-	pdflatex -jobname=analisi-t2 -output-directory=out analisi-t2/main.tex
+analisi-t2: analisi-t2/main.tex
+	latexmk -jobname=analisi-t2 -outdir=./out/ -pdf analisi-t2/main.tex
 
-matematica_applicata: matematica-applicata/main.tex
-	mkdir -p out
-	pdflatex -jobname=matematica-applicata -output-directory=out matematica-applicata/main.tex
+matematica-applicata: matematica-applicata/main.tex
+	latexmk -jobname=matematica-applicata -outdir=./out/ -pdf matematica-applicata/main.tex
 
-fisica_generale: fisica-generale/main.tex
-	mkdir -p out
-	pdflatex -jobname=fisica-generale -output-directory=out fisica-generale/main.tex
+fisica-generale: fisica-generale/main.tex
+	latexmk -jobname=fisica-generale -outdir=./out/ -pdf fisica-generale/main.tex
 
 clean:
 	rm -rf out/*
