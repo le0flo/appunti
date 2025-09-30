@@ -1,0 +1,84 @@
+\documentclass{subfiles}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{Variabili casuali}
+
+Ad ogni esperimento è possibile associare una variabile casuale a valori reali, i cui valori variano in base all'esito dell'esperimento.
+
+\subsection{Variabili casuali discrete}
+
+$X$ si dice variabile casuale discreta, se $X \in \{x_1, \dots, x_n\}$ con $n \in \mathbb{N} \backslash \{0\}$ per $x_j \in \mathbb{R}$.
+
+\subsection{Funzione di massa di probabilità}
+
+Si associa alla variabile casuale discreta $X$, una funzione:
+
+$$
+\begin{matrix}
+p &:& \mathbb{R} \to [0,1] \\
+p(y) &=& P(X = y)
+\end{matrix}
+$$
+
+\subsubsection{Funzione di ripartizione o distribuzione di probabilità}
+
+Data la variabile casuale discreta $X$, si associa ad essa la funzione (detta di ripartizione o distribuzione di probabilità):
+
+$$
+\begin{matrix}
+F &:& \mathbb{R} \to [0,1] \\
+F(y) &=& P(X \leq y)
+\end{matrix}
+$$
+
+\subsubsection{Proprietà}
+
+\begin{itemize}
+    \item $p(y) \in [0,1]$
+    \item $1 = P(S) = P(X = x_1 \cup \dots \cup X = x_n) = \sum^n_{k=1} P(X = x_k) = \sum^n_{k=1} p(x_k)$
+\end{itemize}
+
+\subsection{Variabili casuali continua}
+
+Una variabile casuale $X$ si dice continua se ad essa è associata una funzione (detta di densità di probabilità) $f: \mathbb{R} \to \mathbb{R}^+ \cup \{0\}$ tale che:
+
+$$
+P(X \in B) = \int_B f(y)dy
+$$
+
+\noindent
+$\forall B < \mathbb{R}$
+
+\subsubsection{Funzione di ripartizione o distribuzione di probabilità}
+
+Per una variabile casuale continua $X$:
+
+$$
+\begin{matrix}
+F(y) &=& P(X \leq y) = \int^y_{-\infty} f(X)dx \\
+f(y) &=& \frac{dF(y)}{dy}
+\end{matrix}
+$$
+
+\subsubsection{Proprietà della funzione di ripartizione di probabilità}
+
+\begin{itemize}
+    \item $F(y) \in [0,1] \forall y \in \mathbb{R}$
+    \item $\lim_{y \to -\infty} F(y) = P(X \leq -\infty) = 0$
+    \item $\lim_{y \to +\infty} F(y) = P(X \leq +\infty) = P(X \in \mathbb{R}) = 1 = P(S)$
+    \item $\forall a,b \in \mathbb{R}$ tali che $a < b \implies F(a) \leq F(b)$
+\end{itemize}
+
+\subsubsection{Proprietà della funzione di densità di probabilità}
+
+\begin{itemize}
+    \item $f(y) \geq 0 \forall y \in \mathbb{R}$
+    \item $1 = P(S) = P(X \in \mathbb{R}) = \int^{+\infty}_{-\infty} f(y)dy$
+\end{itemize}
+
+\end{document}

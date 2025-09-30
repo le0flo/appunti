@@ -85,4 +85,130 @@ $$
 
 Dati $E,F \subset S$, $E^c \subset S$ è l'insieme di tutti gli esiti di $S$ che non stanno in $E$.
 
+\subsubsection{Proprietà}
+
+\begin{itemize}
+    \item $E \cup E^c = S$
+    \item $E \cap E^c = \emptyset$
+    \item $(E \cup F)^c = E^c \cap F^c$
+    \item $(E \cap F)^c = E^c \cup F^c$
+\end{itemize}
+
+\subsection{Definizione assiomatica di probabilità}
+
+Dato un esperimento a cui è associato uno spazio campione $S$, allora per ogni evento di $S$ è possibile definire un numero $P(E)$, detto probabilità, tale che:
+
+\begin{enumerate}
+    \item $P(E) \in [0,1]$
+    \item $P(S) = 1$
+    \item Dati gli eventi $E_1, E_2, \dots, E_n$ disgiunti: $P(\bigcup^n_{k=1} E_k) = \sum^n_{k=1} P(E_k)$
+\end{enumerate}
+
+\subsubsection{Conseguenze immediate}
+
+\begin{enumerate}
+    \item Dato uno spazio campione $S$ ed $E \subset S \implies P(E^c) = 1 - P(E)$
+    \item $P(\emptyset) = 0$
+    \item Dati uno spazio campione $S$ e due eventi $E$ ed $F$ con $E \subset F$, allora $\implies P(E) \leq P(F)$
+    \item Dati uno spazio campione $S$ e due eventi $E$ ed $F$, allora $\implies P(E \cup F) = P(E) + P(F) - P(E \cap F)$
+\end{enumerate}
+
+\subsection{Probabilità di un evento per uno spazio campio di esiti equiprobabili}
+
+$S = \{e_1, \dots, e_n\}$ per $n \in \mathbb{N} \backslash \{0\}$ e $n < +\infty$\\
+
+\noindent
+esiti naturalmente disgiunti: $e_i \cap e_k \emptyset$ se $i \neq k$
+
+$$
+S = e_1 \cup \dots \cup e_n = \bigcup^n_{j=1} e_j \implies P(S) = \sum^n_{j=1} P(e_j) = \sum^n_{j=1} p = np \implies p = \frac{1}{n}
+$$
+
+\noindent
+$E \subset S, E = \{e_1, \dots, e_k\}$
+
+$$
+P(E) = P(\bigcup^k_{l=1} e_l) = \sum^k_{l=1} P(e_l) = \sum^k_{l=1} p = kp \implies p = \frac{k}{n}
+$$
+
+\noindent
+Possiamo vedere che:
+
+$$
+P(E) = \frac{k}{n} = \frac{\text{numero di esiti contenuti in } E}{\text{numero di esiti totali in } S} \leftarrow \text{definizione classica di probabilità}
+$$
+
+\subsection{Probabilità condizionata}
+
+Dato uno spazio campione $S$ e due eventi $E, F \subset S$ con $P(F) \neq 0$, allora si definisce probabilità condizionata di $E$ condizionata da $F$
+
+$$
+P(E | F) = \frac{P(E \cap F)}{P(F)}
+$$
+
+\subsection{Due eventi indipendenti}
+
+Dato uno spazio campione $S$ e due eventi $E, F \subset S$, essi si dicono indipendenti se:
+
+$$
+P(E \cap F) = P(E)P(F)
+$$
+
+\subsubsection{Conseguenze}
+
+Se $P(F) \neq 0$, $P(E|F) = \frac{P(E \cap F)}{P(F)} \implies$ se sono indipendenti $\implies \frac{P(E)P(F)}{P(F)} = P(E)$
+
+\subsubsection{Proprietà}
+
+Dati uno spazio campione $S$ e due eventi indipendenti $E,F \subset S$, allora:
+
+\begin{itemize}
+    \item $E$ ed $F^c$ sono indipendenti
+    \item $E^c$ ed $F$ sono indipendenti
+    \item $E^c$ ed $F^c$ sono indipendenti
+\end{itemize}
+
+\subsection{Tre eventi indipendenti}
+
+Dati lo spazio campione $S$ e tre eventi $A,B,C \subset S$, essi si dicono indipendenti se:
+
+$$
+\begin{matrix}
+P(A \cap B \cap C) = P(A)P(B)P(C) \\
+P(A \cap B) = P(A)P(B) \\
+P(A \cap C) = P(A)P(C) \\
+P(B \cap C) = P(B)P(C)
+\end{matrix}
+$$
+
+\noindent
+Generalizzando, ad $n$ eventi, occorre considerare tutte le intersezioni.
+
+\subsection{Partizione di uno spazio campione}
+
+Dato uno spazio campione $S$, si dice partizione di $S$ una suddivisione in eventi $E_1, \dots, E_n$ tali che:
+
+\begin{itemize}
+    \item $\bigcup^n_{k=1} E_k = S$
+    \item $E_i \cap E_j = \emptyset$ se $i \neq j$
+\end{itemize}
+
+Gli elementi della partizione sono detti ipotesi e si indicano solitamente con la lettera $H$.
+
+\subsection{Formula delle probabilità totali}
+
+Dati uno spazio campione $S$, una sua partizione $\{H_1, \dots, H_n\}$ e un evento $E \subset S$, allora:
+
+$$
+P(E) = \sum^n_{k=1} P(E|H_k)P(H_k)
+$$
+
+\subsection{Teorema di Bayes}
+
+Dati uno spazio campione $S$, una sua partizione $\{H_1, \dots, H_k\}$ e un evento $E \subset S$ con $P(E) \neq 0$, allora:
+
+$$
+P(H_j|E) = \frac{P(E|H_j)P(H_j)}{\sum^n_{k=1} P(E|H_k)P(H_k)} = \frac{P(E|H_j)P(H_j)}{P(E)}
+$$
+
 \end{document}
