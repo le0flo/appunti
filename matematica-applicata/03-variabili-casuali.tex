@@ -81,4 +81,191 @@ $$
     \item $1 = P(S) = P(X \in \mathbb{R}) = \int^{+\infty}_{-\infty} f(y)dy$
 \end{itemize}
 
+\subsubsection{Proprietà}
+
+\begin{itemize}
+    \item se $X$ è una variabile casuale continua e $a \in \mathbb{R}$:
+
+    $$
+    P(X \leq a) = P(X < a) = \int^a_{-\infty}f(x)dx
+    $$
+
+    \item sia $X$ una variabile casuale continua con funzione di ripartizione $F(y)$ e siano $a,b \in \mathbb{R}$ con $a < b$:
+
+    $$
+    P(a < X \leq b) = F(b) - F(a)
+    $$
+\end{itemize}
+
+\subsection{Coppie di variabili casuali discrete}
+
+Dato un esperimento si associano ad esso due variabili casuali $X$ e $Y$ che si dicono discrete se:
+
+$$
+\begin{matrix}
+X \in \{x_1, \dots, x_n\} \\
+Y \in \{y_1, \dots, y_m\} \\
+n,m \in \mathbb{N} \backslash \{0\}
+\end{matrix}
+$$
+
+\subsubsection{Funzione di massa di probabilità congiunta}
+
+$$
+\begin{matrix}
+p:\mathbb{R}^2 \to [0,1] \\
+p(a,b) = P(X=a \cap Y=b) = P(X=a, Y=b) \forall a,b \in \mathbb{R}
+\end{matrix}
+$$
+
+\noindent
+Proprietà:
+
+\begin{itemize}
+    \item $p(a,b) \in [0,1] \forall a,b \in \mathbb{R}$
+    \item $\sum^n_{i=1} \sum^m_{j=1} p(x_i, y_j) = 1$
+\end{itemize}
+
+\subsubsection{Funzioni di massa di probabilità marginali}
+
+$$
+\begin{matrix}
+p_x(a) = P(X=a) = P(X=a, Y\leq+\infty) = \sum^m_{j=1} p(a, y_j) \text{ con } a \in \mathbb{R} \\
+p_y(b) = P(Y=b) = P(X\leq+\infty, Y=b) = \sum^n_{i=1} p(x_i, b) \text{ con } b \in \mathbb{R} \\
+\end{matrix}
+$$\\
+
+\noindent
+esempio, date 12 batterie, di cui 3 cariche, 4 poco cariche e 5 non funzionanti, ne vengono scelte 3 a caso.
+$X = \text{numero di batterie cariche estratte}$, $Y = \text{numero di batterie poco cariche estratte}$.
+Per $(X,Y)$ determinare $p(a,b)$ e $p_X(a),p_Y(b)$.
+
+\begin{center}
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{ |c|c|c|c|c|c| }
+\hline
+$Y \backslash X$ & 0 & 1 & 2 & 3 & $p_Y$ \\
+\hline
+\hline
+0 & $\frac{10}{220}$ & $\frac{30}{220}$ & $\frac{15}{220}$ & $\frac{1}{220}$ & $\frac{56}{220}$ \\
+1 & $\frac{40}{220}$ & $\frac{60}{220}$ & $\frac{12}{220}$ & 0 & $\frac{112}{220}$ \\
+2 & $\frac{30}{220}$ & $\frac{18}{220}$ & 0 & 0 & $\frac{48}{220}$ \\
+3 & $\frac{4}{220}$ & 0 & 0 & 0 & $\frac{4}{220}$ \\
+\hline
+$p_X$ & $\frac{84}{220}$ & $\frac{108}{220}$ & $\frac{27}{220}$ & $\frac{1}{220}$ & \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+\end{center}
+
+$$
+\begin{matrix}
+p(0,0) =& P(X=0, Y=0) = \frac{C_{3,0}C_{4,0}C_{5,3}}{C_{12,3}} = \frac{\begin{pmatrix}5\\3\end{pmatrix}}{\begin{pmatrix}12\\3\end{pmatrix}} = \frac{10}{220} \\
+p(0,1) =& P(X=0, Y=1) = \frac{C_{3,0}C_{4,1}C_{5,2}}{C_{12,3}} = \frac{4\begin{pmatrix}5\\2\end{pmatrix}}{\begin{pmatrix}12\\3\end{pmatrix}} = \frac{40}{220} \\
+\vdots &  \\
+p(1,2) =& P(X=1, Y=2) = \frac{C_{3,1}C_{4,2}C_{5,0}}{C_{12,3}} = \frac{40}{220} \\
+\end{matrix}
+$$
+
+\subsubsection{Funzioni di ripartizione di probabilità congiunta}
+
+$$
+\begin{matrix}
+F:\mathbb{R}^2 \to [0,1] \\
+F(a,b) = P(X \leq a \cap Y \leq b) = P(X \leq a, Y \leq b) \forall a,b \in \mathbb{R}
+\end{matrix}
+$$
+
+\subsubsection{Funzioni di ripartizione di probabilità marginali}
+
+$$
+\begin{matrix}
+F_X(a) = P(X \leq a) = P(X \leq a, Y\leq+\infty) = F(a,+\infty) \\
+F_Y(b) = P(Y \leq b) = P(X\leq+\infty, Y \leq b) = F(+\infty,b) \\
+\end{matrix}
+$$
+
+\subsection{Coppie di variabili casuali congiuntamente continue}
+
+Dato un esperimento a cui sono associate le variabili casuali $X$ e $Y$, si dice che esse sono congiuntamente continue se è possibile per esse definire una funzione
+
+$$
+f:\mathbb{R}^2 \to \mathbb{R}^+ \cup \{0\}
+$$
+
+\noindent
+Tale che $\forall D \in \mathbb{R}^2$:
+
+$$
+P((X,Y) \in D) = \int_{D}\int f(x,y) dx dy
+$$
+
+\noindent
+$f$ è detta funzione di densità di probabilità congiunta
+
+\subsubsection{Funzioni di ripartizione di probabilità congiunta}
+
+$$
+\begin{matrix}
+F:\mathbb{R}^2 \to [0,1] \\
+F(a,b) = P(X \leq a \cap Y \leq b)
+\end{matrix}
+$$
+
+Se $(X,Y)$ sono variabili casuali continue:
+
+$$
+F(a,b) = \int^a_{-\infty} (\int^b_{-\infty} f(x,y) dy) dx \implies f(a,b) = \frac{\theta^2 F(a,b)}{\theta a \theta b}
+$$
+
+\subsubsection{Funzioni di ripartizione di probabilità marginali}
+
+$$
+\begin{matrix}
+F_X(a) = P(X \leq a) = P(X \leq a, Y\leq+\infty) = F(a,+\infty) = \int^a_{-\infty} (\int^{+\infty}_{-\infty} f(x,y) dy) dx \\
+F_Y(b) = P(Y \leq b) = P(X\leq+\infty, Y \leq b) = F(+\infty,b) = \int^b_{-\infty} (\int^{+\infty}_{-\infty} f(x,y) dx) dy \\
+\end{matrix}
+$$
+
+\subsubsection{Funzioni di densità di probabilità marginali}
+
+$$
+\begin{matrix}
+f_X(a) = \int^{+\infty}_{-\infty} f(a,y) dy \\
+f_Y(b) = \int^{+\infty}_{-\infty} f(x,b) dx \\
+\end{matrix}
+$$
+
+\subsection{Coppie di variabili casuali indipendenti}
+
+Data una coppia di variabil casuali, esse si dicono indipendenti se $\forall A,B \subset \mathbb{R}$:
+
+$$
+P(X \in A, Y \in B) = P(X \in A)P(Y \in B)
+$$
+
+\noindent
+Condizione necessaria e sufficiente affinchè una coppia di variabili casuali sia indipendente è che:
+
+\begin{enumerate}
+    \item $F(a,b) = F_X(a)F_Y(b) \forall a,b \in \mathbb{R}$
+
+    oppure
+
+    \item se $(X,Y)$ sono una coppia di variabili casuali discrete: $p(a,b) = p_X(a)p_Y(b) \forall a,b \in \mathbb{R}$
+    \item se $(X,Y)$ sono congiuntamente continue: $f(a,b) = f_X(a)f_Y(b) \forall a,b \in \mathbb{R}$
+\end{enumerate}
+
+\subsection{Valore medio di una variabile casuale}
+
+Data una variabile casuale $X$, si definisce valore atteso o valore medio di $X$, se esiste, il numero:
+
+$$
+E[X] =
+\begin{cases}
+\sum^n_{i=1} x_i p(x_i) & \text{ se $X \in \{x_1, \dots, x_n\}$ (è una variabile casuale discreta)} \\
+\int^{+\infty}_{-\infty} x f(x) dx & \text{ se $X$ è una variabile casuale continua}
+\end{cases}
+$$
+
 \end{document}
