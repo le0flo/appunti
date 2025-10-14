@@ -268,4 +268,88 @@ E[X] =
 \end{cases}
 $$
 
+\subsubsection{Proprietà}
+
+\begin{itemize}
+    \item Data una variabile casuale $X$, sia $Y = h(X)$ una variabile casuale funzione della prima, allora:
+
+    $$
+    E[Y] = E[h(X)] =
+    \begin{cases}
+    \sum^n_{i=1} h(x_i) p(x_i) & \text{ con $X \in \{x_1, \dots, x_n\}$} \\
+    \int^{+\infty}_{-\infty} h(x) f(x) dx & \text{ se $X$ è una variabile casuale continua}
+    \end{cases}
+    $$
+
+    \item Data una variabile casuale $X$ e due numeri reali $\alpha$ e $\beta$:
+
+    $$
+    E[\alpha X + \beta] = \alpha E[X] + \beta
+    $$
+
+    \item Date due variabil casuali $X$ e $Y$ e definita una variabile casuale $Z = g(X,Y)$, allora:
+
+    $$
+    E[Z] = E[g(X,Y)] =
+    \begin{cases}
+    \sum^n_{i=1} \sum^m_{j=1} g(x_i, y_j) p(x_i, y_j) & \text{ con $X \in \{x_1, \dots, x_n\}$ e $Y \in \{y_1, \dots, y_m\}$} \\
+    \int^{+\infty}_{-\infty} \int^{+\infty}_{-\infty} g(x,y) f(x,y) dx dy & \text{ se $(X,Y)$ è una coppia di variabili casuali continue}
+    \end{cases}
+    $$
+
+    \item Date le variabili casuali $X$ e $Y$, sia $Z = X+Y$, allora:
+
+    $$
+    E[Z] = E[X+Y] = E[X] + E[Y] \implies E[\sum^n_{i=1} X_i] = \sum^n_{i=1} E[X_i]
+    $$
+\end{itemize}
+
+\subsection{Momento $n$-esimo di una variabile casuale}
+
+Data una variabile casuale, si definisce (se esiste) il suo momento $n$-esimo come:
+
+$$
+\begin{matrix}
+E[X^n] & n \in \mathbb{N}
+\end{matrix}
+$$
+
+\subsection{Varianza di una variabile casuale}
+
+Data una variabile casuale $X$ di valore medio $E[X]=\mu$, si definisce varianza di $X$ (se esiste):
+
+$$
+Var(X) = E[(X-E[X])^2]
+$$
+
+\begin{description}
+    \item[Se $X$ è una variabile casuale discreta] $Var(x) = \sum^n_{i=1} (x_i-\mu)^2 p(x_i)$
+    \item[Se $X$ è una variabile casuale continua] $Var(x) = \int^{+\infty}_{-\infty} (x-\mu)^2 f(x) dx$
+\end{description}
+
+\subsubsection{Proprietà}
+
+\begin{itemize}
+    \item $Var(X) \geq 0$
+    \item $Var(X) = E[X^2] - (E[X])^2$
+    \item $Var(\alpha X + \beta) = \alpha^2 Var(X) \text{ se $\alpha, \beta \in \mathbb{R}$}$
+
+    \begin{itemize}
+        \item se $\alpha = 0$, $Var(\beta) = 0$
+        \item se $\beta = 0$ o $\beta \neq 0$, $Var(\alpha X + \beta) = \alpha^2 Var(X)$
+    \end{itemize}
+
+    \item Date due variabili casuali $X$ e $Y$:
+
+    $$
+    Cov(X,Y) = E[(X-E[X])(Y-E[Y])]
+    $$
+
+    \item Date due variabili casuali $X$ e $Y$:
+
+    $$
+    Var(X+Y) = Var(X) + Var(Y) + 2 E[(X-E[X])(Y-E[Y])] = Var(X) + Var(Y) + 2 Cov(X,Y)
+    $$
+\end{itemize}
+
 \end{document}
