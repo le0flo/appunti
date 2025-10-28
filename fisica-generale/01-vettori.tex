@@ -1,11 +1,13 @@
-\documentclass{subfiles}
+\documentclass{article}
 
-\usepackage{graphicx}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{xcolor}
 
-\graphicspath{ {fisica-generale/assets/} }
+\usepackage{tikz}
+\usetikzlibrary{angles, quotes}
 
 \begin{document}
 
@@ -22,9 +24,9 @@ $$
 \subsection{Definizioni}
 
 \begin{description}
-    \item[Quantità scalari] sono le quantità definite da un numero (un vettore unidimensionale) e un'unità di misura (esempio: temperatura)
-    \item[Quantità vettoriali] definite da un vettore $\vec{a} \in \mathbb{R}^n : n > 1$ e un unità di misura (esempio: distanza)
-    \item[Quantità tensoriali] ??
+\item[Quantità scalari] sono le quantità definite da un numero (un vettore unidimensionale) e un'unità di misura (esempio: temperatura)
+\item[Quantità vettoriali] definite da un vettore $\vec{a} \in \mathbb{R}^n : n > 1$ e un unità di misura (esempio: distanza)
+\item[Quantità tensoriali] ??
 \end{description}
 
 \subsection{Rappresentazione grafica}
@@ -32,9 +34,9 @@ $$
 Un vettore è rappresentato da una freccia, che ha:
 
 \begin{itemize}
-    \item Una direzione
-    \item Un verso
-    \item Modulo (un valore assoluto ed è la lunghezza della suddetta freccia)
+\item Una direzione
+\item Un verso
+\item Modulo (un valore assoluto ed è la lunghezza della suddetta freccia)
 \end{itemize}
 
 \noindent
@@ -42,19 +44,35 @@ Dato un $\vec{a}$, il suo inverso è un vettore che ha uguale modulo ma verso op
 
 \subsection{Somma}
 
-\includegraphics[width=\columnwidth]{somma-di-vettori}
-
 Regola del parallelogramma:
 
-\includegraphics[width=\columnwidth]{regola-del-parallelogramma}
+\begin{multicols}{2}
+\begin{tikzpicture}
+\coordinate (O) at (0,0);
+
+\draw[ultra thick,black,->] (O) -- (3,2) coordinate(a) node[midway,above,sloped]{$\vec{a}$};
+\draw[ultra thick,black,->] (O) -- (4,0) coordinate(b) node[midway,below,sloped]{$\vec{b}$};
+
+\draw[ultra thick,blue,->] (O) -- (7,2) coordinate(c);
+\draw[ultra thick,green,->] (a) -- (b);
+
+\draw[thick,dotted,black] (a) -- (c);
+\draw[thick,dotted,black] (b) -- (c);
+\end{tikzpicture}
+
+\begin{itemize}
+\item \textcolor{blue}{blu $= \vec{a} + \vec{b}$}
+\item \textcolor{green}{verde $= \vec{a} - \vec{b}$}
+\end{itemize}
+\end{multicols}
 
 \subsection{Prodotto per scalare}
 
 Dati $\lambda \in \mathbb{R}$ e $\vec{a} \in \mathbb{R}^n$, $\vec{b} = \lambda \vec{a} \in \mathbb{R}^n$ è un vettore con stessa direzione di $\vec{a}$ se:
 
 \begin{itemize}
-	\item Se $\lambda > 0$, stesso verso
-	\item Se $\lambda < 0$, verso opposto
+\item Se $\lambda > 0$, stesso verso
+\item Se $\lambda < 0$, verso opposto
 \end{itemize}
 
 \noindent
@@ -64,7 +82,16 @@ Il modulo di $\vec{b}$ è uguale a $|\lambda|$ volte quello di $\vec{a}$
 
 Un operazione che prende due vettori e restituisce un numero.
 
-\includegraphics[width=\columnwidth]{prodotto-scalare}
+\begin{center}
+\begin{tikzpicture}
+\coordinate (O) at (0,0);
+
+\draw[ultra thick,red,->] (O) -- (3,2) coordinate(a) node[midway,above,sloped]{$\vec{a}$};
+\draw[ultra thick,blue,->] (O) -- (7,0) coordinate(b) node[midway,below,sloped]{$\vec{b}$};
+
+\pic[draw=black, "$\theta$", angle eccentricity=1.5, angle radius=10mm]{angle=b--O--a};
+\end{tikzpicture}
+\end{center}
 
 $$
 \vec{a} * \vec{b} = |\vec{a}| * |\vec{b}| * \cos{\theta}
@@ -76,9 +103,9 @@ Dove $|\vec{a}|$ è il modulo di $|\vec{a}|$ (similmente per $\vec{b}$) e $\thet
 \subsubsection{Proprietà}
 
 \begin{itemize}
-    \item Commutativa: $\vec{a} * \vec{b} = \vec{b} * \vec{a}$
-    \item Distributiva: $\vec{a} * (\vec{b}+\vec{c}) = \vec{a}*\vec{b} + \vec{a}*\vec{c}$
-    \item $\forall \lambda \in \mathbb{R} : \lambda (\vec{a} * \vec{b}) = (\lambda\vec{a}) * \vec{b} = \vec{a} * (\lambda\vec{b})$
+\item Commutativa: $\vec{a} * \vec{b} = \vec{b} * \vec{a}$
+\item Distributiva: $\vec{a} * (\vec{b}+\vec{c}) = \vec{a}*\vec{b} + \vec{a}*\vec{c}$
+\item $\forall \lambda \in \mathbb{R} : \lambda (\vec{a} * \vec{b}) = (\lambda\vec{a}) * \vec{b} = \vec{a} * (\lambda\vec{b})$
 \end{itemize}
 
 \subsection{Componente}
@@ -115,13 +142,27 @@ $$
 \noindent
 $\vec{a} \wedge \vec{b}$ è definito come il vettore che vive lungo la direzione ortogonale al piano individuato da $\vec{a}$ e $\vec{b}$, che ha modulo $|\vec{a}|*|\vec{b}|*\sin{\theta}$ e un verso determinato dalla "regola della mano destra".
 
-\includegraphics[width=\columnwidth]{prodotto-vettoriale}
+\begin{center}
+\begin{tikzpicture}
+\coordinate (O) at (0,0,0);
+
+\draw[ultra thick,black,->] (O) -- (5,0,0) coordinate(x) node[right]{$\hat{x}$};
+\draw[ultra thick,black,->] (O) -- (0,5,0) coordinate(y) node[above]{$\hat{y}$};
+\draw[ultra thick,black,->] (O) -- (0,0,5) coordinate(z) node[below]{$\hat{z}$};
+
+\draw[thick,red,->] (O) -- (2,0,3) coordinate(a) node[midway,below,sloped]{$\vec{a}$};
+\draw[thick,blue,->] (O) -- (3,0,1) coordinate(b) node[midway,below,sloped]{$\vec{b}$};
+\draw[thick,purple,->] (O) -- (1.5,5,1) coordinate(c) node[midway,right]{$\vec{a} \wedge \vec{b} = \vec{a} * \vec{b} * \sin{\theta}$};
+
+\pic[draw=black, "$\theta$", angle eccentricity=1.5, angle radius=5mm]{angle=a--O--b};
+\end{tikzpicture}
+\end{center}
 
 \subsubsection{Proprietà}
 
 \begin{itemize}
-    \item Distributiva: $(\vec{a} * \vec{b}) \wedge \vec{c} = \vec{a} \wedge \vec{c} + \vec{b} \wedge \vec{c}$
-    \item Non vale la proprietà associativa: $(\vec{a} \wedge \vec{b}) \wedge \vec{c} \neq \vec{a} \wedge (\vec{b} \wedge \vec{c})$
+\item Distributiva: $(\vec{a} * \vec{b}) \wedge \vec{c} = \vec{a} \wedge \vec{c} + \vec{b} \wedge \vec{c}$
+\item Non vale la proprietà associativa: $(\vec{a} \wedge \vec{b}) \wedge \vec{c} \neq \vec{a} \wedge (\vec{b} \wedge \vec{c})$
 \end{itemize}
 
 \subsection{Vettori e coordinate}
@@ -132,50 +173,106 @@ Questo significa introdurre un insieme di vettori privilegiato ed esprimere ogni
 \noindent
 In una dimensione, un sistema di riferimento è dato da un singolo versore $\hat{u}$:
 
-\includegraphics[width=\columnwidth]{vettori-e-coordinate-una-dimensione}
+\begin{center}
+\begin{tikzpicture}
+\coordinate (O) at (0,0);
+\coordinate (p) at (4,0);
+
+\draw[ultra thick,black,<->] (-7,0) -- (7,0) coordinate(u) node[right]{$\hat{u}$};
+\draw[ultra thick,red,->] (O) -- (p) coordinate(v) node[midway,below]{$\vec{v}$};
+
+\filldraw[black] (O) circle(1.5pt) node[below]{O};
+\filldraw[red] (p) circle(1.5pt) node[below]{p};
+\end{tikzpicture}
+
+$$
+\begin{matrix}
+\vec{v} = v_{\hat{u}} * \hat{u} \\
+|\vec{v}| = \vec{v} * \hat{u} = |\vec{v}_{\hat{u}}|
+\end{matrix}
+$$
+\end{center}
 
 \noindent
 In due dimensioni, un sistema di riferimento è dato da due versori ortogonali:
 
-\includegraphics[width=\columnwidth]{vettori-e-coordinate-due-dimensioni}
+\begin{center}
+\begin{tikzpicture}
+\coordinate (O) at (0,0);
+\coordinate (A) at (4,0);
+\coordinate (B) at (4,2);
+\coordinate (C) at (0,2);
+
+\draw[ultra thick,black,->] (-1,0) -- (7,0) coordinate(u) node[right]{$\hat{u}$};
+\draw[ultra thick,black,->] (0,-1) -- (0,4) coordinate(v) node[right]{$\hat{v}$};
+
+\draw[dotted,green] (A) -- (B);
+\draw[dotted,green] (C) -- (B);
+
+\draw[thick,blue,->] (O) -- (A) coordinate(w_u) node[midway,below]{$w_{\hat{u}}$};
+\draw[thick,blue,->] (O) -- (C) coordinate(w_v) node[midway,left]{$w_{\hat{v}}$};
+\draw[ultra thick,blue,->] (O) -- (B) coordinate(w) node[midway,above,sloped]{$\vec{w}$};
+
+\pic[draw=black, "$\theta$", angle eccentricity=1.5, angle radius=10mm]{angle=w_u--O--w};
+
+\filldraw[black] (O) circle(1.5pt) node[anchor=north east]{O};
+\filldraw[blue] (A) circle(1.5pt) node[below]{A};
+\filldraw[blue] (B) circle(1.5pt) node[below]{B};
+\end{tikzpicture}
+
+$$
+\vec{w} = w_{\hat{u}} \hat{u} + w_{\hat{v}} \hat{v} \to (w_{\hat{u}}, w_{\hat{v}}) \in \mathbb{R}^2
+$$
+\end{center}
 
 \noindent
 In tre dimensioni, un sistema di riferimento è determinato da tre versori ortogonali (di solito i versori sono indicati come $\hat{x}, \hat{y}, \hat{z}$ oppure come $\hat{i}, \hat{j}, \hat{k}$):
 
-\includegraphics[width=\columnwidth]{vettori-e-coordinate-tre-dimensioni}
+\begin{center}
+\begin{tikzpicture}
+\coordinate (O) at (0,0,0);
+
+\draw[ultra thick,black,->] (O) -- (7,0,0) coordinate(j) node[right]{$\hat{j}$};
+\draw[ultra thick,black,->] (O) -- (0,4,0) coordinate(k) node[above]{$\hat{k}$};
+\draw[ultra thick,black,->] (O) -- (0,0,4) coordinate(i) node[below]{$\hat{i}$};
+\end{tikzpicture}
+\end{center}
+
+\noindent
+Siccome i versori sono ortogonali: $\hat{i} \wedge \hat{j} = \hat{k}, \hat{j} \wedge \hat{i} = -\hat{k}$
 
 \subsection{Operazioni tra vettori in coordinate}
 
 Le coordinate sono le componenti di un vettore rispetto ai versori (o "assi") del sistema di riferimento.
 
 \begin{description}
-	\item[Somma] $\vec{a} = (a_x, a_y, a_z), \vec{b} = (b_x, b_y, b_z)$
+\item[Somma] $\vec{a} = (a_x, a_y, a_z), \vec{b} = (b_x, b_y, b_z)$
 
-	$$
-	\vec{a} + \vec{b} = (a_x+b_x, a_y+b_y, a_z+b_z)
-	$$
+$$
+\vec{a} + \vec{b} = (a_x+b_x, a_y+b_y, a_z+b_z)
+$$
 
-	\item[Prodotto per scalare] $\lambda \in \mathbb{R}, \vec{a} \in \mathbb{R}^3, \vec{a} = (a_x, a_y, a_z)$
+\item[Prodotto per scalare] $\lambda \in \mathbb{R}, \vec{a} \in \mathbb{R}^3, \vec{a} = (a_x, a_y, a_z)$
 
-	$$
-	\lambda \vec{a} = (\lambda a_x, \lambda a_y, \lambda a_z)
-	$$
+$$
+\lambda \vec{a} = (\lambda a_x, \lambda a_y, \lambda a_z)
+$$
 
-	\item[Prodotto scalare] $\vec{a} = a_i \hat{i} + a_j \hat{j} + a_k \hat{k}, \vec{b} = b_i \hat{i} + b_j \hat{j} + b_k \hat{k}$
+\item[Prodotto scalare] $\vec{a} = a_i \hat{i} + a_j \hat{j} + a_k \hat{k}, \vec{b} = b_i \hat{i} + b_j \hat{j} + b_k \hat{k}$
 
-	$$
-    \begin{matrix}
-    \vec{a} * \vec{b} = a_ib_i + a_jb_j + a_kb_k \\
-    \vec{a} * \vec{b} = |\vec{a}| |\vec{b}| \cos{\theta} \\
-    \theta = \arccos{[\frac{a_ib_i + a_jb_j + a_kb_k}{|\vec{a}||\vec{b}|}]}
-    \end{matrix}
-    $$
+$$
+\begin{matrix}
+\vec{a} * \vec{b} = a_ib_i + a_jb_j + a_kb_k \\
+\vec{a} * \vec{b} = |\vec{a}| |\vec{b}| \cos{\theta} \\
+\theta = \arccos{[\frac{a_ib_i + a_jb_j + a_kb_k}{|\vec{a}||\vec{b}|}]}
+\end{matrix}
+$$
 
-    \item[Prodotto vettoriale] $\vec{a} = a_i \hat{i} + a_j \hat{j} + a_k \hat{k}, \vec{b} = b_i \hat{i} + b_j \hat{j} + b_k \hat{k}$
+\item[Prodotto vettoriale] $\vec{a} = a_i \hat{i} + a_j \hat{j} + a_k \hat{k}, \vec{b} = b_i \hat{i} + b_j \hat{j} + b_k \hat{k}$
 
-    $$
-    \vec{a} \wedge \vec{b} = (a_jb_k - a_kb_j, a_kb_i - a_ib_k, a_ib_j - a_jb_i)
-    $$
+$$
+\vec{a} \wedge \vec{b} = (a_jb_k - a_kb_j, a_kb_i - a_ib_k, a_ib_j - a_jb_i)
+$$
 \end{description}
 
 \subsection{Regola mnemonica del determinante}

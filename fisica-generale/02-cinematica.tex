@@ -1,9 +1,15 @@
-\documentclass{subfiles}
+\documentclass{article}
 
 \usepackage{graphicx}
+
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{xcolor}
+
+\usepackage{tikz}
+\usetikzlibrary{angles, quotes}
 
 \graphicspath{ {fisica-generale/assets/} }
 
@@ -13,7 +19,22 @@
 
 La cinematica è lo studio moto. Il moto dipende dal sistema di riferimento.
 
-\includegraphics[width=\columnwidth]{moto-di-un-punto}
+\begin{center}
+\begin{tikzpicture}
+\coordinate (O) at (0,0,0);
+\coordinate (p) at (2,2,0);
+\coordinate (r) at (4,2,0);
+
+\draw[ultra thick,black,->] (O) -- (7,0,0) coordinate(y) node[right]{y};
+\draw[ultra thick,black,->] (O) -- (0,4,0) coordinate(z) node[above]{z};
+\draw[ultra thick,black,->] (O) -- (0,0,4) coordinate(x) node[below]{x};
+
+\draw[thick,blue,->] (O) -- (r) coordinate(r_t) node[midway,below,sloped]{$\vec{r}(t)$};
+
+\filldraw[cyan] (p) circle(1.5pt) node[below]{p};
+\draw[thick,cyan] plot [smooth] coordinates {(p) (3,2.5,0) (r) (5,1.5,0) (6,2,0)};
+\end{tikzpicture}
+\end{center}
 
 \noindent
 Possiamo descrivere il moto di un punto materiale come una funzione.
@@ -50,7 +71,23 @@ $$
 
 La velocità è una funzione vettoriale che associa ad ogni tempo "lo spostamento infinitesimo" in un intervallo di tempo infinitesimo.
 
-\includegraphics[width=\columnwidth]{rappresentazione-velocita-grafica}
+\begin{center}
+\begin{tikzpicture}
+\coordinate (O) at (0,0);
+\coordinate (p) at (-1,1);
+\coordinate (A) at (2,2.5);
+\coordinate (B) at (3,2);
+
+\draw[ultra thick,black,->] plot [smooth] coordinates {(p) (A) (B) (6,3)};
+\draw[thick,black,->] (O) -- (A) node[midway,left]{$\vec{r}(t)$};
+\draw[thick,black,->] (O) -- (B) node[midway,right]{$\vec{r}(t + \Delta t)$};
+\draw[red,->] (A) -- (B);
+
+\filldraw[black] (O) circle(1.5pt) node[below]{O};
+\filldraw[green] (A) circle(1.5pt) node[above]{A};
+\filldraw[purple] (B) circle(1.5pt) node[above]{B};
+\end{tikzpicture}
+\end{center}
 
 $$
 \vec{v}(t) = \lim_{\Delta t \to 0} \frac{\vec{r}(t + \Delta t) - \vec{r}(t)}{\Delta t} = \frac{d}{dt} \vec{r}(t)
