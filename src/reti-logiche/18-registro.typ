@@ -1,0 +1,56 @@
+= Registro
+
+Un registro a $k$ bit è una rete logica sincrona in grado di memorizzare un dato formato da $k$ bit.
+La rete ad ogni fronte di salita del clock, memorizza e rende disponibile sulle uscite $"OUT"[k-1 dots 0]$ il dato $"IN"[k-1 dots 0]$ in ingresso se l'ingresso $"WE" = 1$ (write enable) mentre mantiene il valore precedentemente memorizzato se $"WE" = 0$.
+Inoltre la rete è dotata di un ingresso asincrono $"A_RESET"$ che, se $1$, pone a livello logico $0$ tutti i bit del registro, indipendentemente dal valore dei segnali $"WE"$, $"IN"$ e del clock.
+$"WE"$ è un comando sincrono, agisce al fronte del clock, quindi al termine degli intervalli di tempo in cui vale $1$.
+
+== Varianti
+
+Molto spesso esistono più varianti delle RSS notevoli, che si differenziano per:
+
+- comandi disponibili (registri con o senza $"A_RESET"$)
+- se i comandi disponibili sono sincroni o asincroni
+- per l'ordine di priorità dei comandi (i comandi asincroni sono sempre prioritari rispetto a quelli sincroni)
+
+Bisogna sapere quale ingresso sincrono è prioritario se vi sono più ingressi sincroni.
+
+== Flip-flop T
+
+Usando un FF-D, il flip-flop T (toggle) è realizzato prendendo l'uscita ($Q$) e il suo complemento ($Q'$) dal FF-D e collegarle ad un selettore che a sua volta è collegato in retroazione diretta all'ingresso $D$ del FF-D.
+
+== Shift register
+
+Uno shift register (o registro a scorrimento) a $k$ bit è una rete in grado di memorizzare gli ultimi $k$ bit ricevuti su un segnale di ingresso seriale $"IN"$, rendendoli disponibili attraverso le uscite $"OUT"[k-1 dots 0]$.
+Tutti i bit memorizzato possono essere portati a $0$ asserendo l'ingresso asincrono $"A_RESET"$.
+Questo componente è utile per:
+
+- Ritardare da $1$ a $k$ intervalli di tempo il segnale $"IN"$.
+- Riconoscere il verificarsi di stringe d'ingresso
+- Convertitore Seriale/Parallelo e Parallelo/Seriale
+- Conteggio
+- Rotazione verso destra o sinistra
+- Moltiplicazione o divisione per una potenza di 2
+
+#pagebreak()
+
+=== Comandi
+
+- *$"EN"$ o enable*: l'ingresso $"IN"$ viene memorizzato solo se $"EN"=1$ e le uscite non cambiano quando $"EN"=0$
+- *$"LD"$ o load*: se $"LD"=1$ il valore memorizzato diventa $"IN"$
+- *$R/L'$ o destra/sinistra'*: consente variare la direzione dello shift
+
+=== Universal shift register
+
+Quando tutti i comandi elencati precedentemente sono disponibili, si parla di universal shift register.
+4 comandi possibili:
+
+- *Hold*: corrispondente a $"LD"=0$, $"EN"=0$, $R/L'=-$
+- *Shift right*: corrispondente a $"LD"=0$, $"EN"=1$, $R/L'=1$
+- *Shift left*: corrispondente a $"LD"=0$, $"EN"=1$, $R/L'=0$
+- *Load*: corrispondente a $"LD"=1$, $"EN"=-$, $R/L'=-$
+
+Sono codificabili da 2 bit di comando $S_1$ e $S_0$.
+Posso avere un solo ingresso $"IN"$ che entra a sinistra o a destra a seconda del valore dei bit di comando, o due ingressi diversi $"IN_R"$ e $"IN_L"$.
+
+#pagebreak()
