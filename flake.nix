@@ -9,11 +9,7 @@
     pkgs = nixpkgs.legacyPackages.${system};
   in {
     devShells.${system}.default = pkgs.mkShell {
-      packages = with pkgs; [
-        gnumake typst
-
-        typstPackages.cetz typstPackages.cetz-plot
-      ];
+      packages = with pkgs; [ typst typstPackages.cetz typstPackages.cetz-plot just ];
     };
   };
 }
