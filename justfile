@@ -26,3 +26,8 @@ build-matematica-applicata:
 build-fisica-generale:
   mkdir -p target/
   typst compile src/fisica-generale.typ target/fisica-generale.pdf
+
+# Builds economia e organizzazione aziendale
+build-economia-organizzazione-aziendale:
+  mkdir -p target/
+  typst compile src/economia-organizzazione-aziendale.typ target/economia-organizzazione-aziendale.pdf
