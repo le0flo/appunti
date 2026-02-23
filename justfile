@@ -31,3 +31,8 @@ build-fisica-generale:
 build-economia-organizzazione-aziendale:
   mkdir -p target/
   typst compile src/economia-organizzazione-aziendale.typ target/economia-organizzazione-aziendale.pdf
+
+# Builds elettrotecnica
+build-elettrotecnica:
+  mkdir -p target/
+  typst compile src/elettrotecnica.typ target/elettrotecnica.pdf
