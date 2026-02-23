@@ -9,7 +9,11 @@
     pkgs = nixpkgs.legacyPackages.${system};
   in {
     devShells.${system}.default = pkgs.mkShell {
-      packages = with pkgs; [ typst typstPackages.cetz typstPackages.cetz-plot just ];
+      packages = with pkgs; [
+        typst typstPackages.cetz typstPackages.cetz-plot
+        tinymist
+        just just-lsp
+      ];
     };
   };
 }
