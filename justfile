@@ -36,3 +36,8 @@ build-economia-organizzazione-aziendale:
 build-elettrotecnica:
   mkdir -p target/
   typst compile src/elettrotecnica.typ target/elettrotecnica.pdf
+
+# Builds fondamenti di telecomunicazioni
+build-telecomunicazioni:
+  mkdir -p target/
+  typst compile src/telecomunicazioni.typ target/telecomunicazioni.pdf
