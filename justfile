@@ -2,6 +2,17 @@
 clean:
   rm -rf target/*
 
+# Builds everything
+build-all: \
+  build-analisi-t1 \
+  build-algebra-geometria \
+  build-reti-logiche \
+  build-matematica-applicata \
+  build-fisica-generale \
+  build-economia-organizzazione-aziendale \
+  build-elettrotecnica \
+  build-telecomunicazioni
+
 # Builds analisi t1
 build-analisi-t1:
   mkdir -p target/
