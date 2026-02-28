@@ -7,6 +7,12 @@ Si possono categorizzare le imprese per:
 - *Dimensione* (esempi: microimpresa, piccola impresa, grande impresa, ...)
 - *Forma giuridica* (esempi: individuale, collettiva, ...)
 
+== Definizioni
+
+*Imprenditore*: Chi esercita professionalmente un'attività economica organizzata finalizzata alla produzione o allo scambio di beni o servizi (art. 2208 del codice civile).
+
+*Impresa*: Ogni attività economica che sia organizzata, esercitata professionalmente e diretta alla produzione o allo scambio di beni o servizi per il mercato.
+
 == Classificazione per forma giuridica
 
 + Impresa individuale
