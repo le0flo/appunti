@@ -10,8 +10,7 @@ build-all: \
   build-matematica-applicata \
   build-fisica-generale \
   build-economia-organizzazione-aziendale \
-  build-elettrotecnica \
-  build-fondamenti-telecomunicazioni
+  build-elettrotecnica
 
 # Analisi t1
 build-analisi-t1:
@@ -47,8 +46,3 @@ build-economia-organizzazione-aziendale:
 build-elettrotecnica:
   mkdir -p target/
   typst compile --root src/ src/elettrotecnica/root.typ target/elettrotecnica.pdf
-
-# Fondamenti di Telecomunicazioni
-build-fondamenti-telecomunicazioni:
-  mkdir -p target/
-  typst compile --root src/ src/fondamenti-telecomunicazioni/root.typ target/fondamenti-telecomunicazioni.pdf
