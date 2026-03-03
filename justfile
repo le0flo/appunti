@@ -11,44 +11,44 @@ build-all: \
   build-fisica-generale \
   build-economia-organizzazione-aziendale \
   build-elettrotecnica \
-  build-telecomunicazioni
+  build-fondamenti-telecomunicazioni
 
-# Builds analisi t1
+# Analisi t1
 build-analisi-t1:
   mkdir -p target/
-  typst compile src/analisi-t1.typ target/analisi-t1.pdf
+  typst compile --root src/ src/analisi-t1/root.typ target/analisi-t1.pdf
 
-# Builds algebra e geometria
+# Algebra e Geometria
 build-algebra-geometria:
   mkdir -p target/
-  typst compile src/algebra-geometria.typ target/algebra-geometria.pdf
+  typst compile --root src/ src/algebra-geometria/root.typ target/algebra-geometria.pdf
 
-# Builds reti logiche
+# Reti Logiche
 build-reti-logiche:
   mkdir -p target/
-  typst compile src/reti-logiche.typ target/reti-logiche.pdf
+  typst compile --root src/ src/reti-logiche/root.typ target/reti-logiche.pdf
 
-# Builds matematica applicata
+# Matematica Applicata
 build-matematica-applicata:
   mkdir -p target/
-  typst compile src/matematica-applicata.typ target/matematica-applicata.pdf
+  typst compile --root src/ src/matematica-applicata/root.typ target/matematica-applicata.pdf
 
-# Builds fisica generale
+# Fisica Generale
 build-fisica-generale:
   mkdir -p target/
-  typst compile src/fisica-generale.typ target/fisica-generale.pdf
+  typst compile --root src/ src/fisica-generale/root.typ target/fisica-generale.pdf
 
-# Builds economia e organizzazione aziendale
+# Economia e Organizzazione Aziendale
 build-economia-organizzazione-aziendale:
   mkdir -p target/
-  typst compile src/economia-organizzazione-aziendale.typ target/economia-organizzazione-aziendale.pdf
+  typst compile --root src/ src/economia-organizzazione-aziendale/root.typ target/economia-organizzazione-aziendale.pdf
 
-# Builds elettrotecnica
+# Elettrotecnica
 build-elettrotecnica:
   mkdir -p target/
-  typst compile src/elettrotecnica.typ target/elettrotecnica.pdf
+  typst compile --root src/ src/elettrotecnica/root.typ target/elettrotecnica.pdf
 
-# Builds fondamenti di telecomunicazioni
-build-telecomunicazioni:
+# Fondamenti di Telecomunicazioni
+build-fondamenti-telecomunicazioni:
   mkdir -p target/
-  typst compile src/telecomunicazioni.typ target/telecomunicazioni.pdf
+  typst compile --root src/ src/fondamenti-telecomunicazioni/root.typ target/fondamenti-telecomunicazioni.pdf
