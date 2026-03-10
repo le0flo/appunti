@@ -27,6 +27,8 @@ Si possono categorizzare le imprese per:
 + Terzo settore
 + Società Benefit
 
+#pagebreak()
+
 == Impresa individuale
 
 Un solo titolare, nessun capitale minimo, responsabilità illimitata e patrimonio personale esposto
@@ -41,8 +43,6 @@ Un solo titolare, nessun capitale minimo, responsabilità illimitata e patrimoni
 
 - *Alto rischio personale*, l'imprenditore risponde con tutto il patrimonio personale
 - *Patrimonio*, nessuna separazione tra beni aziendali e beni personali
-
-#pagebreak()
 
 === Costi di mercato e di gerarchia
 
@@ -73,12 +73,12 @@ Questa struttura aziendale conviene quando:
 - Le specializzazioni
 - Il rischio contrattuale
 
+#pagebreak()
+
 == Le società
 
 Quando due o più persone conferiscono beni o servizi per l'esercizio in comune di un'attività economica
 allo scopo di dividerne gli utili (art. 2247 del codice civile) si è in presenza di una società.
-
-#pagebreak()
 
 === Società di persone
 
@@ -117,6 +117,8 @@ Una società di persone è caratterizzata da:
 
 Avviare una SRL o una SPA garantisce una riduzione del rischio personale rispetto alle società di persone o imprese individuali.
 Questo permette un aumento degli investimenti che può portare ad una crescita dimensionale dell'impresa.
+
+#pagebreak()
 
 *SRL* o società a responsabilità limitata:
 
