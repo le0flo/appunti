@@ -92,4 +92,12 @@ dove:
 - $N$ è il numero di elementi a convenzione di generatore
 - $M$ è il numero di elementi a convenzione di utilizzatore
 
+Un'altra forma del teorema è:
+
+$ sum^L_(p=1) v_p i_p = 0 $
+
+dove:
+
+- $L$ è il numero di lati nella rete
+
 #pagebreak()
