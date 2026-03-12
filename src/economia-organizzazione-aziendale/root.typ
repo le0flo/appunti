@@ -4,6 +4,6 @@
   materia: "Economia e Organizzazione aziendale"
 )
 
-#include "01-azienda.typ"
-#include "02-struttura.typ"
+#include "01-introduzione.typ"
+#include "02-forme-giuridiche.typ"
 #include "03-organizzazione.typ"

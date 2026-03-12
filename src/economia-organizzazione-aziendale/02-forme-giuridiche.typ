@@ -1,19 +1,4 @@
-= Struttura
-
-Si possono categorizzare le imprese per:
-
-- *Attività* (esempi: agricola, commerciale, ...)
-- *Soggetto* (esempi: pubblico e privato)
-- *Dimensione* (esempi: microimpresa, piccola impresa, grande impresa, ...)
-- *Forma giuridica* (esempi: individuale, collettiva, ...)
-
-== Definizioni
-
-*Imprenditore*: Chi esercita professionalmente un'attività economica organizzata finalizzata alla produzione o allo scambio di beni o servizi (art. 2208 del codice civile).
-
-*Impresa*: Ogni attività economica che sia organizzata, esercitata professionalmente e diretta alla produzione o allo scambio di beni o servizi per il mercato.
-
-== Classificazione per forma giuridica
+= Forme giuridiche
 
 + Impresa individuale
 + Società di persone
@@ -26,8 +11,6 @@ Si possono categorizzare le imprese per:
 + Società cooperative
 + Terzo settore
 + Società Benefit
-
-#pagebreak()
 
 == Impresa individuale
 
@@ -43,6 +26,8 @@ Un solo titolare, nessun capitale minimo, responsabilità illimitata e patrimoni
 
 - *Alto rischio personale*, l'imprenditore risponde con tutto il patrimonio personale
 - *Patrimonio*, nessuna separazione tra beni aziendali e beni personali
+
+#pagebreak()
 
 === Costi di mercato e di gerarchia
 
@@ -194,3 +179,5 @@ Ha il doppio scopo di profitto e beneficio comune.
   [S.P.A.], [Limitata], [$50.000 euro$], [Assemblea, Comitato di Amministrazione, Sindaci], [Si],
   [Cooperativa], [Limitata], [Variabile], [1 Testa = 1 Voto], [Si],
 )
+
+#pagebreak()
