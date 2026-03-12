@@ -122,8 +122,10 @@ La potenza generata dal componente è:
 
 $ p(t) = v(t)i(t) = e i(t) => cases(>0 "potenza erogata", <0 "potenza assorbita") $
 
-Se $e = 0$ si ha davanti un cortocircuito.
+Se $e=0$ si ha davanti un cortocircuito.
 In un generatore di tensione reale (esempio: una batteria), più la corrente aumenta, più la tensione diminuisce.
+
+Un generatore indipendente di tensione si dice *passivato* quando $e=0$.
 
 == Generatore indipendente di corrente
 
@@ -135,7 +137,9 @@ La potenza generata dal componente è:
 
 $ p(t) = v(t)i(t) = v(t) a => cases(>0 "potenza erogata", <0 "potenza assorbita") $
 
-Se $a = 0$ si ha davanti un circuito aperto.
+Se $a=0$ si ha davanti un circuito aperto.
 In un generatore di corrente reale (esempio: un pannello fotovoltaico), se aumenta la tensione, la corrente diminuisce.
+
+Un generatore indipendente di corrente si dice *passivato* quando $a=0$.
 
 #pagebreak()
