@@ -84,3 +84,30 @@ Collegandoli in serie, la *LKC* (legge di Kirchhoff delle correnti) sarebbe viol
 In parallelo:
 
 $ i(t) = i_1(t) + i_2(t) = a_1(t) + a_2(t) $
+
+#pagebreak()
+
+== Collegamento a stella
+
+== Collegamento a triangolo
+
+== Trasformazioni
+
+Le formule per trasformare da una configurazione all'altra sono:
+
+- Trasformazione *triangolo-stella*:
+  - $R_a = (R_(a b) R_(c a)) / (R_(a b) + R_(b c) + R_(c a))$
+  - $R_b = (R_(b c) R_(a b)) / (R_(a b) + R_(b c) + R_(c a))$
+  - $R_c = (R_(c a) R_(b c)) / (R_(a b) + R_(b c) + R_(c a))$
+- Trasformazione *stella-triangolo*
+  - $R_(a b) = (R_a R_b + R_b R_c + R_c R_a) / R_c$
+  - $R_(b c) = (R_a R_b + R_b R_c + R_c R_a) / R_a$
+  - $R_(c a) = (R_a R_b + R_b R_c + R_c R_a) / R_b$
+
+Se le resistenze sono equivalenti, la formula di trasformazione diminuisce sostanzialmente in complessità e diventa:
+
+$ R_a = R_b = R_c = R_times.three = R_triangle / 3 $
+
+$ R_(a b) = R_(b c) = R_(c a) = R_triangle = 3 R_times.three $
+
+#pagebreak()
