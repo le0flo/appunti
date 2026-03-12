@@ -1,14 +1,15 @@
-= Azienda
+= Introduzione
 
-== Definizione giuridica
+== Azienda
+
+=== Definizione giuridica
 
 Il codice civile (art. 2555) definisce azienda il complesso di beni organizzati da un soggetto (l'imprenditore),
 strutturato funzionalmente per l'esercizio dell'impresa (attività) (produzione di beni e servizi).
 
-== Definizione economica
+=== Definizione economica
 
-Istituto economico duraturo volto alla produzione di beni/servizi,
-per il soddisfacimento (diretto o indiretto) dei bisogni umani.
+Istituto economico duraturo volto alla produzione di beni/servizi, per il soddisfacimento (diretto o indiretto) dei bisogni umani.
 
 == Azienda, impresa e imprenditore
 

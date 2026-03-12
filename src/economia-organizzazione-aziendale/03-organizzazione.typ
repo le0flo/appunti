@@ -40,6 +40,8 @@ La struttura distribuisce ruoli e autorità.
 
 Le componenti organizzative rendono operativa la struttura.
 
+#pagebreak()
+
 == Divisione e Integrazione
 
 La struttura organizzativa rappresenta il criterio secondo il quale le persone e il lavoro
@@ -72,8 +74,6 @@ relativamente semplice, su cui si specializza (un tipico esempio è quello degli
 Implica una progressiva divisione tra progettazione del lavoro (“la mente”) e la sua esecuzione (“il braccio”),
 e porta alla creazione dei livelli gerarchici della struttura organizzativa e alla definizione di ruoli con diverso grado di potere e responsabilità.
 
-#pagebreak()
-
 === Organizzazione scientifica del lavoro
 
 All’inizio del XX secolo, Frederick Taylor formalizzò la divisione del lavoro attraverso l’organizzazione scientifica del lavoro.
@@ -84,6 +84,8 @@ La metodologia prevedeva:
 - Misurazione dei tempi
 - Eliminazione dei movimenti inutili
 - Standardizzazione delle procedure
+
+#pagebreak()
 
 === I principi del "Fordismo"
 
@@ -129,6 +131,8 @@ Il coordinamento può essere definito come la gestione delle interdipendenze tra
 La standardizzazione riduce la necessità di interventi continui di coordinamento, ma richiede ambienti relativamente stabili.
 Nelle organizzazioni semplici prevale l’adattamento reciproco.
 Con l’aumento della complessità diventa necessaria la supervisione diretta o la standardizzazione.
+
+#pagebreak()
 
 == Compromesso tra specializzazione e coordinamento
 
