@@ -57,3 +57,5 @@ L'ipotesi fondamentale è quella in cui si analizza una rete lineare con un nume
 La tensione tra i due nodi è pari al rapporto della sommatoria delle correnti di circuito di ogni lato sulla sommatoria delle conduttanze di ogni lato.
 
 $ v_(a b) = (sum^K_(i=0) e_i / R_i + sum^M_(j=1) i_j) / (sum^N_(p=1) 1 / R_p) $
+
+#pagebreak()
