@@ -11,9 +11,12 @@
     devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [
         typst typstPackages.cetz typstPackages.cetz-plot
-        tinymist
-        just just-lsp
+        just
       ];
+
+      shellHook = ''
+        export PS1="("devshell") $PS1";
+      '';
     };
   };
 }
