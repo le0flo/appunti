@@ -9,3 +9,4 @@
 #include "03-componenti.typ"
 #include "04-collegamenti.typ"
 #include "05-analisi.typ"
+#include "06-transitorio.typ"
