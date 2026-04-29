@@ -10,7 +10,9 @@
   in {
     devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [
-        typst typstPackages.cetz typstPackages.cetz-plot
+        typst
+        typstPackages.cetz
+        typstPackages.cetz-plot
         just
       ];
 
