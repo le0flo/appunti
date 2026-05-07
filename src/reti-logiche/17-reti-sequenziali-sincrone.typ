@@ -37,8 +37,6 @@ Sequenza tipica di lavoro di una rete sequenziale sincrona:
 - L'eventuale cambiamento dello stato presente e l'eventuale cambiamento degli ingressi porta la rete a calcolare una nuova uscita e un nuovo stato futuro (gli stati spuri intermedi, se esistenti, vengono ignorati dalla rete)
 - I nuovi bit di stato futuro sono a regime con un anticipo sulla fine del periodo $T_0$ pari almeno al tempo di set-up dei FF-D, pronti per essere campionati alla fine del periodo e iniziare un nuovo ciclo
 
-#pagebreak()
-
 == Temporizzazione di una RSS
 
 Le RSS non funzionano ad inseguimento degli ingressi come le reti combinatorie o le RSA.
@@ -85,8 +83,6 @@ Una rete che realizza un segnale $X_"sync"$ partendo da un ingresso asincrono $X
 Il più semplice tra i sincronizzatori è un FF-D.
 Per diminuire la probabilità che la rete veda un segnale in metastabilità, il sincronizzatore viene spesso realizzato con 2 o più FF-D in cascata.
 
-#pagebreak()
-
 == Segnali $"A_"$
 
 Un segnale di ingresso asincrono viene indicato dal suo nome preceduto da $"A_"$.
@@ -111,5 +107,3 @@ Il procedimento di sintesi formale di una rete sequenziale sincrona è formato d
 === Sintesi diretta
 
 La progettazione diretta di una RSS si esegue combinando RSS notevoli più semplici (registri, shift register, contatori, $dots$) tramite opportuna logica combinatoria.
-
-#pagebreak()

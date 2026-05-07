@@ -25,5 +25,3 @@ Non è necessario ricordare se $n$ clock prima abbiamo visto il dato $k$.
 In ogni momento la rete aspetta un simbolo che la rete attende e che la fa avanzare al passo successivo, ovvero fa incrementare di 1 il numero di simboli corretti visti in sequenza.
 Il modo più efficiente per riconoscere sequenze secondo Moore negli ultimi $n$ dati di ingresso è quindi quello di memorizzare in un contatore x$(n+1)$ se si è visto 0, 1, 2, $dots$, o tutti e $n$ i simboli della sequenza, abilitando il conteggio quando la rete riceve un simbolo corretto e resettando a 0 quando compare un simbolo fuori sequenza.
 Così facendo sono necessari soltanto $[log_2 (n+1)]$ FF-D.
-
-#pagebreak()

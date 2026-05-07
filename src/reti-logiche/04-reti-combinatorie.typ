@@ -102,8 +102,6 @@ esempio, Full adder:
 - $R(a,b,r) = Sigma_3 m(3,5,6,7)$
 - $R(a,b,r) = Pi_3 M(0,1,2,4)$
 
-#pagebreak()
-
 == Equivalenza tra espressioni
 
 L'equivalenza tra due espressioni si indica con:
@@ -134,8 +132,6 @@ Proprietà della somma e del prodotto logico:
 - *Prima legge di De Morgan*: $(x+y)' = x'*y'$
 - *Seconda legge di De Morgan*: $(x*y)' = x'+y'$
 - *Consenso*: $x y+x'z+y z = x y+x'z$ e $(x+y)*(x'+z)*(y+z) = (x+y)*(x'+z)$
-
-#pagebreak()
 
 == Manipolazione algebrica di espressioni
 
@@ -181,5 +177,3 @@ Abbiamo due possibili obbiettivi:
 
 - *Reti di costo minimo*: Massima velocità e Minima complessità
 - *Reti programmabili*: Rapidità di progetto e Massima flessibilità
-
-#pagebreak()

@@ -121,8 +121,6 @@ Y=C D+C'y+D y \
 Q=y
 $
 
-#pagebreak()
-
 === Sintesi diretta
 
 Si può realizzare una sintesi di un latch CD utilizzando i componenti precedentemente introdotti.
@@ -170,8 +168,6 @@ Esistono due tipi principali di flip-flop D:
 - *Master-slave*: realizzato con due latch CD in cascata con $C$ in forma vera e negata
 - *Edge-triggered*: 6 NAND invece che 8 e altri miglioramenti che vengono da scelte di progetto non intuitive, ottenute utilizzando strumenti di CAD (Computer-Aided Design)
 
-#pagebreak()
-
 === Tempi di set-up, di hold e di risposta
 
 I tempi caratteristici di un flip-flop D hanno gli stessi nomi e significati simili a quelli del latch CD, con la differenza che fanno riferimento al fronte di salita del clock.
@@ -191,5 +187,3 @@ Il clock divide il tempo in intervalli discreti tra cui vale la relazione:
 $ Q^(n+1) = D^n $
 
 Questa è una caratteristica che lo rende fondamentale nella realizzazione di reti sequenziali sincrone.
-
-#pagebreak()

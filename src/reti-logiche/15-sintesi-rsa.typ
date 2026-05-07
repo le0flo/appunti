@@ -26,8 +26,6 @@ esempio:
   $D$, $A,-$, $D,1$,
 )
 
-#pagebreak()
-
 == Tabella delle transizioni
 
 In ogni rete sequenziale, lo stato è rappresentato da una configurazione binaria dei bit di stato.
@@ -114,5 +112,3 @@ $ arrow.b $
     $1$, $1$, $1$, $0$, $0$,
   )
 })
-
-#pagebreak()

@@ -54,8 +54,6 @@ Tabella della verità:
 
 Espressione: $z = x*y$ oppure $z = x y$
 
-#pagebreak()
-
 === Gate OR
 
 Tabella della verità:
@@ -118,8 +116,6 @@ Tabella della verità:
 
 Espressione: $z = x arrow.b y$ oppure $z = overline(x + y)$
 
-#pagebreak()
-
 === Gate EXNOR
 
 Tabella della verità:
@@ -176,5 +172,3 @@ esempio:
 Pur lavorando con componenti astratti, bisogna tenere in considerazione il fatto che possono essere componenti reali.
 La differenza principale tra i due, da prendere in considerazione, è il "ritardo di propagazione", indicato con $tau_p$, ed esprime il tempo che un segnale impiega per completare la transizione tra stati.
 Un impulso di durata inferiore a $tau_p$ su uno degli ingressi non appare in uscita.
-
-#pagebreak()

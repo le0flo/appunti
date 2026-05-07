@@ -24,5 +24,3 @@ Macchina digitale alla cui base troviamo il componente transistor.
 L'architettura dei microprocessori è molto complicata.
 Possiamo dividere l'architettura in livelli di astrazione, individuando componenti primitivi, che permettono di realizzare componenti di sempre più alto livello fino ad avere il microprocessore desiderato.
 Dei componenti primitivi interessa soltanto il "comportamento", ovvero la relazione tra input ed output da un punto di vista esterno.
-
-#pagebreak()

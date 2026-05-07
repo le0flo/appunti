@@ -50,5 +50,3 @@ La tecnologia di oggi ci permette di avere numero di fan-out $>= 10$, ma rimane 
 
 Esistono DEC in forma integrata con 2, 3, o 4 bit di indirizzo.
 Questi ricadono tutti sotto l'ala della MSI.
-
-#pagebreak()

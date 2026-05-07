@@ -26,5 +26,3 @@ Se il segnale $"OUT"$ è usato in una rete di Moore, potrebbe non essere un prob
 Consiste nella stessa rete della versione base, con l'aggiunta di un FF-D prima del FF-1 della versione base, per eliminare i casi limite di metastabilità.
 L'uscita del nuovo FF-1 si chiama $"IN_meta"$.
 L'unico lato negativo di questa versione è l'aumento di un periodo, dal momento in cui la rete rileva il fronte sul segnale $"IN"$ all'uscita $"OUT"$ anche per fronti del segnale asincrono che non violano il tempo di set-up e hold.
-
-#pagebreak()

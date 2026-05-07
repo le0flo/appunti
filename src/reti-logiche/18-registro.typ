@@ -32,8 +32,6 @@ Questo componente è utile per:
 - Rotazione verso destra o sinistra
 - Moltiplicazione o divisione per una potenza di 2
 
-#pagebreak()
-
 === Comandi
 
 - *$"EN"$ o enable*: l'ingresso $"IN"$ viene memorizzato solo se $"EN"=1$ e le uscite non cambiano quando $"EN"=0$
@@ -52,5 +50,3 @@ Quando tutti i comandi elencati precedentemente sono disponibili, si parla di un
 
 Sono codificabili da 2 bit di comando $S_1$ e $S_0$.
 Posso avere un solo ingresso $"IN"$ che entra a sinistra o a destra a seconda del valore dei bit di comando, o due ingressi diversi $"IN_R"$ e $"IN_L"$.
-
-#pagebreak()

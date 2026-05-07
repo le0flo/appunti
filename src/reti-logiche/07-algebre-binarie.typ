@@ -30,5 +30,3 @@ La sintesi "a NAND" può essere effettuata trasformando un'espressione SP (SP, S
 - Si sostituisce il simbolo "$arrow.b$" ad ogni simbolo "$+$"
 - Si sostituisce il simbolo "$arrow.b$" ad ogni simbolo "$*$" e si completano le variabili singole affiancate a tale simbolo senza aggiungere o togliere parentesi
 - (Opzionale) Se compaiono segnali di ingresso in forma negata e non sono disponibili, li sostituisco con il NOR del segnale in forma vera
-
-#pagebreak()

@@ -52,8 +52,6 @@ esempio:
 
 $ arrow.b $
 
-#pagebreak()
-
 $ arrow.b $
 
 #table(
@@ -103,8 +101,6 @@ $ arrow.b $
 
 Questa configurazione non è valida poiché le celle $B,11$ e $C,00$ non rispettano il vincolo di adiacenza tra stato presente e stato futuro.
 
-#pagebreak()
-
 == Determinare se una configurazione è valida o meno
 
 I segnali in retroazione per cui è stata prevista una modifica contemporanea di valore si trovano in una situazione di corsa.
@@ -149,5 +145,3 @@ Si possono eliminare le situazioni di corse critiche a priori seguendo le seguen
 - Si sovrappone il grafo ad una mappa con codici di Gray su righe e colonne (come per le mappe di Karnaugh) e si verifica se è possibile assegnare configurazioni adiacenti ad ogni coppia di stati coinvolta in una transazione
 - Se è impossibile soddisfare i vincoli di adiacenza, si cerca di ridurli ricorrendo a transazioni multiple
 - Se non ci si riesce, si incrementa il numero delle variabili di stato e si ritorna al punto 3
-
-#pagebreak()

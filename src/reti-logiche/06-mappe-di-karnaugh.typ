@@ -187,12 +187,8 @@ esempio:
 La copertura $c' + a c d'$ è valida ma non è una copertura minima.
 Infatti se prendiamo in considerazione la copertura $c' + a d'$, essa è una copertura valida con lo stesso numero di RR ma entrambi di dimensione massima.
 
-#pagebreak()
-
 == Analisi di un circuito con le mappe
 
 - Si scrive l'espressione associata allo schema dato e, se necessario, la si manipola fino ad ottenere una espressione SP o PS.
 - Si predispone una mappa di dimensioni adeguate e si tracciano sulla mappa i RR che corrispondono ai termini dell'espressione.
 - Nelle celle coperte dagli RR, si indica valore 1 se l'espressione analizzata è SP, 0 in caso sia una espressione PS. Nelle celle non coperte si mette il valore opposto (0 con le SP, 1 con le PS).
-
-#pagebreak()

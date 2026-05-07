@@ -45,5 +45,3 @@ I due principali HDL sono:
 
 - VHDL
 - Verilog
-
-#pagebreak()
