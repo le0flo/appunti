@@ -27,8 +27,6 @@ Un solo titolare, nessun capitale minimo, responsabilità illimitata e patrimoni
 - *Alto rischio personale*, l'imprenditore risponde con tutto il patrimonio personale
 - *Patrimonio*, nessuna separazione tra beni aziendali e beni personali
 
-#pagebreak()
-
 === Costi di mercato e di gerarchia
 
 L'impresa individuale è una gerarchia minima:
@@ -57,8 +55,6 @@ Questa struttura aziendale conviene quando:
 - Le funzioni richieste
 - Le specializzazioni
 - Il rischio contrattuale
-
-#pagebreak()
 
 == Le società
 
@@ -102,8 +98,6 @@ Una società di persone è caratterizzata da:
 
 Avviare una SRL o una SPA garantisce una riduzione del rischio personale rispetto alle società di persone o imprese individuali.
 Questo permette un aumento degli investimenti che può portare ad una crescita dimensionale dell'impresa.
-
-#pagebreak()
 
 *SRL* o società a responsabilità limitata:
 
@@ -179,5 +173,3 @@ Ha il doppio scopo di profitto e beneficio comune.
   [S.P.A.], [Limitata], [$50.000 euro$], [Assemblea, Comitato di Amministrazione, Sindaci], [Si],
   [Cooperativa], [Limitata], [Variabile], [1 Testa = 1 Voto], [Si],
 )
-
-#pagebreak()

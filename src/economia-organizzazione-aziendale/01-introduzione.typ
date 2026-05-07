@@ -36,8 +36,6 @@ $ Q = f(K,L,T) $
 
 dove: $K = "Capitale", L = "Lavoro", T = "Tecnologia"$
 
-#pagebreak()
-
 == Il valore aggiunto
 
 L'impresa è un *sistema aperto* che trasforma risorse in output, creando valore economico.
@@ -169,5 +167,3 @@ ed ha i seguenti benefici:
 - Agevolazioni fiscali
 - Deroghe al diritto societario
 - Incentivi per gli investitori
-
-#pagebreak()
