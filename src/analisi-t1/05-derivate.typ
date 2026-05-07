@@ -40,8 +40,6 @@ $ D^n f = (d^n f) / (d x^n) = f^((n)) $
 - $D^2 f >= 0 arrow D f$ è crescente, la funzione è convessa.
 - $D^2 f <= 0 arrow D f$ è decrescente, la funzione è concava.
 
-#pagebreak()
-
 == Derivate comuni
 
 - $D c = 0$
@@ -69,5 +67,3 @@ $ D^n f = (d^n f) / (d x^n) = f^((n)) $
 - $f(x), g(x) arrow D(f / g) = ((D f)g - f(D g)) / g^2$
 - $f(x), g(x) arrow D(f o g) = D f(g) * D g$
 - $f(x) arrow D f^(-1) = 1 / (D f(f^(-1)(x)))$
-
-#pagebreak()

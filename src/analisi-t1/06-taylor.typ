@@ -50,5 +50,3 @@ dots +
 (D^(n+1) f(c)) / ((n+1)!) (x - x_0)^(n+1)
 "per" x arrow x_0
 $
-
-#pagebreak()

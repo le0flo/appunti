@@ -58,5 +58,3 @@ exists c in ]a,b[ :
 (f(b) - f(a)) D g(c) = (g(b) - g(a)) D f(c) arrow
 (D f(c)) / (D g(c)) = (f(b) - f(a)) / (g(b) - g(a))
 $
-
-#pagebreak()
