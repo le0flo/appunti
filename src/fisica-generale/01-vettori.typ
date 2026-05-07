@@ -119,8 +119,6 @@ $ arrow(a)_u = a_(hat(u)) * hat(u) $
 
 Il modulo di un vettore (o norma) è legato al prodotto scalare da $|a^2| = arrow(a) * arrow(a)$, infatti $arrow(a) * arrow(a) = |a| * |a| * cos(theta)$.
 
-#pagebreak()
-
 == Prodotto vettoriale
 
 Un operazione che prende 2 vettori e restituisce un vettore in $RR^3$.
@@ -166,8 +164,6 @@ $ arrow(c) = arrow(a) and arrow(b) = arrow(a) * arrow(b) * sin(theta) $
 
 - Distributiva: $(arrow(a) * arrow(b)) and arrow(c) = arrow(a) and arrow(c) + arrow(b) and arrow(c)$
 - Non vale la proprietà associativa: $(arrow(a) and arrow(b)) and arrow(c) != arrow(a) and (arrow(b) and arrow(c))$
-
-#pagebreak()
 
 == Vettori e coordinate
 
@@ -264,8 +260,6 @@ In tre dimensioni, un sistema di riferimento è determinato da tre versori ortog
 
 Siccome i versori sono ortogonali: $hat(i) and hat(j) = hat(k), hat(j) and hat(i) = -hat(k)$
 
-#pagebreak()
-
 == Operazioni tra vettori in coordinate
 
 Le coordinate sono le componenti di un vettore rispetto ai versori (o "assi") del sistema di riferimento.
@@ -298,5 +292,3 @@ $
 det(mat(hat(i),hat(j),hat(k); a_i, a_j, a_k; b_i, b_j, b_k))
 = hat(i) (a_j b_k - a_k b_j) - hat(j) (a_i b_k - a_k b_i) + hat(k) (a_i b_j - a_j b_i)
 $
-
-#pagebreak()

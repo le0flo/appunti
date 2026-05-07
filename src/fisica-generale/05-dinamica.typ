@@ -39,8 +39,6 @@ Sistemi di riferimento inerziali sono un'idealizzazione.
 Qualsiasi sistemi di riferimento che prendiamo in pratica ha delle "deviazioni" da un sistema di riferimento inerziale ideale.
 L'importante è che gli effetti dovuti all'aver scelto un sistema non inerziali siano trascurabili rispetto al moto che si vuole descrivere.
 
-#pagebreak()
-
 == Seconda legge
 
 Un punto materiale su cui agisce una forza $arrow(F)$, accelera con un'accelerazione $arrow(a)$ proporzionale a $arrow(F)$.
@@ -186,8 +184,6 @@ $ arrow(F)_R = arrow(F)_T + arrow(F)_p $
 - $arrow(F)^((R))_n = |arrow(F)_T| - |arrow(F)_p| cos(theta(t))$
 - $arrow(F)^((R))_t = -|arrow(F)_p| sin(theta(t)) = -m g sin(theta(t))$
 
-#pagebreak()
-
 == Forze di attrito
 
 Le forze di attrito sono forze causati dall'interazione di componenti microspopiche che hanno l'effeto netto di "opporsi" al moto.
@@ -232,5 +228,3 @@ $ arrow(F)_("AD") = mu_D * |arrow(F)_N| $
 dove $mu_D$ è il coefficiente di attrito dinamico, tipicamente:
 
 $ 0 < mu_D < mu_S arrow mu_D tilde.op 0.01 $
-
-#pagebreak()

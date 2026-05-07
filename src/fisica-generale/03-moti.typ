@@ -45,8 +45,6 @@ s(t) &tilde.eq sum_(t') |arrow(r)(t' + Delta t) - arrow(r)(t')| \
 &= integral^t_0 |arrow(v)(t')| d t'
 $
 
-#pagebreak()
-
 == Cerchio osculatore
 
 Data una curva $arrow(r)(t)$ e un punto $P = arrow(r)(t_0)$, definiamo il cerchio osculatore come il cerchio che meglio approssima la curva vicino a $P$.
@@ -120,8 +118,6 @@ Data una curva $arrow(r)(t)$ e un punto $P$ su $arrow(r)(t)$, possiamo definire 
 
 Si possono esprimere velocità e accelerazione in funzione della terna soprascritta.
 Questa rappresentazione è utile perchè è indipendente da un sistema di riferimento fissato a priori.
-
-#pagebreak()
 
 == Velocità
 
@@ -302,8 +298,6 @@ $ arrow(a)(t) = R dot.double(phi)(t) hat(u)_phi - R dot(phi)(t)^2 hat(u)_r $
 Se $R dot.double(phi) = 0$ parliamo di moto circolare uniforme, dove la velocità angolare è costante ($omega$), ma l'accelerazione centripeta è $a_n = -R omega^2 != 0$.
 $phi$ si misura in radianti (rad), $dot(phi)(t)$ si misura (rad/s).
 
-#pagebreak()
-
 == Moti periodici
 
 Un moto è detto periodico con periodo $T$ se:
@@ -361,5 +355,3 @@ Data $dot.double(f)(t) = -A f(t)$, la soluzione più generale è:
 $ f(t) = alpha sin((omega t + phi_0)) $
 
 dove $omega = sqrt(A)$, mentre $alpha$ e $phi_0$ sono parametri liberi che vanno fissati dalle condizioni iniziali.
-
-#pagebreak()

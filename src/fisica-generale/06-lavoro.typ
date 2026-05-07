@@ -85,8 +85,6 @@ Il lavoro si misura in Joule (J):
 
 $ 1J = 1N * 1m $
 
-#pagebreak()
-
 == Potenza
 
 Si definisce la potenza di una forza, come il lavoro compiuto da essa in una unità di tempo:
