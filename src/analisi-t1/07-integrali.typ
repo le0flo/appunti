@@ -38,8 +38,6 @@ Dati $F(x), G(x)$:
 
 $ integral D F(G(x)) * D G(x) d x = D F(G(x)) + c $
 
-#pagebreak()
-
 == Sostituzioni con tangente
 
 Dato $t = tan(x / 2)$:
@@ -53,5 +51,3 @@ Dato $t = tan(x)$:
 - $d x = 1 / (1 + t^2) d t$
 - $sin(x) = dots$
 - $cos(x) = dots$
-
-#pagebreak()

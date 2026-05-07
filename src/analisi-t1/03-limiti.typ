@@ -45,5 +45,3 @@ Dati i limiti $L, M, x_0 in [ -infinity , +infinity ]$, $lim_(x arrow x_0) f(x) 
 - $lim_(x arrow 0) cos(x) - 1 / x^2 = -1 / 2$
 - $lim_(x arrow 0) e^x - 1 / x = 1$
 - $lim_(x arrow 0) ln(1 + x) / x = 1$
-
-#pagebreak()

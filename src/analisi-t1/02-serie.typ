@@ -92,8 +92,6 @@ Dato $(a_n)_n, a_n != 0$, se $exists lim_(n arrow infinity) |a_n + 1 / a_n| = L$
 - se $L > 1$ allora $sum a_n$ non converge
 - se $L = 1$ allora non si può concludere nulla
 
-#pagebreak()
-
 === Criterio di Leibniz
 
 Se $(a_j)_j : a_j > 0 : a_j >= a_j + 1 : lim_(j arrow +infinity) a_j = 0$, allora la serie:
@@ -110,5 +108,3 @@ Dati $(a_n)_n, forall n : a_n >= 0$ e $(b_n)_n, forall n : b_n > 0$, se $lim_(n 
 - $sum a_n = +infinity arrows sum b_n = +infinity$, entrambe divergono
 
 Dati $(a_n)_n, forall n : a_n >= 0$ e $p = n * a_n$, se $lim_(n arrow +infinity) a_n / (1 / n^p) = L > 0$, allora $sum_n a_n$ converge se $sum_n 1 / n^p$ converge; possibile converge se $p > 1$.
-
-#pagebreak()
