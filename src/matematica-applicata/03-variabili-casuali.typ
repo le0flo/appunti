@@ -98,8 +98,6 @@ esempio, date 12 batterie, di cui 3 cariche, 4 poco cariche e 5 non funzionanti,
 $X = "numero di batterie cariche estratte"$, $Y = "numero di batterie poco cariche estratte"$.
 Per $(X,Y)$ determinare $p(a,b)$ e $p_X(a),p_Y(b)$.
 
-#pagebreak()
-
 #table(
   columns: (1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
   inset: 10pt,
@@ -186,8 +184,6 @@ oppure
 - se $(X,Y)$ sono una coppia di variabili casuali discrete: $p(a,b) = p_X(a)p_Y(b) forall a,b in RR$
 - se $(X,Y)$ sono congiuntamente continue: $f(a,b) = f_X(a)f_Y(b) forall a,b in RR$
 
-#pagebreak()
-
 == Valore medio di una variabile casuale
 
 Data una variabile casuale $X$, si definisce valore atteso o valore medio di $X$, se esiste, il numero:
@@ -235,8 +231,6 @@ $ E[Z] = E[X+Y] = E[X] + E[Y] arrow E[sum^n_(i=1) X_i] = sum^n_(i=1) E[X_i] $
 Data una variabile casuale, si definisce (se esiste) il suo momento $n$-esimo come:
 
 $ E[X^n] & n in NN $
-
-#pagebreak()
 
 == Varianza di una variabile casuale
 
@@ -291,5 +285,3 @@ La covarianza può assumere i seguenti valori, con il rispettivo significato:
 Date due variabili casuali $X$ e $Y$ di valore atteso $E[X]$ e $E[Y]$, allora si dice coefficiente di correlazione di $X$ e $Y$:
 
 $ "Corr"(X,Y) = "Cov"(X,Y) / sqrt("Var"(X)"Var"(Y)) in [-1, 1] $
-
-#pagebreak()
