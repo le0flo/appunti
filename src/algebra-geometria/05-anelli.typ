@@ -18,5 +18,3 @@ esempi:
 - se $P_2$ ha un elemento neutro, $AA$ si dice: "anello con unità"
 - se $(AA backslash arrow(0), P_2)$ è un gruppo, allora $AA$ si dice anello di divisione o con corpo
 - quando il corpo è commutativo, $AA$ è un *campo*
-
-#pagebreak()

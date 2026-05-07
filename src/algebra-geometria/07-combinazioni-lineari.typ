@@ -31,5 +31,3 @@ Se $VV$ ha una base costituita da $n$ vettori, allora si dice che la dimensione 
 $ dim VV = n $
 
 Se conosciamo la dimensione dello spazio vettoriale $VV$ e troviamo un insieme di vettori linearmente indipendenti, allora possiamo dire che quell'insieme di vettori è una base di $VV$.
-
-#pagebreak()
