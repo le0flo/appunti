@@ -47,8 +47,6 @@ Se $R = 0$, significa che per qualsiasi intensità di corrente ($i(t)$), la diff
 $A$ e $B$ sono collegati e questa situazione viene dettà *cortocircuito*.
 Se $R = infinity$, allora la differenza di potenziale sarebbe $infinity$, perciò il circuito risulta *aperto*.
 
-#pagebreak()
-
 == Condensatore
 
 Usa la convenzione dell'utilizzatore, la sua equazione costitutiva è:
@@ -93,8 +91,6 @@ ed è sempre $>= 0$ perciò il componente è *passivo*.
 
 Nel caso del condensatore, la tensione è detta "variabile di stato", perchè descrive lo stato energetico del componente.
 Essa non può variare istantaneamente.
-
-#pagebreak()
 
 == Induttore
 
@@ -141,5 +137,3 @@ Se $a=0$ si ha davanti un circuito aperto.
 In un generatore di corrente reale (esempio: un pannello fotovoltaico), se aumenta la tensione, la corrente diminuisce.
 
 Un generatore indipendente di corrente si dice *passivato* quando $a=0$.
-
-#pagebreak()

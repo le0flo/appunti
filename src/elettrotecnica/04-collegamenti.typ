@@ -85,8 +85,6 @@ In parallelo:
 
 $ i(t) = i_1(t) + i_2(t) = a_1(t) + a_2(t) $
 
-#pagebreak()
-
 == Collegamento a stella
 
 == Collegamento a triangolo
@@ -109,5 +107,3 @@ Se le resistenze sono equivalenti, la formula di trasformazione diminuisce sosta
 $ R_a = R_b = R_c = R_times.three = R_triangle / 3 $
 
 $ R_(a b) = R_(b c) = R_(c a) = R_triangle = 3 R_times.three $
-
-#pagebreak()

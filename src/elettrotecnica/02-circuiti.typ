@@ -31,8 +31,6 @@ L'energia:
 
 $ w(t) = integral^(t_2)_(t_1) p(t) d t space ["J"] $
 
-#pagebreak()
-
 == Convenzioni
 
 Un elemento può essere rappresentato usando due convenzioni:
@@ -79,8 +77,6 @@ $ sum^N_(k=1) plus.minus i_k = 0 $
 
 dove le correnti positive sono quelle entranti, mentre quelle negative rappresentano le correnti uscenti.
 
-#pagebreak()
-
 == Teorema di Tellegen
 
 La somma delle potenze generate all'interno di un circuito è pari alla somma delle potenze assorbite:
@@ -99,5 +95,3 @@ $ sum^L_(p=1) v_p i_p = 0 $
 dove:
 
 - $L$ è il numero di lati nella rete
-
-#pagebreak()

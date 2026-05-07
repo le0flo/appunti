@@ -157,8 +157,6 @@ $ e_l_c = integral.cont_l_c E * d l_c = - integral.double_S (theta B) / (theta t
 Dove $Phi$ è il flusso magnetico concatenato con la linea chiusa $l_c$.
 La tensione elettrica $e_l_c$ indotta sulla linea chiusa della variazione del flusso magnetico concatenato con $l_c$ è detta *forza elettromotrice* (f.e.m).
 
-#pagebreak()
-
 === Legge di conservazione della carica
 
 La carica elettrica non si crea e non si distrugge.

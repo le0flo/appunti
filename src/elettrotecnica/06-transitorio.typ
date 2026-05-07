@@ -94,8 +94,6 @@ Soluzione completa:
 
 $ i_L(t) = (I_(L 0) - E/R) e^(-(t R) / L) + E/R $
 
-#pagebreak()
-
 == Circuito RLC
 
 EDO da risolvere:
