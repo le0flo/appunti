@@ -189,5 +189,3 @@ $
 Dati $Y_1 tilde.op log(N(mu_1, sigma_1^2))$ e $Y_2 tilde.op log(N(mu_2, sigma_2^2))$ indipendenti:
 
 $ Z = Y_1 Y_2 = e^(X_1) e^(X_2) = e^(X_1 + X_2) = e^T tilde.op log(N(mu_1 + mu_2, sigma_1^2 + sigma_2^2)) $
-
-#pagebreak()

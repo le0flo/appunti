@@ -43,8 +43,6 @@ $ lim_(N arrow +infinity) P(|(sum^N_(k=1) X_k) / N - mu| > epsilon) = 0 $
 
 Ovvero, la media aritmetica delle $X_k$ converge in probabilità alla media teoria $mu$.
 
-#pagebreak()
-
 == Funzione generatrice dei momenti
 
 Data una variabile casuale $X$, si dice funzione generatrice dei momenti (se esiste):
@@ -68,5 +66,3 @@ $
 - $(d^n phi) / (d t^n) bar_(t=0) = E[x^n]$
 - Siano $X$ e $Y$ due variabili casuali indipendenti, allora: $phi_(X+Y)(t) = phi_X(t) phi_Y(t)$
 - Se due variabili casuali presentano la stessa funzione generatrice dei momenti, allora sono identicamente distribuite.
-
-#pagebreak()

@@ -51,8 +51,6 @@ $ "Var"(X) = "Var"(sum^n_(j=1) Y_j) = sum^n_(j=1) "Var"(Y_j) = sum^n_(j=1) p q =
 
 $ phi_X(t) = phi_(sum^n_(j=1) Y_j)(t) = phi_(Y_1)(t) * dots * phi_(Y_n)(t) = (q+e^t p)^n $
 
-#pagebreak()
-
 === Proprietà di riproducibilità
 
 Siano $X tilde.op B(n_1,p)$ e $Y tilde.op B(n_2,p)$, indipendenti tra loro, allora:
@@ -94,8 +92,6 @@ $ Z = X+Y tilde.op "Po"(lambda_1 + lambda_2) $
 Le variabili casuali poissoniane possono essere viste come il limite di una variabile casuale binomiale quando $n$ tende a $+infinity$.
 
 $ n arrow +infinity, n p = lambda arrow p = lambda / n << 1 $
-
-#pagebreak()
 
 == Variabile casuale geometrica
 
@@ -142,5 +138,3 @@ Dato $X = sum^r_(j=1) Y_j$ con $Y_j tilde.op G(p)$ indipendenti
 - $E[X] = E[sum^r_(j=1) Y_j] = sum^r_(j=1) E[Y_j] = sum^r_(j=1) 1 / p = r / p$
 
 $ "Var"(X) = "Var"(sum^r_(j=1) Y_j) = sum^r_(j=1) "Var"(Y_j) = (r q) / p^2 $
-
-#pagebreak()

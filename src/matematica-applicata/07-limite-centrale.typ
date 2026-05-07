@@ -16,8 +16,6 @@ Dato $S_n = sum^n_(k=1) X_k$ e $Y_n = (S_n - n mu) / (sigma sqrt(n))$:
 - $E[Y_n] = E[(S_n - n mu) / (sigma sqrt(n))] = (E[S_n] - n mu) / (sigma sqrt(n)) = (n mu - n mu) / (sigma sqrt(n)) = 0$
 - $"Var"(Y_n) = 1 / (sigma^2 n) "Var"(S_n) = (n sigma^2) / (sigma^2 n) = 1$
 
-#pagebreak()
-
 == Applicazioni del teorema del limite centrale
 
 === Prima applicazione
@@ -70,8 +68,6 @@ $ S_n = sum^n_(k=1) X_j tilde.dot N(n mu, n sigma^2) $
 - $E[X_k] = mu$
 - $"Var"(X_k) = sigma^2$
 - con $k=1,dots,n$
-
-#pagebreak()
 
 === Terza applicazione
 

@@ -40,8 +40,6 @@ Dati $n$ oggetti distinti, si dicono permutazioni semplici di $n$ elementi gli a
 
 $ P_n = n(n-1)(n-2) dots 1 = n! $
 
-#pagebreak()
-
 == Permutazioni con ripetizioni
 
 Dati $n$ oggetti non necessariamente distinti, si definiscono permutazioni con ripetizioni, gli allineamenti che si possono costruire a partire da gli n oggetti dati.
@@ -125,8 +123,6 @@ Dati uno spazio campione $S$ e due eventi indipendenti $E,F subset S$, allora:
 - $E^c$ ed $F$ sono indipendenti
 - $E^c$ ed $F^c$ sono indipendenti
 
-#pagebreak()
-
 == Tre eventi indipendenti
 
 Dati lo spazio campione $S$ e tre eventi $A,B,C subset S$, essi si dicono indipendenti se:
@@ -160,5 +156,3 @@ $ P(E) = sum^n_(k=1) P(E|H_k) P(H_k) $
 Dati uno spazio campione $S$, una sua partizione ${H_1, dots, H_k}$ e un evento $E subset S$ con $P(E) != 0$, allora:
 
 $ P(H_j|E) = (P(E|H_j) P(H_j)) / (sum^n_(k=1) P(E|H_k) P(H_k)) = (P(E|H_j) P(H_j)) / P(E) $
-
-#pagebreak()
