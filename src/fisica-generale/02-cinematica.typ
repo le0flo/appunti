@@ -49,8 +49,6 @@ $ arrow(t)(t) = (r_x(t), r_y(t), r_z(t)) $
 
 $ [r_x] = (m) $
 
-#pagebreak()
-
 == Velocità
 
 === Definizione
@@ -114,8 +112,6 @@ La velocità si misura in $"m/s"$
 - Sia $lambda(t)$ una funzione reale in $RR$ e $arrow(f)(t) in RR^3$: $d / (d t) (lambda(t) arrow(f)(t)) = (d / (d t) lambda(t)) arrow(f)(t) + lambda(t) (d / (d t) arrow(f)(t))$
 - Siano $arrow(f)(t), arrow(g)(t) in RR^3$, allora: $d / (d t)(arrow(f)(t) arrow(g)(t)) = (d / (d t) arrow(f)(t)) arrow(g)(t) + arrow(f)(t) (d / (d t) arrow(g)(t))$
 - $d / (d t)(arrow(f)(t) and arrow(g)(t)) = (d / (d t) arrow(f)(t)) and arrow(g)(t) + arrow(f)(t) and (d / (d t) arrow(g)(t))$
-
-#pagebreak()
 
 == Accelerazione
 
@@ -215,5 +211,3 @@ che graficamente è:
 
 Capita molto più spesso di avere informazioni su $arrow(v)(t)$ o $arrow(a)(t)$ e di voler ricostruire $arrow(t)(t)$.
 Questo è definito come il "problema inverso" della cinematica, che si riconduce alla risoluzione di equazioni differenziali
-
-#pagebreak()

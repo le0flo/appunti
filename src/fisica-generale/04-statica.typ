@@ -57,8 +57,6 @@ $ arrow(M) = arrow(R) and arrow(F) $
 
 Un punto è in quiete in un sistema di riferimento, se ha una velocità nulla in ogni istante.
 
-#pagebreak()
-
 == Equilibrio
 
 Se un sistema di punti inizialmente in quiete rimane in quiete (anche se agiscono forze), si dice che si trova in uno stato di equilibrio.
@@ -131,5 +129,3 @@ esempio, il tavolo impedisce alla palla di accedere ai punti con $y < 0$:
 
 A livello microscopico, il tavolo si "deforma un po'", e possiamo pensarlo come un insieme di piccole molle.
 Un vincolo si dice liscio se non oppone resistenza rispetto ad un moto tangenziale alla superficie del vincolo ("no attrito").
-
-#pagebreak()
