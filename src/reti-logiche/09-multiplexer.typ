@@ -57,5 +57,3 @@ Il MUX viene utilizzato, in questo caso, come generatore di funzioni.
 
 Esistono MUX a 2,4,8 o 16 bit di programmazione.
 Il circuito integrato ha un numero di pin limitati, ma gli ingressi di un MUX crescono esponenzialmente, perciò saranno disponibili in forma integrata, al massimo MUX a 16 bit di programmazione.
-
-#pagebreak()

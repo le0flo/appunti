@@ -45,8 +45,6 @@ Una volta che lo stato presente diventa disponibile, le uscite dipendono solo da
 Una RSA è perciò composta da $m+k$ reti combinatorie, ognuna con $n+k$ ingressi.
 Una convenzione comune è indicare con $F$ le funzioni che calcolano i bit di uscita e con $G$ le funzioni che calcolano i bit di stato futuro.
 
-#pagebreak()
-
 == Retroazione
 
 Data una rete combinatoria, provare a collegare l'uscita di essa in retroazione su uno dei propri ingressi, analizzando il tutto soltanto con usando le pure relazioni matematiche tra i gate, risulterebbe impossibile.
@@ -98,8 +96,6 @@ Per analizzare una rete sequenziali asincrona invece si usano:
 - Grafo degli stati e Tabella di flusso $arrow$ Comportamento della rete
 - Espressione o schema logico $arrow$ Struttura della rete (per ognuna delle $m+k$ reti combinatorie che la compongono)
 
-#pagebreak()
-
 == Grafo degli stati
 
 Un grafo ad archi orientati dove:
@@ -128,8 +124,6 @@ Nel caso dell'automa di Mealy, si indica il valore dell'uscita sugli stati invec
 
 In una rete sequenziale asincrona, l'uscita dipende dagli ingressi e dallo stato presente.
 Per assicurarsi un comportamento deterministico, la certezza che la rete parta sempre dallo stesso stato, si introduce un segnale di reset, che assume valore 1 per pochi istanti all'accensione, e rimane 0 per il resto del tempo.
-
-#pagebreak()
 
 == Tabella di flusso
 
@@ -180,5 +174,3 @@ esempio:
 + Però lo stato D con ingressi $y_1y_0 = 10$ non è stabile e il seguente stato futuro è C
 + Anche lo stato C con ingressi $y_1y_0 = 10$ non è stabile e il seguente stato futuro è A
 + Lo stato A con ingressi $y_1y_0 = 10$ è stabile, perciò il nostro spostamento è terminato
-
-#pagebreak()

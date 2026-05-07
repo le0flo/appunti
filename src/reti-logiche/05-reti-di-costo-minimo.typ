@@ -32,8 +32,6 @@ Il numero di gate e/o connessioni della rete di costo minimo di tipo SP è in ge
 
 E' possibile che più espressioni dello stesso tipo (SP o PS) siano minime (abbiano cioè valori uguali di $N_"gate", N_"conn"$ e $N_"casc" <= 2$).
 
-#pagebreak()
-
 == Implicanti e implicanti primi
 
 Viene detto implicante, un termine di $n$ ingressi che assume il valore 1 solo la dove la funzione vale 1 o per indifferenza.
@@ -79,8 +77,6 @@ Implicanti primi: $a', b c$
 
 $ F(a,b,c) = a' + b c $
 
-#pagebreak()
-
 == Implicati e implicati primi
 
 Viene detto implicato, un termine di $n$ ingressi che assume il valore 0 solo la dove la funzione vale 0 o per indifferenza.
@@ -108,5 +104,3 @@ esempio:
 - *Implicati primi essenziali*: $a'+c, a'+b$
 
 $ F(a,b,c) = (a'+c)(a'+b) $
-
-#pagebreak()

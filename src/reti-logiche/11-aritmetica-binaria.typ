@@ -95,8 +95,6 @@ Questa realizzazione viene detta ripple-carry adder.
 Ogni Full adder impiega $2 tau_p$ per portare a regime il riporto in uscita da quando è a regime il riporto in ingresso.
 Se eseguo operazioni tra dati di $64$ bit, nel caso peggiore ottengo il risultato aggiornato dopo $128 tau_p$.
 
-#pagebreak()
-
 == Carry lookahead
 
 Una rete più veloce, ma più costosa dal punto di vista del numero di gate impiegati, si ottiene sintetizzando un circuito di carry lookahead, che elabori gli output del primo Half adder.
@@ -124,5 +122,3 @@ Serve poi un XOR tra il carry propagate e il riporto $r_i$ per calcolare i bit d
 La codifica dei numeri a complemento a $2$ è alla base della costruzione delle ALU.
 Le ALU sono delle reti combinatorie in grado di eseguire diverse operazioni (somma, sottrazione, complemento a $2$, scorrimento a destra e a sinistra, AND, OR, XOR, $dots$) su due operandi in base al codice operativo (op-code) in ingresso.
 Oltre al risultato stesso, diversi bit detti flags indicano il verificarsi di diversi casi speciali durante il calcolo del risultato.
-
-#pagebreak()

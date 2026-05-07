@@ -47,8 +47,6 @@ Una possibile ottimizzazione sarebbe sostituire il selettore per $Q_0$ con un EX
   $1$, $1$, $0$, $0$, $0$,
 )
 
-#pagebreak()
-
 Oltre a $Q_0$, è possibile ottimizzare il calcolo del valore $Q_1$.
 Questo infatti equivale a un AND e un EXOR in cascata.
 
@@ -85,8 +83,6 @@ Per realizzare un contatore binario x8, il bit $Q_2$ deve commutare ogni qualvol
 Un concetto equivalente al fatto che nel sistema decimale, la cifra delle centinaia incrementa soltanto quando quelle che la precedono formano il numero 99.
 La commutazione può essere realizzata come quella per $Q_1$ vista nello schema con ENABLE.
 
-#pagebreak()
-
 === Incremento della base di conteggio
 
 La regola che il bit $Q_i$ deve commutare quando tutti i bit da $Q_(i-1)$ a $Q_0$ valgono $1$ ha valenza generale.
@@ -112,5 +108,3 @@ Dato un contatore per $n$, per realizzare un contatore per $m$ tale che $m < n$,
 
 Ogni uscita $Q_i$ del contatore mentre $"EN"=1$ evolve come un'onda quadra con frequenza $f / (2^(i+1))$, se $f$ è la frequenza del clock.
 Per esempio, $Q_0$ ha la frequenza di $f / 2$, $Q_1$ ha la frequenza di $f / 4$ e così via.
-
-#pagebreak()

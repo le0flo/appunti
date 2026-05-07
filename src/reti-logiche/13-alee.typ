@@ -63,5 +63,3 @@ Per evitare a priori l'insorgere di alee statiche, quando si effettua la sintesi
 
 - espressione SP minima: $a'd + a d' + a b + c'd$
 - espressione SP priva di alee: $a'd + a d' + a b + c'd + b d + a c'$
-
-#pagebreak()

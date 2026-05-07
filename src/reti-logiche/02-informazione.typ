@@ -38,8 +38,6 @@ $ 2^n - 1 $
 Nel mondo reale, l'allineamento meccanico perfetto è impossibile, ovvero due segnali non possono variare contemporaneamente.
 Per evitare letture scorrette nei punti di disallineamento, è opportuno utilizzare configurazioni relative a posizioni consecutive che differiscono di un solo valore.
 
-#pagebreak()
-
 == Codice di Gray
 
 A differenza del codice binario, il codice di Gray è una configurazione di bit che codifica informazioni adiacenti tali che differiscono soltanto di 1 bit.
@@ -56,5 +54,3 @@ Possiamo dividere i codici in esterno e interno.
 
 - *Standard*: Un codice scelto da norme internazionali o da un costruttore molto diffuso, e permette a tutti di adottare quel codice per rendere le proprie informazioni facilmente interpretabili
 - *Proprietario*: Un codice scelto dal costruttore con l'unico scopo di interconnettere i propri prodotti.
-
-#pagebreak()
