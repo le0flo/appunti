@@ -28,8 +28,6 @@ Un generatore alla volta, annullo gli altri e calcolo le incognite del circuito 
 
 *Nota bene*: questo metodo non si può applicare al calcolo di potenze e altre quantità non lineari.
 
-#pagebreak()
-
 == Teorema di Thévenin
 
 Date le ipotesi di linearità e una rete lineare da semplificare senza generatori dipendenti,
@@ -57,5 +55,3 @@ L'ipotesi fondamentale è quella in cui si analizza una rete lineare con un nume
 La tensione tra i due nodi è pari al rapporto della sommatoria delle correnti di circuito di ogni lato sulla sommatoria delle conduttanze di ogni lato.
 
 $ v_(a b) = (sum^K_(i=0) e_i / R_i + sum^M_(j=1) i_j) / (sum^N_(p=1) 1 / R_p) $
-
-#pagebreak()
