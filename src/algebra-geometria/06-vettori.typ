@@ -34,8 +34,6 @@ La formula di Grassman è una relazione tra le dimensioni di due sottospazi di u
 
 $ dim(U + W) = dim U + dim W - dim(U and W) $
 
-#pagebreak()
-
 == Somma diretta
 
 $ U plus.o W "se" U inter W = { arrow(0) } $
@@ -49,5 +47,3 @@ $ B_u union B_w = B_(u+w) : "è una base di" U + W $
 Un sottospazio affine di $V$ è un sottoinsieme nella forma:
 
 $ AA = { arrow(v) + arrow(w) : arrow(w) in W } $
-
-#pagebreak()

@@ -22,5 +22,3 @@ Una funzione $f: AA arrow BB$ può essere:
 - *Iniettiva*: $forall a in.not AA : exists b in BB: a arrow b$
 - *Suriettiva*: $AA = BB$
 - *Biettive*: entrambe le precedenti
-
-#pagebreak()

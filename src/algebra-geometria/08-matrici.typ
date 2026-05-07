@@ -83,8 +83,6 @@ $ det A = "prodotto degli elementi sulla diagonale" $
 
 Se una matrice $A$ ha due righe o colonne uguali $arrow det A = 0$
 
-#pagebreak()
-
 == Determinante e le mosse di Gauss
 
 Il determinante è una funzione che prende in entrata una matrice e restituisce uno scalare.
@@ -103,5 +101,3 @@ Se le matrici assumono le seguenti forme, allora la moltiplicazione è possibile
 - $B in M(n,k,KK)$
 
 $ A B in M(m,k,KK) $
-
-#pagebreak()

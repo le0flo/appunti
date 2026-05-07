@@ -32,5 +32,3 @@ esempi:
 Dati due insiemi $AA$ e $BB$, il prodotto cartesiano $AA * BB$ è:
 
 $ AA * BB = { (a,b) : a in AA, b in BB } $
-
-#pagebreak()

@@ -42,5 +42,3 @@ $ p(x) = a_0 + a_1 x + a_2 x^2 + dots + a_n x^n $
 - $n$ = grado del polinomio
 - $a in CC$ = coefficienti
 - $forall z in CC$ possiamo considerare $p(z) = a_0 + a_1 z + a_2 z^2 + dots + a_n z^n in CC$
-
-#pagebreak()
