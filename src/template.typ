@@ -1,6 +1,6 @@
 #let appunti(materia: "", doc) = {
   set page(
-    margin: 20pt,
+    margin: 40pt,
     footer: context [
       #align(right, {
         counter(page).display(
@@ -12,13 +12,13 @@
   )
 
   set heading(numbering: "1.")
-  set list(spacing: 1.5em)
-  set enum(spacing: 1.5em)
 
   show title: set text(size: 20pt)
   show title: set align(left)
   show link: set text(fill: blue)
   show heading: set block(above: 2em, below: 2em)
+  show list: set block(above: 1.5em, below: 1.5em)
+  show enum: set block(above: 1.5em, below: 1.5em)
 
   title[Appunti di #materia]
 
