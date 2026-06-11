@@ -3,10 +3,9 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
   };
 
-  outputs = {nixpkgs, ...}:
-  let
+  outputs = inputs: let
     system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
+    pkgs = inputs.nixpkgs.legacyPackages.${system};
   in {
     devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [
