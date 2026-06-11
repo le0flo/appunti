@@ -85,9 +85,29 @@ In parallelo:
 
 $ i(t) = i_1(t) + i_2(t) = a_1(t) + a_2(t) $
 
-== Collegamento a stella
+== Collegamento da triangolo a stella
 
-== Collegamento a triangolo
+$
+  R_A = (R_"AB" R_"CA")/(R_"AB" + R_"BC" + R_"CA") \
+  R_B = (R_"AB" R_"BC")/(R_"AB" + R_"BC" + R_"CA") \
+  R_C = (R_"CA" R_"BC")/(R_"AB" + R_"BC" + R_"CA")
+$
+
+Nel caso in cui $R_"AB" = R_"BC" = R_"CA" = R_Delta$:
+
+$ R_A = R_B = R_C = R_Delta / 3 $
+
+== Collegamento da stella a triangolo
+
+$
+  R_"AB" = (R_A R_B + R_B R_C + R_C R_A)/R_C \
+  R_"BC" = (R_A R_B + R_B R_C + R_C R_A)/R_A \
+  R_"CA" = (R_A R_B + R_B R_C + R_C R_A)/R_B
+$
+
+Nel caso in cui $R_A = R_B = R_C = R_Y$:
+
+$ R_"AB" = R_"BC" = R_"CA" = 3 R_Y $
 
 == Trasformazioni
 
