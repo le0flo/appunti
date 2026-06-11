@@ -1,4 +1,4 @@
-= Transitori
+= Regime Transitorio
 
 I resistori sono dei componenti con un comportamento *adinamico*.
 Ad ogni variazione di tensione e/o corrente, si ha una variazione proporzionale e istantanea e lo stato attuale è indipendente dagli istanti precedenti.

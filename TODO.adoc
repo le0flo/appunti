@@ -1,6 +1,0 @@
-= 19/1/2026
-
-* [x] fisica generale: Finire i grafici
-* [x] reti logiche: Completare la parte mancante in aritmetica binaria
-* [ ] matematica applicata: Processi stocastici e funzioni di variabili casuali mancanti
-* [ ] elettrotecnica: Regime sinusoidale e illustrazioni con CetZ
