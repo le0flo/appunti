@@ -1,4 +1,4 @@
-#import "../template.typ": *
+#import "../../template.typ": *
 
 #show: appunti.with(
   materia: "Reti Logiche"
