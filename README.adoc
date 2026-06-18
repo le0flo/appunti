@@ -1,3 +1,15 @@
 = Appunti
 
 University notes.
+
+== Status
+
+* *Primo anno*:
+** Analisi T1 *100%*
+** Algebra e Geometria *75%*
+** Reti Logiche *100%* (-grafiche)
+* *Secondo anno*:
+** Matematica Applicata *80%*
+** Fisica Generale *50%*
+** Economia e Organizzazione aziendale *10%*
+** Elettrotecnica *80%* (-grafiche)
