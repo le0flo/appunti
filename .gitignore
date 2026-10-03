@@ -1,2 +1,6 @@
 # Project
 target/
+*.aux
+*.log
+*.out
+*.pdf

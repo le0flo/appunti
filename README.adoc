@@ -4,12 +4,13 @@ University notes.
 
 == Status
 
-* *Primo anno*:
-** Analisi T1 *100%*
-** Algebra e Geometria *75%*
-** Reti Logiche *100%* (-grafiche)
-* *Secondo anno*:
-** Matematica Applicata *80%*
-** Fisica Generale *50%*
-** Economia e Organizzazione aziendale *10%*
-** Elettrotecnica *80%* (-grafiche)
+* Analisi T1 *0%*
+* Algebra e Geometria *0%*
+* Reti Logiche *0%*
+* Analisi T2 *0%*
+* Matematica Applicata *0%*
+* Fisica Generale *0%*
+* Economia e Organizzazione aziendale *0%*
+* Elettrotecnica *0%*
+* Elettronica *0%*
+* Controlli Automatici *5%*

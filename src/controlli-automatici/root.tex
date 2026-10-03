@@ -1,0 +1,87 @@
+\documentclass{article}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+\title{Controlli Automatici}
+\author{Leonardo Florenzano}
+
+\begin{document}
+
+\maketitle
+
+\section{Modelli e Algoritmi}
+
+L'obbiettivo del corso è di sostituire il ragionamento umano, perciò l'elemento che controlla.
+Possiamo rappresentare la realtà come un modello, più o meno preciso.
+Una rete di controllo ha:
+
+\begin{itemize}
+\item sensori per avere una immagine dello stato del modello.
+\item una uscita per pilotare il modello in base alla logica di controllo.
+\end{itemize}
+
+Lo stato interno del modello si può rappresentare con strumenti matematici, come le equazioni differenziali ordinarie:
+
+\[ \dot{x}(t) = f(x(t), u(t), t) \]
+
+L'uscista della rete invece si può rappresentare con una semplice trasformazione:
+
+\[ y = h(x(t), t) \]
+
+Diamo per vero che entrambe le funzioni di stato e uscita sono lineari.
+Si può generalizzare ancora di più la descrizione del modello, espandendo le funzioni \(u(t), x(t), y(t)\) a più dimensioni:
+
+\begin{align*}
+  u(t) &= \begin{bmatrix} u_1(t) \\ u_2(t) \\ \dots \\ u_n(t) \end{bmatrix} \in \mathbb{R}^n\\
+  x(t) &= \begin{bmatrix} x_1(t) \\ x_2(t) \\ \dots \\ x_n(t) \end{bmatrix} \in \mathbb{R}^m\\
+  y(t) &= \begin{bmatrix} y_1(t) \\ y_2(t) \\ \dots \\ y_n(t) \end{bmatrix} \in \mathbb{R}^o
+\end{align*}
+
+Possiamo definire \(\dot{x}(t) = f(x(t), u(t), t)\) come \textbf{traiettoria del sistema}.
+In particolare \(x(t)\) si dice traiettoria dello stato e \(y(t)\) si dice traiettoria dell'uscita.
+Sistemi che non hanno un ingresso, vengono detti \textbf{non forzati}.
+
+\vspace{10pt}
+
+Un sistema lineare tempo invariante si può scrivere nella seguente maniera:
+
+\begin{align*}
+  \dot{x}(t) &= A(t)x(t) + B(t)u(t)\\
+  y(t) &= C(t)x(t) + D(t)u(t)
+\end{align*}
+
+Dove \(A(t), B(t), C(t), D(t)\) sono delle matrici.
+
+\[
+  \begin{bmatrix} \dot{x}_1(t) \\ \vdots \\ \dot{x}_n(t) \end{bmatrix}
+  =
+  \begin{bmatrix}
+    a_{11} & \dots & a_{1n}\\
+    \vdots & \ddots & \vdots\\
+    a_{m1} & \dots & a_{mn}
+  \end{bmatrix} 
+  \begin{bmatrix} x_1(t) \\ \vdots \\ x_n(t) \end{bmatrix}
+  +
+  \begin{bmatrix}
+    b_{11} & \dots & b_{1n}\\
+    \vdots & \ddots & \vdots\\
+    b_{l1} & \dots & b_{ln}
+  \end{bmatrix}
+  \begin{bmatrix} u_1(t) \\ \vdots \\ u_n(t) \end{bmatrix}
+\]
+
+La traiettoria di stato \(x(t)\) può essere come somma di due componenti
+
+\[ x(t) = x_l(t) + x_f(t) \]
+
+Queste due componenti sono chiamate
+
+\begin{itemize}
+\item Evoluzione libera: \(x_l(t) = A x(t) , x(0) = x_0 \neq 0\)
+\item Evoluzione forzata: \(x_f(t) = B u(t) , u(0) = u_0 \neq 0\)
+\end{itemize}
+
+Se io prendo uno stato \(x_E=0\) e un ingresso \(u_E=0\), porto il sistema in equilibrio.
+
+\end{document}
